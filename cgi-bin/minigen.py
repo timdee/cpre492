@@ -216,7 +216,7 @@ def main():
 #			print str( 10000*j*(10**i)) + " hz"
 #			time.sleep(1)
 
-	m.setFrequency(100000)
+	m.setFrequency(40000)
 	print "Frequency Register: " + bin(m.getFreqReg0())
 	m.close()
 

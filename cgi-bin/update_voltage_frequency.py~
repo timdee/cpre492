@@ -51,7 +51,7 @@ def update_frequency(frequency):
  # m = get_pickle_minigen()
 
   # ask the minigen to set the new frequency
-  m.setFrequency(float(frequency)*1000)
+  m.setFrequency(float(frequency))
 
   # update pickled information
   ###set_pickle_minigen(m)
