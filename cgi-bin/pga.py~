@@ -8,9 +8,9 @@ class pga:
 
 	def __init__(self):
 		#Switch user
-		#sudoPassword = 'root'
-		#command = 'sudo -i'
-		#p = os.system('echo %s|sudo -S %s' % (sudoPassword, command))
+		sudoPassword = 'root'
+		command = 'sudo -i'
+		p = os.system('echo %s|sudo -S %s' % (sudoPassword, command))
 
 		#Default Gx pins
 		self.pinGx = [4, 17, 27]
