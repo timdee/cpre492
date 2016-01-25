@@ -3,6 +3,7 @@
 import RPi.GPIO as GPIO
 import time
 import os
+import sys
 
 class pga:
 
@@ -59,7 +60,7 @@ class pga:
 	def printGainList(self):
 		print self.gainList
 
-
+	# Only Allows for gains set in the given list 
 	def setGain(self, gain):
 		try:
 			binNum = '{:03b}'.format(self.gainList.index(gain))
@@ -77,7 +78,7 @@ class pga:
 def main():
 	print "Running PGA test"
 	p = pga()
-	p.setGain(0)
+	p.setGain(int(sys.argv[1]))
 
 
  #self.gainList = [0, -1, -2, -5, -10, -20, -50, -100]

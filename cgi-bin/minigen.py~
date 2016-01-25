@@ -2,7 +2,7 @@
 
 import spidev
 import time
-
+import sys
 # Designed to provide some of the functionality from SparkFun_MiniGen.cpp
 # designed so that you only need to use set_frequency to set the frequency
 class minigen:
@@ -209,14 +209,7 @@ class minigen:
 def main():
 	print 'running in test mode'
 	m = minigen()
-	
-#	for i in range(0 ,2):
-#		for j in range(1,10):
-#			m.setFrequency( 10000*j*(10**i))
-#			print str( 10000*j*(10**i)) + " hz"
-#			time.sleep(1)
-
-	m.setFrequency(40000)
+	m.setFrequency(sys.argv[1])
 	print "Frequency Register: " + bin(m.getFreqReg0())
 	m.close()
 
