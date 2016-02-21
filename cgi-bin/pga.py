@@ -17,13 +17,13 @@ class pga:
 		self.pinGx = [4, 17, 27]
 		
 		#6910-3
-		#self.gainList = [0, -1, -2, -3, -4, -5, -6, -7]
+		self.gainList = [0, -1, -2, -3, -4, -5, -6, -7]
 
 		#6910-2
 		#self.gaintList = [0, -1, -2, -4, -8, -16, -32, -64]
 
 		#6910-3
-		self.gainList = [0, -1, -2, -5, -10, -20, -50, -100]
+		#self.gainList = [0, -1, -2, -5, -10, -20, -50, -100]
 
 
 		GPIO.setmode(GPIO.BCM)

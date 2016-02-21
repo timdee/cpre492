@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# open python thing
+cd /home/pi/cpre494/cpre492/cgi-bin
+
+# choose which switch to set the gain of based on the first argument
+#if (( "$1" == 0 )); then
+echo -e "import switch\nswitch=switch.switch($1)\nswitch.setState($2)" | sudo python
+#else
+	
+#fi
