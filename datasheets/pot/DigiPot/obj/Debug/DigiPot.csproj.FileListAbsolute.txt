@@ -1,0 +1,41 @@
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\ResolveAssemblyReference.cache
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\TinyCLR_DebugReferences.cache
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\DigiPot.Resources.resources
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\GenerateResource.read.1.tlog
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\GenerateResource.write.1.tlog
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\DigiPot.Resources.tinyresources
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\TinyResGen.cache
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\le\ChipworkX Application.exe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\be\ChipworkX Application.exe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\le\ChipworkX Application.pdb
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\be\ChipworkX Application.pdb
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\ChipworkX Application.exe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\ChipworkX Application.pdb
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\le\ChipworkX Application.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\le\ChipworkX Application.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\be\ChipworkX Application.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\be\ChipworkX Application.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\be\ChipworkX Application.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\be\ChipworkX Application.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\le\ChipworkX Application.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\le\ChipworkX Application.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\ChipworkX Application.exe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\obj\Debug\ChipworkX Application.pdb
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.Hardware.ChipworkX.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.Hardware.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.System.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.Hardware.ChipworkX.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.Hardware.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.System.pe
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.Hardware.ChipworkX.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.Hardware.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\LE\GHIElectronics.NETMF.System.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.Hardware.ChipworkX.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.Hardware.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\BE\GHIElectronics.NETMF.System.pdbx
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.Hardware.ChipworkX.dll
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.Hardware.dll
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.System.dll
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.Hardware.xml
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.Hardware.ChipworkX.xml
+d:\ehlers\documents\visual studio 2010\Projects\DigiPot\DigiPot\bin\Debug\GHIElectronics.NETMF.System.xml
