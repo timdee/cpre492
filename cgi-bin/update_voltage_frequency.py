@@ -17,7 +17,7 @@ def main():
   #update_frequency(100)
 
   # Test setting the voltage using I2c
-  update_voltage("23")
+  update_voltage("22")
 
 # define variables
 #minigen_pickle_file = "/tmp/mini_pickle"

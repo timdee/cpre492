@@ -23,19 +23,22 @@ class switch:
 
 	def updatePins(self):
 		GPIO.cleanup()
+		GPIO.setmode(GPIO.BCM)
+		
 		for pos in range(0,2):
-			GPIO.setmode(GPIO.BCM)
 			GPIO.setup(self.pinGx[pos], GPIO.OUT)
 
 	# Only Allows for gains set in the given list 
 	def setState(self, state):
+		pin_value = 1
+
 		# if 0, set 0. If any other value, set 1
 		if(state == 0):
-			self.pinGx[self.switchNumber] = 0
-		else:
-			self.pinGx[self.switchNumber] = 1
+			pin_value  = 0
+
+		GPIO.output(self.pinGx[self.switchNumber], pin_value)
 			
-		self.updatePins()
+		#self.updatePins()
 
 def main():
 	print "Running Switch Test"
