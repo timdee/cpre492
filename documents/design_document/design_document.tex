@@ -131,7 +131,8 @@ Constraints on this project fall within the size, voltage, and portability domai
 
 The size requirements of this project are directly related 
 to the portability of the final design.
-The design requirements specify this system must be easily and quickly moved around from one workstation to another.
+The design requirements specify this system must be easily and quickly
+ moved around from one workstation to another.
 The maximal allowed size is approximately 
 the size of a backpack 
 with smaller sizes being more desirable
@@ -139,47 +140,92 @@ but not explicitly required.
 With the electronics currently being used,
 these requirements will easily be met.
 
-The other constraint that we might meet would arise from the power supply. We require a 60V power supply to feed into the amplifier portion of the circuit. This means that the device will most likely be attached to a power brick that requires being plugged in. This leads to the need to be within easy reach of a wall plugin, which should not be a problem in most, if not all, testing environments. 
+Another constraint arises from the power supply requirements.
+The power supply must deliver at least 60V DC in order to feed the amplifier circuit. 
+Due to this, the final design requires a power brick
+similar to one which would be used to charge a laptop.
+Importantly, this would require the device to be plugged into a wall outlet.
+This is not seen as an issue.
+Every location this device will operate 
+will most likely have other equipment with similar power requirements.
 
-The system requirements call for several different systems to run or power our devices. The first requirement would be a connection to a computer to be able to interact and use the web interface on the raspberry pi that runs the device. Without a computer to interact with you will have no practical means to change the device's function. The next requirement is a connection to the raspberry pi itself. The third system requirement is a standard wall outlet to plug the device into. The finished product will require a amplifier circuit from 3.3V AC to 60V AC which is most easily handled by regulating the usual 120V sine wave. 
+In order to use this system,
+there are other items which are required
+apart from the device itself. 
+The first requirement is a network connection between the device and a computer.
+This connection is necessary to be able to interact with the web server hosted on the Raspberry Pi. 
+Without a computer to interact with this system there is no practical means of utilizing the device's functionality. 
+The next requirement, as mentioned above, is a network connection to the Raspberry Pi. 
+The third system requirement is a standard wall outlet
+to accommodate the power needs of the system. 
 
 \section{System Analysis}
-A user will interface with this system though the web interface. The interface will allow the user to choose the values for Voltage and Frequency. Once the user enters these values update scripts will run on the Raspberry pi. These scripts will cause the appropriate values to be set in the Minigen and Digital potentiometers. This will cause the output of the circuit to change to the requested values.
+A user will interface with this system though the web interface.
+This web interface may be accessed by
+typing the IP address of the device into a standard web browser.
+The interface will allow the user to choose the values for Voltage and Frequency.
+Once these values have been entered,
+update scripts on the Raspberry Pi
+will set the voltage and frequency output of the circuit
+according to the values entered.
 
 \section{Block Diagrams}
-
-standard non-inverting amplifier circuit 
-Detail Description
+%TODO
 
 \section{Functional Decomposition}
-There are four large blocks in our system. They include the Web Interface, Raspberry Pi, Minigen Signal Generator, and Amplifier Circuit. The project will be described in terms of these pieces.
+This system has four fundamental functional blocks.
+These include the 
+Web Interface, 
+Raspberry Pi, 
+Minigen Signal Generator, and
+Amplifier Circuit.
+The project will be described in terms of 
+these components and
+their interactions.
 
-The web interface will be created using an Apache web server. We will be able to use the Raspberry Pi to host the web server. The web server will need to display an interface which will allow the user to set the voltage and frequency. A simple interactive interface can be created with cgi scripts hosted by the webserver.In addition to hosting the web server the Raspberry pi can be used to regulate the voltage and frequency output by the system. The SPI interface of the raspberry pi will be used to communicate with the Minigen which controls the frequency and digital potentiometers which regulate the voltage.
-
-The Minigen produces a frequency which is a function of the values contained in its frequency registers. These values can be modified though SPI communications with the Minigen. We will use the Raspberry Pi for these communications.
-
-The Raspberry pi also controls the resistance of several digital potentiometers. These potentiometers regulate the gain of an amplifier circuit. The power from the amplifier will need to come from a voltage source which will supply at least 60 Vpp.
+\subsection{Web Interface}
+The web interface is hosted on the Raspberry Pi using an Apache web server.
+This web server displays an interface which allows the user to
+set a voltage and frequency output by the system. 
+The interface is simple and interactive,
+implemented using cgi-scripts on the Apache web server.
 
 \subsection{Web Server}
-The primary function of the webserver will be to communicate with the Raspberry Pi. This will be the primary method of control utilized by the user. The web pages displayed by the server will have the ability to control the voltage and frequency output from the circuit. A simple web interface might look something like the following.
+The primary function of the web server is to communicate with the Raspberry Pi.
+This is the primary method of control afforded 
+to the user by the system. 
+The web pages displayed by the server
+have the ability to control the voltage and frequency output by the circuit.
 
-Figure 2: Web Interface
-
-This could be accomplished by running an apache web server on the Raspberry Pi. The web server would need to display this page. When the user clicks update, the server could execute a cgi script which would perform the update functions.
+Displaying this interface is accomplished by 
+running an Apache web server on the Raspberry Pi. 
+When the user clicks update, the server could executes 
+a cgi-script performing the update functionality.
 
 \subsection{Raspberry Pi}
+The Raspberry Pi will act as the bridge between the user and the circuit.
+The Raspberry Pi will host a web server allowing the user to interact with the system.
+Based on the results of this user interaction, 
+the Raspberry Pi will update the state of the GPIO pins.
+The GPIO pins connect to a circuit causing the output to change based on their state. 
 
-The Raspberry Pi will act as the bridge between the user and the circuit. The Pi will host a webserver which the user can interact with. Based on what the user indicates in this interaction, the Pi will update the state of the GPIO pins. The GPIO pins connect to a circuit causing the output to change based on their state. 
+In addition to hosting the web server the Raspberry pi is used to
+communicate with the 
+Minigen Signal Generator and 
+amplifier circuit.
+This communication is accomplished via 
+the Raspberry Pi's SPI interface and
+GPIO pins respectively.
 
-The Raspberry pi is capable of producing square waves by turning the GPIO pins on and off rapidly. We can use this functionality to produce a wave of the frequency indicated by the user. The GPIO pins can also be used to set the voltage by communicating with the circuit how much the output waveform should be amplified. The downside to this approach is the analog circuit component will need to be more complex. The analog circuit needs to output a sine wave. With this approach we would need to integrate the square wave produced by the GPIO pin.
-
-There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as sparkfun.com ‘s Minigen. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
 \subsection{Minigen}
+This Minigen device controls the frequency output by the circuit.
+It does this as a function of the values contained in its frequency registers.
+These register values are modified though SPI communications with the Minigen.
+The SPI interface on the Raspberry Pi is utilized for these communications.
 
-The minigen outputs a waveform from -3.3V to 3.3V, this will be the starting point before going into the amplifier circuit. The minigen communicates over SPI, which the raspberry pi has dedicated modules for. The minigen is controlled by setting five registers, two for frequency, two for phase shift and one as a control. We have no need for phase shifting, but will be communicating with the frequency and control registers. By having two frequency registers, we are able to send data to reg0, then tell the control reg to use reg0, this allows for a nicer gradient, because the frequency won’t change until the entire register is written. The control register also allows for changing between sine, square and triangle, although this doesn’t interest us at the moment, it may be nice to experiment with later on. Finally, the bottom half of the control register allows us to switch between writing to the top half, bottom or whole frequency register, giving us the ability to accurately dial in small changes to the register, or large changes, or just rewrite the entire frequency. Due to the small chip size, it will be able to fit into a case with the raspberry pi, allowing for a small footprint, a requirement we need to meet.  
+The Minigen outputs a waveform from -3.3V to 3.3V, this will be the starting point before going into the amplifier circuit. The minigen communicates over SPI, which the raspberry pi has dedicated modules for. The Minigen is controlled by setting five registers, two for frequency, two for phase shift and one as a control. We have no need for phase shifting, but will be communicating with the frequency and control registers. By having two frequency registers, we are able to send data to reg0, then tell the control reg to use reg0, this allows for a nicer gradient, because the frequency won’t change until the entire register is written. The control register also allows for changing between sine, square and triangle, although this doesn’t interest us at the moment, it may be nice to experiment with later on. Finally, the bottom half of the control register allows us to switch between writing to the top half, bottom or whole frequency register, giving us the ability to accurately dial in small changes to the register, or large changes, or just rewrite the entire frequency. Due to the small chip size, it will be able to fit into a case with the raspberry pi, allowing for a small footprint, a requirement we need to meet.  
 
 \subsection{Amplifier Circuit}
-
 Takes input from the Minigen signal generator. Based on this input the circuit will manage the voltage and frequency of the output.
 
 The Minigen will generate the signal applied to the input of the analog circuit. We only need a method of producing the correct voltage. One way we could accomplish this is to communicate to the circuit what the voltage should be using the GPIO pins on the PI to control a digital potentiometer. Like the minigen, we would use SPI to communicate with this component. Such a circuit might look like the following with one of R1, R2 being a digital potentiometer.
@@ -247,6 +293,19 @@ Begin working on Research component of the project.
 2/1 - 5/15
 Continue Experimenting
 Use the project to perform some sort of research TBD
+
+\section{Redesigned Components}
+Throughout the course of this project,
+several components have been redesigned.
+Below is some mention of these designs and
+the issues encountered which motivated deviation from them.
+
+\subsection{Initial Frequency Control Circuit}
+The Raspberry pi is capable of producing square waves by turning the GPIO pins on and off rapidly. We can use this functionality to produce a wave of the frequency indicated by the user. The GPIO pins can also be used to set the voltage by communicating with the circuit how much the output waveform should be amplified. The downside to this approach is the analog circuit component will need to be more complex. The analog circuit needs to output a sine wave. With this approach we would need to integrate the square wave produced by the GPIO pin.
+
+There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as sparkfun.com ‘s Minigen. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
+
+\section{Conclusion}
 
 \end{multicols}
 

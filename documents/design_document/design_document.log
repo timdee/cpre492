@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  16 MAR 2016 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  18 MAR 2016 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,10 +363,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 163.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ˜ in font ptmr7t!
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -379,14 +376,17 @@ Missing character: There is no ™ in font ptmr7t!
  [2]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
 <images/491_web_interface_good.png, id=12, 785.93625pt x 806.01125pt>
 File: images/491_web_interface_good.png Graphic file (type png)
 
 <use images/491_web_interface_good.png>
-Package pdftex.def Info: images/491_web_interface_good.png used on input line 2
-57.
+Package pdftex.def Info: images/491_web_interface_good.png used on input line 3
+16.
 (pdftex.def)             Requested size: 542.025pt x 555.90239pt.
 
 <images/"Diagram - Pi to Minigen and MCP4131".jpg, id=14, 963.6pt x 722.7pt>
@@ -394,7 +394,7 @@ File: images/"Diagram - Pi to Minigen and MCP4131".jpg Graphic file (type jpg)
 
 <use images/"Diagram - Pi to Minigen and MCP4131".jpg>
 Package pdftex.def Info: images/"Diagram - Pi to Minigen and MCP4131".jpg used 
-on input line 264.
+on input line 323.
 (pdftex.def)             Requested size: 542.025pt x 406.52878pt.
 
 <images/voltage_control_circuit.png, id=15, 1363.34344pt x 702.37407pt>
@@ -402,7 +402,7 @@ File: images/voltage_control_circuit.png Graphic file (type png)
 
 <use images/voltage_control_circuit.png>
 Package pdftex.def Info: images/voltage_control_circuit.png used on input line 
-271.
+330.
 (pdftex.def)             Requested size: 542.025pt x 279.24059pt.
  [3] [4 <./images/491_web_interface_good.png>] [5 <./images/Diagram - Pi to Min
 igen and MCP4131.jpg>] [6 <./images/voltage_control_circuit.png>] (./design_doc
@@ -410,7 +410,7 @@ ument.aux) )
 Here is how much of TeX's memory you used:
  4452 strings out of 493054
  63525 string characters out of 6140586
- 163261 words of memory out of 5000000
+ 165261 words of memory out of 5000000
  7874 multiletter control sequences out of 15000+600000
  19290 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -418,7 +418,7 @@ Here is how much of TeX's memory you used:
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on design_document.pdf (6 pages, 159909 bytes).
+Output written on design_document.pdf (6 pages, 160172 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
