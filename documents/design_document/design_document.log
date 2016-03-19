@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  18 MAR 2016 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  19 MAR 2016 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -263,6 +263,16 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip48
 \backup@length=\skip49
 )
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
+\TX@col@width=\dimen140
+\TX@old@table=\dimen141
+\TX@old@col=\dimen142
+\TX@target=\dimen143
+\TX@delta=\dimen144
+\TX@cols=\count120
+\TX@ftn=\toks24
+)
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -271,36 +281,36 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) (./design_document.aux)
 \openout1 = `design_document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 55.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count120
-\scratchdimen=\dimen140
+\scratchcounter=\count121
+\scratchdimen=\dimen145
 \scratchbox=\box58
-\nofMPsegments=\count121
-\nofMParguments=\count122
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count123
-\MPscratchDim=\dimen141
-\MPnumerator=\count124
-\makeMPintoPDFobject=\count125
-\everyMPtoPDFconversion=\toks25
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen146
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -349,21 +359,21 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count126
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
+\c@lstlisting=\count127
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 187.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -381,12 +391,36 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
+Underfull \hbox (badness 1803) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/10 Design Web In-ter-
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/10 Hardware Com-mu-
+ []
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 337--337
+\OT1/ptm/m/n/10 ni-ca-tions and De-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/10 Prototype Com-ple-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
+[]|\OT1/ptm/m/n/10 Continue Ex-per-i-
+ []
+
 <images/491_web_interface_good.png, id=12, 785.93625pt x 806.01125pt>
 File: images/491_web_interface_good.png Graphic file (type png)
 
 <use images/491_web_interface_good.png>
 Package pdftex.def Info: images/491_web_interface_good.png used on input line 3
-16.
+43.
 (pdftex.def)             Requested size: 542.025pt x 555.90239pt.
 
 <images/"Diagram - Pi to Minigen and MCP4131".jpg, id=14, 963.6pt x 722.7pt>
@@ -394,7 +428,7 @@ File: images/"Diagram - Pi to Minigen and MCP4131".jpg Graphic file (type jpg)
 
 <use images/"Diagram - Pi to Minigen and MCP4131".jpg>
 Package pdftex.def Info: images/"Diagram - Pi to Minigen and MCP4131".jpg used 
-on input line 323.
+on input line 350.
 (pdftex.def)             Requested size: 542.025pt x 406.52878pt.
 
 <images/voltage_control_circuit.png, id=15, 1363.34344pt x 702.37407pt>
@@ -402,23 +436,23 @@ File: images/voltage_control_circuit.png Graphic file (type png)
 
 <use images/voltage_control_circuit.png>
 Package pdftex.def Info: images/voltage_control_circuit.png used on input line 
-330.
+357.
 (pdftex.def)             Requested size: 542.025pt x 279.24059pt.
  [3] [4 <./images/491_web_interface_good.png>] [5 <./images/Diagram - Pi to Min
 igen and MCP4131.jpg>] [6 <./images/voltage_control_circuit.png>] (./design_doc
 ument.aux) ) 
 Here is how much of TeX's memory you used:
- 4452 strings out of 493054
- 63525 string characters out of 6140586
- 165261 words of memory out of 5000000
- 7874 multiletter control sequences out of 15000+600000
- 19290 words of font info for 43 fonts, out of 8000000 for 9000
+ 4504 strings out of 493054
+ 64153 string characters out of 6140586
+ 164314 words of memory out of 5000000
+ 7922 multiletter control sequences out of 15000+600000
+ 21370 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,72p,1573b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,72p,1573b,333s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on design_document.pdf (6 pages, 160172 bytes).
+Output written on design_document.pdf (6 pages, 160700 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

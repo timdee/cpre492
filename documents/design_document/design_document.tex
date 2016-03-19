@@ -12,6 +12,7 @@
 \usepackage{color}
 \usepackage{multirow}
 \usepackage{array}
+\usepackage{tabularx}
 
 %% Set the folder where pictures are located
 \graphicspath{ {images/} }
@@ -249,51 +250,6 @@ Capacitors - \$5.00
 Op Amps - \$9.50
 Estimated Total = \$152.35
 
-\section{Timeline}
-% Timeline in table format
-%\begin{center}
-%\begin{tabular}{||c c c||}
-
-%\hline
-%Item & Completion Date & Description
-%\hline\hline
-
-%item & 10/1/2015 & \multicolumn{1}{|p{2cm}|}{\centering description} \\
-%\hline
-
-%\end{tabular}
-%\end{center}
-
-
-
-Completion Date
-Object
-Description
-10/1
-Project Plan
-Create a project plan which specifies the pieces of the project.
-10/15
-Design
-Complete a detailed design of each component of our project. Assign people to work on the various pieces of the project.
-11/1
-Design Web Interface
-Design and build web interface. Outline code for Communications with Minigen and Digital Potentiometers.
-11/15
-Hardware Communications and Design
-Get communications working between Raspberry Pi, Minigen, and Digital Potentiometers.
-12/1
-Completion of Prototype
-Take final steps testing prototype. Device should be able to do everything in specification.
-12/15
-Presentation
-Present a working prototype of our project.
-1/15
-Begin Science Component
-Begin working on Research component of the project.
-2/1 - 5/15
-Continue Experimenting
-Use the project to perform some sort of research TBD
-
 \section{Redesigned Components}
 Throughout the course of this project,
 several components have been redesigned.
@@ -310,6 +266,77 @@ There exist alternatives to using the GPIO pins to generate a signal with a give
 \end{multicols}
 
 \section{Appendix}
+%TODO modify timeline
+\subsection{Timeline}
+% Timeline in table format
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        
+        \textbf{Item} & 
+        \textbf{Completion Date} & 
+        \textbf{Description} \\
+        \hline
+
+        Project Plan & 
+        01 Oct. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Create a project plan which specifies the pieces of the project.
+        } \\
+        \hline
+
+        Project Design & 
+        15 Oct. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Complete a detailed design of each component of our project. Assign people to work on the various pieces of the project.
+        } \\
+        \hline
+
+        Design Web Interface & 
+        01 Nov. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Design and build web interface.
+        Outline code for Communications with Minigen and Digital Potentiometers.
+        } \\
+        \hline
+
+        Hardware Communications and Design & 
+        15 Nov. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Get communications working between Raspberry Pi, Minigen, and Digital Potentiometers.
+        } \\
+        \hline
+
+        Prototype Completion & 
+        01 Dec. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Take final steps testing prototype. Device should be able to do everything in specification.
+        } \\
+        \hline
+
+        Senior Design I Presentation & 
+        15 Dec. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Present a working prototype of our project.
+        } \\
+        \hline
+
+        Begin Experimentation Component & 
+        01 Jan. 2015 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Begin working on Research component of the project.
+        } \\
+        \hline
+
+        Continue Experimentation & 
+        01 Feb. 2016 - 05 May. 2016 & 
+        \multicolumn{1}{|p{12cm}|}{\centering 
+        Use the project to perform research.
+        } \\
+        \hline
+    \end{tabularx}
+\end{center}
+
 \subsection{Graphical Comprehension Aides}
 \begin{figure}[!hbt]
 \begin{center}
