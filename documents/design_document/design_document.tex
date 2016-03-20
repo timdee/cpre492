@@ -105,7 +105,7 @@ The system must be able to generate up to a 60 V peak-peak sine wave with
 user-controlled variable frequency from 10 kHz to 1 MHz. 
 % TODO
 
-\section{Deliverables}
+\subsection{Deliverables}
 There are four items which must be constructed for this project:
 % TODO list the components which must be constructed
 
@@ -127,7 +127,7 @@ These experiments constitute the remainder of the project.
 For these experiments our advisor at Minetronix, John Pritchard, 
 will be the main source of guidance and testable material. 
 
-\section{Constraints}
+\subsection{Constraints}
 Constraints on this project fall within the size, voltage, and portability domains.
 
 The size requirements of this project are directly related 
@@ -160,7 +160,7 @@ The next requirement, as mentioned above, is a network connection to the Raspber
 The third system requirement is a standard wall outlet
 to accommodate the power needs of the system. 
 
-\section{System Analysis}
+\subsection{System Analysis}
 A user will interface with this system though the web interface.
 This web interface may be accessed by
 typing the IP address of the device into a standard web browser.
@@ -286,6 +286,56 @@ generate signals which range from $1V_{pp}$ to $60V_{pp}$.
 To accomplish this,
 %TODO
 
+\section{Software Components}
+The web interface displayed by
+the web server hosted on the Raspberry Pi
+is the user's window into the system.
+Through this interface,
+the user can seamlessly control various
+components of the system cause 
+the desired voltage and frequency 
+to be produced.
+Previously covered are
+the hardware components used to accomplish this.
+This section describes the software counterparts
+used to control the hardware.
+
+% code layout diagram
+%\begin{figure}[!hbt]
+\begin{center}
+\includegraphics[width=0.47\textwidth,keepaspectratio]{script_layout.png}
+\end{center}
+%\caption{Script layout according to work delegation.}
+%\label{fig_script_layout}
+%\end{figure}
+
+\subsection{Modifying Frequency}
+The frequency output by the circuit is controlled 
+by the Minigen Function Generator.
+Thus the software components used to 
+modify the output frequency
+are in essence
+a method of communication with the Minigen device.
+
+The process begins when the user 
+enters a new frequency value into the web interface
+and clicks the "update" button.
+The \textit{update.py} script parses 
+the parameters contained in the URL
+resulting from the user's update request.
+These parameters are than
+passed on to \textit{update\_voltage\_frequency.py}
+which determines the appropriate update procedure 
+with which to call \textit{minigen.py}.
+
+%TODO explain how minigen.py works in detail
+
+\subsection{Controlling Voltage}
+%TODO explain how we decide whether to turn switches on or off
+%TODO explain how we choose the value to set the pga
+%TODO explain how we modify the values of the switches
+%TODO explain how we modify the value of the pga
+
 \section{Cost Considerations}
 The monetary cost of this project is fairly low. 
 The precise costs of components in the future are unknown, but
@@ -372,6 +422,7 @@ specified in the project description.
     \end{tabularx}
 \end{center}
 
+%TODO integrate into table
 Total Cost
 Raspberry Pi 2 Kit - \$99.95
 Minigen - \$29.95
@@ -380,29 +431,62 @@ Capacitors - \$5.00
 Op Amps - \$9.50
 Estimated Total = \$152.35
 
-%TODO entire section
 \section{Redesigned Components}
+In an introductory economics class,
+it is common that students are taught about sunk costs.
+Sunk costs refer to those costs which
+have already been incurred and
+cannot be recovered.
+These classes teach that suck costs should not
+be considered in making future investments.
+In other words,
+one should not ask themselves the extent of 
+current investment down a particular path.
+Rather, one should ask,
+given what is known now,
+which investment is more intelligent.
+
+While economics classes teach about sunk costs in
+the context of monetary investment,
+the same logic may be applied to other domains.
+In the case of this project,
+the investment capital is time and energy.
+Regardless of how much energy has been invested
+in a particular design,
+it is necessary to evaluate alternatives to that design.
+If these alternatives than look better
+given what is known about both designs
+than the design should be modified accordingly
+to fit the alternative design.
+
 Throughout the course of this project,
-several components have been redesigned.
+several components needed to be redesigned.
 Below is some mention of these designs and
 the issues encountered which motivated deviation from them.
 
-\subsection{Initial Frequency Control Circuit}
+\subsection{Frequency Control}
 The Raspberry pi is capable of producing square waves by turning the GPIO pins on and off rapidly. We can use this functionality to produce a wave of the frequency indicated by the user. The GPIO pins can also be used to set the voltage by communicating with the circuit how much the output waveform should be amplified. The downside to this approach is the analog circuit component will need to be more complex. The analog circuit needs to output a sine wave. With this approach we would need to integrate the square wave produced by the GPIO pin.
 
 There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as sparkfun.com ‘s Minigen. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
 
-\subsection{Digital Potentiometer}
+\subsection{Voltage Control}
+\subsubsection{Digital Potentiometer}
 The output of the digital potentiometer has 128 steps. This Translates into our ability to set 128 different gains on our amplifier. We will need multiple stages of amplifier to go between 1 and 60 Vpp. The most prominent reason for this is due to the gain bandwidth of the op-amps. We will not be able to have a large gain while still producing a frequency of 1Mhz.
 
 One problem we foresee with the digital potentiometer is that it cannot handle a large amount of power. This may force us to come up with different amplifier configurations, or use the digital potentiometer in a different way. Another way we could possibly use this device is as an attenuator at the input to the amplifier.
 
 Another problem which might arise with the digital potentiometer is the capacitance of the wiper. We don’t have any context for understanding how much this will affect the output signal. According to some preliminary calculations, we have determined that the capacitance will not present a large problem.
 
+\section{Known Issues}
+%TODO
+
 \section{Conclusion}
 %TODO
 
 \end{multicols}
+
+% go to next page
+\pagebreak
 
 \section{Appendix}
 %TODO modify timeline
@@ -482,20 +566,6 @@ Another problem which might arise with the digital potentiometer is the capacita
 \includegraphics[width=1.0\textwidth,keepaspectratio]{491_web_interface_good.png}
 \end{center}
 \caption{Web Interface}
-\end{figure}
-
-\begin{figure}[!hbt]
-\begin{center}
-\includegraphics[width=1.0\textwidth,keepaspectratio]{"Diagram - Pi to Minigen and MCP4131"}
-\end{center}
-\caption{Raspberry Pi Connection Scheme}
-\end{figure}
-
-\begin{figure}[!hbt]
-\begin{center}
-\includegraphics[width=1.0\textwidth,keepaspectratio]{voltage_control_circuit.png}
-\end{center}
-\caption{Voltage Control Circuit}
 \end{figure}
 
 %\subsection{Code Listing - HTML}
