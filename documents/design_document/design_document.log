@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  20 MAR 2016 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  25 MAR 2016 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,86 +370,139 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 120.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <script_layout.png, id=9, 
-963.6pt x 722.7pt>
-File: script_layout.png Graphic file (type png)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <images/block_diagram.png,
+ id=9, 963.6pt x 722.7pt>
+File: images/block_diagram.png Graphic file (type png)
 
-<use script_layout.png>
-Package pdftex.def Info: script_layout.png used on input line 306.
-(pdftex.def)             Requested size: 254.7524pt x 191.06245pt.
+<use images/block_diagram.png>
+Package pdftex.def Info: images/block_diagram.png used on input line 188.
+(pdftex.def)             Requested size: 542.025pt x 406.52878pt.
 
-Overfull \hbox (24.70622pt too wide) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 211--227
+[]\OT1/ptm/m/n/9 Our im-ple-men-ta-tion pro-vides sev-eral func-tion-al-i-ties.
+
+ []
+
+<images/491_web_interface_good.png, id=11, 785.93625pt x 806.01125pt>
+File: images/491_web_interface_good.png Graphic file (type png)
+
+<use images/491_web_interface_good.png>
+Package pdftex.def Info: images/491_web_interface_good.png used on input line 2
+29.
+(pdftex.def)             Requested size: 243.90959pt x 250.13147pt.
+
+Overfull \hbox (13.86342pt too wide) in paragraph at lines 229--230
  [] 
  []
 
-[2]
+<images/rpi_connection.png, id=12, 963.6pt x 722.7pt>
+File: images/rpi_connection.png Graphic file (type png)
+
+<use images/rpi_connection.png>
+Package pdftex.def Info: images/rpi_connection.png used on input line 263.
+(pdftex.def)             Requested size: 243.90959pt x 182.92416pt.
+
+Overfull \hbox (13.86342pt too wide) in paragraph at lines 263--264
+ [] 
+ []
+
+[2 <./images/491_web_interface_good.png>] [3 <./images/block_diagram.png> <./im
+ages/rpi_connection.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 338.
+ <script_layout.png, id=22, 963.6pt x 722.7pt>
+File: script_layout.png Graphic file (type png)
+
+<use script_layout.png>
+Package pdftex.def Info: script_layout.png used on input line 406.
+(pdftex.def)             Requested size: 254.7524pt x 191.06245pt.
+
+Overfull \hbox (24.70622pt too wide) in paragraph at lines 406--407
+ [] 
+ []
+
+[4 <./script_layout.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+[]|\OT1/ptm/b/n/9 Raspberry
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+[]|\OT1/ptm/b/n/9 Minigen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+\OT1/ptm/b/n/9 Func-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+[]|\OT1/ptm/b/n/9 Resistor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--524
+[]|\OT1/ptm/b/n/9 Capacitor
+ []
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ˜ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 473.
- [3 <./script_layout.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [4]
-Underfull \hbox (badness 1803) in paragraph at lines 560--560
+[5] [6]
+Underfull \hbox (badness 1803) in paragraph at lines 700--700
 []|\OT1/ptm/m/n/10 Design Web In-ter-
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 560--560
+Underfull \hbox (badness 1776) in paragraph at lines 700--700
 []|\OT1/ptm/m/n/10 Hardware Com-mu-
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 560--560
+Underfull \hbox (badness 4595) in paragraph at lines 700--700
 \OT1/ptm/m/n/10 ni-ca-tions and De-
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 560--560
+Underfull \hbox (badness 3492) in paragraph at lines 700--700
 []|\OT1/ptm/m/n/10 Prototype Com-ple-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--560
+Underfull \hbox (badness 10000) in paragraph at lines 700--700
 []|\OT1/ptm/m/n/10 Continue Ex-per-i-
  []
 
-<images/491_web_interface_good.png, id=25, 785.93625pt x 806.01125pt>
-File: images/491_web_interface_good.png Graphic file (type png)
-
-<use images/491_web_interface_good.png>
-Package pdftex.def Info: images/491_web_interface_good.png used on input line 5
-66.
-(pdftex.def)             Requested size: 542.025pt x 555.90239pt.
- [5] [6 <./images/491_web_interface_good.png>] (./design_document.aux) ) 
+[7] (./design_document.aux) ) 
 Here is how much of TeX's memory you used:
- 4510 strings out of 493054
- 63939 string characters out of 6140586
- 161314 words of memory out of 5000000
- 7924 multiletter control sequences out of 15000+600000
+ 4520 strings out of 493054
+ 64208 string characters out of 6140586
+ 163314 words of memory out of 5000000
+ 7932 multiletter control sequences out of 15000+600000
  24191 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,72p,570b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/s
-hare/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
-usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on design_document.pdf (6 pages, 142885 bytes).
+ 38i,8n,72p,572b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on design_document.pdf (7 pages, 258873 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

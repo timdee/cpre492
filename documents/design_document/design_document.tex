@@ -83,15 +83,27 @@ The particles the electric field will attract or repel depends on
 characteristics of the electric filed which may be controlled
 by varying the voltage and frequency of the electronics driving the field.
 
-This technology has many useful applications in health care
+This technology has many useful applications in health care.
+The proposed end use of this equipment is
+for separating particles bodily fluids,
+such as spinal fluid.
+Such medial applications could be useful
+in testing or filtering these fluids.
+
+Being capable of separating though the
+application of an electric field would represent
+an advancement over existing solutions.
+It introduces a new method of testing which
+could be more precise when compared
+to existing technologies.
 % TODO
 
 \section{Project Definition}
 In our implementation, an electric field is applied 
 to two metal plates.
-by varying the voltage and frequency
+Through varying the voltage and frequency
 applied to these plates, 
-the properties of the electric field can be changed.
+the properties of the electric field may be changed.
 
 Our job is to construct a system 
 containing an electronic circuit capable of providing
@@ -170,8 +182,13 @@ update scripts on the Raspberry Pi
 will set the voltage and frequency output of the circuit
 according to the values entered.
 
-\section{Block Diagrams}
-%TODO
+%\section{Block Diagram}
+\begin{figure*}[!hbt]
+\begin{center}
+\includegraphics[width=1.0\textwidth,keepaspectratio]{block_diagram.png}
+\end{center}
+\caption{Block Diagram provides an overview of the system components.}
+\end{figure*}
 
 \section{Functional Decomposition}
 This system has four fundamental functional blocks.
@@ -190,6 +207,27 @@ This web server displays an interface which allows the user to
 set a voltage and frequency output by the system. 
 The interface is simple and interactive,
 implemented using cgi-scripts on the Apache web server.
+
+Our implementation provides several functionalities.
+Among these are
+the ability to set:
+voltage and frequency,
+sine or triangle or square waveforms,
+and the ability to set a voltage and frequency for an amount of time.
+The table displayed
+in the figure below
+provides the ability to set voltage and frequency for the number
+of minutes specified.
+The "Go" button will cause the first
+voltage and frequency to be set for the corresponding amount of time.
+After the time has expired,
+the next voltage and frequency will be set for the corresponding amount of time.
+This process continues until the table entries are completed or
+the user presses the "Stop" button.
+
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{491_web_interface_good.png}
+\end{center}
 
 \subsection{Web Server}
 The primary function of the web server is to communicate with the Raspberry Pi.
@@ -217,6 +255,13 @@ amplifier circuit.
 This communication is accomplished via 
 the Raspberry Pi's SPI interface and
 GPIO pins respectively.
+
+%TODO
+
+%TODO insert Raspberry Pi connection diagram
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{rpi_connection.png}
+\end{center}
 
 \subsection{Minigen}
 The Minigen Function Generator device controls the frequency output by the circuit.
@@ -284,7 +329,62 @@ voltage and frequency output.
 The project requirements state that the system must 
 generate signals which range from $1V_{pp}$ to $60V_{pp}$. 
 To accomplish this,
+various circuit components were used to accomplish the amplification.
+The overall scheme is to split the output voltages into
+three different ranges.
+One component is used to adjust the voltage within each of the ranges while
+other comp are used to change the range the voltage adjuster is acting within.
+
+\subsubsection{Summing Amplifier}
+The summing amplifier is the last component
+in the amplifier circuit.
+The overall voltage range which needs to be produced is divided into three segments.
+Each of these segments have their output connected as
+input to the summing amplifier.
+One of the segments utilizes a programmable gain amplifier(PGA)
+to vary the voltage within one third of the range.
+While the relays are used to increase the voltage by one third of the overall voltage range when they are turned on.
+
+The advantage of this design is that
+it allows for three times the number of voltage steps
+allowed for by a single PGA.
+This could also be accomplished by using multiple PGA's.
+Utilizing the relays in increase the voltage instead of additional PGA's
+allows for reduced software and hardware complexity.
+
+\subsubsection{Relay}
+The overall voltage range,
+$1V_{pp}$ to $60V_{pp}$,
+is divided into three $20V_{pp}$ ranges.
+The relay's have two states,
+on and off,
+which allow for moment between the ranges.
+When on,
+the input the the Amplifier circuit is amplified to $20V_{pp}$.
+This $20V_{pp}$ signal is input to the summing amplifier.
+There are two of these relay circuits used.
+Turning them on or off allows the voltage range to be chosen.
+These relay circuits are controlled by 
+GPIO pins on the Raspberry Pi.
+
+\subsubsection{Programmable Gain Amplifier(PGA)}
+There are three $20V_{pp}$ voltage ranges.
+Which range being acted in is chosen by the relay circuits.
+Within a given range,
+however,
+a PGA is used to control the voltage output.
+In our implementation,
+a PGA has control over a $20V_{pp}$ range.
+The PGA has 8 steps within this range.
+This Device is controlled by 
+the SPI interface on the Raspberry Pi.
+
 %TODO
+
+%TODO insert a diagram of the amplifier circuit
+%\begin{center}
+%\includegraphics[width=0.45\textwidth,keepaspectratio]{amplifier_circuit.png}
+%\end{center}
 
 \section{Software Components}
 The web interface displayed by
@@ -331,22 +431,24 @@ with which to call \textit{minigen.py}.
 %TODO explain how minigen.py works in detail
 
 \subsection{Controlling Voltage}
-%TODO explain how we decide whether to turn switches on or off
+\subsubsection{Relay}
+%TODO explain how we decide whether to turn relays on or off
+
+\subsubsection{Programmable Gain Amplifier(PGA)}
 %TODO explain how we choose the value to set the pga
-%TODO explain how we modify the values of the switches
 %TODO explain how we modify the value of the pga
+
 
 \section{Cost Considerations}
 The monetary cost of this project is fairly low. 
 The precise costs of components in the future are unknown, but
 a table 
-%TODO reference table
 of current prices has been provided
 along with the necessary quantity of each component.
 The projected cost of op-amps and other electronic components is minimal. 
 The largest expenditure of the project is
 the purchase of the 
-Rasperry Pi 2 and 
+Raspberry Pi 2 and 
 Minigen Function Generator. 
 The Raspberry Pi 2 package is currently priced at \$99.95 and
 the Minigen cost at \$29.95.
@@ -372,7 +474,7 @@ the total cost is approximated at \$152.35.
 This is far below the maximum allotted funds of \$1,000
 specified in the project description.
 
-%TOTO table of costs
+%TODO table of costs
 \begin{center}
     \begin{tabularx}{0.4\textwidth}{|X|X|X|X|}
         \hline
@@ -380,56 +482,47 @@ specified in the project description.
         \textbf{Item} &
         \textbf{Part Number} &
         \textbf{Quantity} &
-        \textbf{Price} \\
+        \textbf{Price(\$)} \\
         \hline
 
+        \textbf{Raspberry Pi 2 Kit} &
         \textbf{-} &
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} \\
+        \textbf{1} &
+        \textbf{99.95} \\
         \hline
 
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} \\
+        \textbf{Minigen Function Generator} &
+        \textbf{AD9837} &
+        \textbf{1} &
+        \textbf{29.95} \\
         \hline
 
+        \textbf{Resistor Pack} &
         \textbf{-} &
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} \\
+        \textbf{1} &
+        \textbf{7.95} \\
         \hline
 
+        \textbf{Capacitor Pack} &
         \textbf{-} &
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} \\
+        \textbf{1} &
+        \textbf{5.00} \\
         \hline
 
+        \textbf{Op Amps} &
         \textbf{-} &
-        \textbf{-} &
-        \textbf{-} &
-        \textbf{-} \\
+        \textbf{8} &
+        \textbf{9.50} \\
         \hline
 
         \textbf{Total} &
         \textbf{-} &
         \textbf{-} &
-        \textbf{TODO} \\
+        \textbf{152.35} \\
 
         \hline
     \end{tabularx}
 \end{center}
-
-%TODO integrate into table
-Total Cost
-Raspberry Pi 2 Kit - \$99.95
-Minigen - \$29.95
-Resistors - \$7.95
-Capacitors - \$5.00
-Op Amps - \$9.50
-Estimated Total = \$152.35
 
 \section{Redesigned Components}
 In an introductory economics class,
@@ -467,7 +560,7 @@ the issues encountered which motivated deviation from them.
 \subsection{Frequency Control}
 The Raspberry pi is capable of producing square waves by turning the GPIO pins on and off rapidly. We can use this functionality to produce a wave of the frequency indicated by the user. The GPIO pins can also be used to set the voltage by communicating with the circuit how much the output waveform should be amplified. The downside to this approach is the analog circuit component will need to be more complex. The analog circuit needs to output a sine wave. With this approach we would need to integrate the square wave produced by the GPIO pin.
 
-There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as sparkfun.com ‘s Minigen. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
+There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as \textit{sparkfun.com}‘s Minigen Function Generator. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
 
 \subsection{Voltage Control}
 \subsubsection{Digital Potentiometer}
@@ -476,11 +569,58 @@ The output of the digital potentiometer has 128 steps. This Translates into our 
 One problem we foresee with the digital potentiometer is that it cannot handle a large amount of power. This may force us to come up with different amplifier configurations, or use the digital potentiometer in a different way. Another way we could possibly use this device is as an attenuator at the input to the amplifier.
 
 Another problem which might arise with the digital potentiometer is the capacitance of the wiper. We don’t have any context for understanding how much this will affect the output signal. According to some preliminary calculations, we have determined that the capacitance will not present a large problem.
+This design was replaced by a programmable gain amplifier.
+
+\subsubsection{Transistor switch}
+The overall voltage output by the amplifier circuit
+varies between $1V_{pp}$ to $60V_{pp}$.
+In our implementation,
+this range is segmented into three parts of $20V_{pp}$ each.
+Each of the three segments are input to a summing amp to
+create up to $60V_{pp}$ overall.
+
+A PGA is used for fine adjustment of one $20V_{pp}$ range while
+the other two ranges are either $20V_{pp}$ or $0V_{pp}$.
+In other words,
+there ranges are turned on or off.
+
+The original design for turning on and off the ranges
+required that a BJT transistor switch circuit be used.
+The intent was for this circuit to have either $20V_{pp}$ or $0V_{pp}$
+depending on a GPIO pin from the Raspberry Pi.
+This design did not work as intended.
+Even when the transistors were off there was still current leakage.
+This current leakage caused problems when input to the summing amplifier.
+For this reason, the BJT transistor switch ciruits were replaced with solid state relays.
 
 \section{Known Issues}
+The current solution has some noteworthy issues
+which need to be addressed.
+Issues are defined as unintended issues of unknown origin.
+Possible reasons for each of the issues are discussed as
+well as the accommodations made in this implementation to lessen their impact.
+Potential solutions are also mentioned.
+
+\subsection{B23}
+In the current prototype,
+there is an ongoing issue with the Minigen Function Generator.
+This device works as expected in most cases.
+The exception occurs when bit 23 of either frequency register
+is set high.
+This case will cause the Minigen device to produce a $4Mhz$ sine wave.
+There is potential that the specific Minigen device used 
+is responsible for this bug.
+Further testing is required.
+
+The solution currently implemented is
+to detect conditions which will cause the error
+and avert these situations problematically.
+Whenever bit 23 is set to high in a frequency register write,
+the current implementation sets bit 23 to low
+and sets all less significant bits to high.
 %TODO
 
-\section{Conclusion}
+%\section{Conclusion}
 %TODO
 
 \end{multicols}
@@ -560,13 +700,13 @@ Another problem which might arise with the digital potentiometer is the capacita
     \end{tabularx}
 \end{center}
 
-\subsection{Graphical Comprehension Aides}
-\begin{figure}[!hbt]
-\begin{center}
-\includegraphics[width=1.0\textwidth,keepaspectratio]{491_web_interface_good.png}
-\end{center}
-\caption{Web Interface}
-\end{figure}
+%\subsection{Graphical Comprehension Aides}
+%\begin{figure}[!hbt]
+%\begin{center}
+%\includegraphics[width=1.0\textwidth,keepaspectratio]{491_web_interface_good.png}
+%\end{center}
+%\caption{Web Interface}
+%\end{figure}
 
 %\subsection{Code Listing - HTML}
 %\lstinputlisting[caption=Main HTML Page]{../www/index.html}
