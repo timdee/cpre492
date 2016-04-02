@@ -15,6 +15,9 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 
+% packages added by me
+\usepackage{standalone}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 'dedication' environment: To add a dedication paragraph at the start of book %
 % Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
@@ -142,24 +145,24 @@ Board containing our frequency and voltage regulating hardware.
 The design document covers the hardware included on this PCB in great detail.
 An overview of the functionality will be given here as a summary.
 All that must be understood for operation of the system is the inputs and ouputs of this hardware component.
-The imputs are the GPIO pins on the provided Raspberry Pi.
-The outpus are wires which may be soldered on to the PCB at the locations described.
+The inputs are the GPIO pins on the provided Raspberry Pi.
+The outputs are wires which may be soldered on to the PCB at the locations described.
 Circuit diagrams of the PCB are included in the attached design document.
 
-\section{Software}
-There are a few components to our provided software.
-Included among these is a startup script which can be
-run on a fresh install of Rasbian Linux operating system.
-This startup script will create all necessary files
-and make all necessary changes to the device.
-After the startup script is run, the system should be fully operational
-and the user should be able to control it from a web browser.
+%\section{Software}
+%There are a few components to our provided software.
+%Included among these is a startup script which can be
+%run on a fresh install of Rasbian Linux operating system.
+%This startup script will create all necessary files
+%and make all necessary changes to the device.
+%After the startup script is run, the system should be fully operational
+%and the user should be able to control it from a web browser.
 
-In the case that combatibility issues between the script and future versions of
-Rasbian Linux operating system arrise in the future,
-a fully detailed guide is provided to enable manual setup.
-We will describe the necessary software packages used in this setup,
-how to acquire these packages, and how to configure them similar to the way we have done.
+%In the case that compatibility issues between the script and future versions of
+%Rasbian Linux operating system arise in the future,
+%a fully detailed guide is provided to enable manual setup.
+%We will describe the necessary software packages used in this setup,
+%how to acquire these packages, and how to configure them similar to the way we have done.
 
 \chapter{Setup and Configuration}
 \section{Acquiring a Raspberry Pi}
@@ -170,67 +173,115 @@ Other items which may need to be purchased along with the Raspberry Pi include:
 
 2. protective case
 
-3. TODO
+%3. TODO
 
 \section{Installing Rasbian}
-Rasbian is a distribution of linux which has very light weight system requirements.
+Rasbian is a distribution of Linux which has very light weight system requirements.
 The operating system is optimized to run on the raspberry pi, and 
 contains many useful packages reinstalled.
 
 \section{Networking the Raspberry Pi}
-In order for the Raspberry Pi to be controlable from the provided web interface,
+In order for the Raspberry Pi to be controllable from the provided web interface,
 the device must be connected to the same network as the controlling computer.
 
-\section{Configuring the Raspberry Pi - Configure Script}
-NOT YET IMPLEMENTED
+%\section{Configuring the Raspberry Pi - Configure Script}
+%NOT YET IMPLEMENTED
 
-Simply run the provided script as root user.
-Place the folder containing cgi-bin, www, and setup\_script.bash whereever
-you want the webserver to be hosted on the raspberry pi.
-After this, enter the following command \it{./setup\_script.bash}.
+%Simply run the provided script as root user.
+%Place the folder containing cgi-bin, www, and setup\_script.bash wherever
+%you want the web server to be hosted on the raspberry pi.
+%After this, enter the following command \it{./setup\_script.bash}.
 
 \section{Configuring the Raspberry Pi - Manual Configuration}
 \subsection{Install Packages}
-
+%TODO
 
 \chapter{Using the Device}
 \section{Physical Connections}
+%TODO
+
 \section{Using the Web Interface}
+%TODO
+
+\chapter{Technical Specifications}
+\section{Web Interface}
+The web interface is hosted on the Raspberry Pi using an Apache web server.
+This web server displays an interface which allows the user to
+set a voltage and frequency output by the system. 
+The interface is simple and interactive,
+implemented using cgi-scripts on an Apache web server.
+
+The Apache Web server is configured to 
+run as user pi on the Raspberry pi Device.
+User pi does not have root privileges.
+However,
+there are some operations which are required
+to set voltage and frequency that
+make root execution privileges necessary.
+Root privileges are necessary to set the value
+of the GPIO pins of the Raspberry pi directly.
+
+It would likely not be wise to run a web server as root.
+If a user could discover a way to cause the web server to 
+execute arbitrary code this could constitute a large security flaw.
+To provide some protection,
+single purpose scripts are used to handle 
+situations in which root execution privileges are required.
+
+These scripts utilize the ability of the pi user to
+use the sudo command.
+In other words,
+user pi is a member of the \textit{sudoers} group.
+These single purpose scripts are written using bash.
+The scripts are called from
+cgi-scripts initiated by
+user interactions with the web interface.
+These bash scripts call other
+python scripts to preform preform actions
+requiring root access.
+Namely,
+These scripts are used to change the values associated with the GPIO pins.
+%TODO
 
 \chapter{Troubleshooting}
+\section{Internet Issues}
+The wireless adapter does not al
+%TODO
 
 \chapter{Design Document}
+%TODO insert the design document tex file
+%\input{../design_document/design_document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sample table                                        %
 % Source: www1.maths.leeds.ac.uk/latex/TableHelp1.pdf %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
-\caption{Sample table} % title of Table
-\centering % used for centering table
-\begin{tabular}{c c c c}
-% centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-S. No. & Column\#1 & Column\#2 & Column\#3 \\ [0.5ex]
-% inserts table
+%\begin{table}[ht]
+%\caption{Sample table} % title of Table
+%\centering % used for centering table
+%\begin{tabular}{c c c c}
+%% centered columns (4 columns)
+%\hline\hline %inserts double horizontal lines
+%S. No. & Column\#1 & Column\#2 & Column\#3 \\ [0.5ex]
+%% inserts table
 %heading
-\hline % inserts single horizontal line
-1 & 50 & 837 & 970 \\
-2 & 47 & 877 & 230 \\
-3 & 31 & 25 & 415 \\
-4 & 35 & 144 & 2356 \\
-5 & 45 & 300 & 556 \\ [1ex] % [1ex] adds vertical space
-\hline %inserts single line
-\end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+%\hline % inserts single horizontal line
+%1 & 50 & 837 & 970 \\
+%2 & 47 & 877 & 230 \\
+%3 & 31 & 25 & 415 \\
+%4 & 35 & 144 & 2356 \\
+%5 & 45 & 300 & 556 \\ [1ex] % [1ex] adds vertical space
+%\hline %inserts single line
+%\end{tabular}
+%\label{table:nonlin} % is used to refer this table in the text
+%\end{table}
 
 % Sample list
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ Lorem ipsum list:
-\begin{itemize}
-\item Mauris sit amet nulla mi, vitae rutrum ante.
-\item Maecenas quis nulla risus, vel tincidunt ligula.
-\item Nullam ac enim neque, non \emph{dapibus} mauris.
-\end{itemize}
+%Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla %pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \\ Lorem ipsum list:
+%\begin{itemize}
+%\item Mauris sit amet nulla mi, vitae rutrum ante.
+%\item Maecenas quis nulla risus, vel tincidunt ligula.
+%\item Nullam ac enim neque, non \emph{dapibus} mauris.
+%\end{itemize}
 
 \end{document}

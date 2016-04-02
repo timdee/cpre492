@@ -2,15 +2,16 @@
 \contentsline {chapter}{\numberline {1}Materials}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Raspberry Pi}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Printed Circuit Board}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Software}{3}{section.1.3}
 \contentsline {chapter}{\numberline {2}Setup and Configuration}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Acquiring a Raspberry Pi}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Installing Rasbian}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Networking the Raspberry Pi}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Configuring the Raspberry Pi - Configure Script}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Configuring the Raspberry Pi - Manual Configuration}{6}{section.2.5}
+\contentsline {section}{\numberline {2.4}Configuring the Raspberry Pi - Manual Configuration}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Install Packages}{5}{subsection.2.4.1}
 \contentsline {chapter}{\numberline {3}Using the Device}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Physical Connections}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Using the Web Interface}{7}{section.3.2}
-\contentsline {chapter}{\numberline {4}Troubleshooting}{9}{chapter.4}
-\contentsline {chapter}{\numberline {5}Design Document}{11}{chapter.5}
+\contentsline {chapter}{\numberline {4}Technical Specifications}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Web Interface}{9}{section.4.1}
+\contentsline {chapter}{\numberline {5}Troubleshooting}{11}{chapter.5}
+\contentsline {chapter}{\numberline {6}Design Document}{13}{chapter.6}
