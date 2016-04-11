@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  9 APR 2016 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  10 APR 2016 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -638,18 +638,18 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
  ABD: EveryShipout initializing macros
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -749,28 +749,62 @@ Package caption Info: End \AtBeginDocument code.
 File: images/minnetronix_logo.png Graphic file (type png)
 
 <use images/minnetronix_logo.png>
-Package pdftex.def Info: images/minnetronix_logo.png used on input line 28.
+Package pdftex.def Info: images/minnetronix_logo.png used on input line 44.
 (pdftex.def)             Requested size: 520.33604pt x 162.6288pt.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 92.
+ (/usr/share/texmf-dist/tex/latex/ae/omsaer.fd
+File: omsaer.fd 1999/12/27
+)
+LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <29.86> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+ <../design_document/images/block_diagram.png, id=38, 963.6pt x 722.7pt>
+File: ../design_document/images/block_diagram.png Graphic file (type png)
+
+<use ../design_document/images/block_diagram.png>
+Package pdftex.def Info: ../design_document/images/block_diagram.png used on in
+put line 141.
+(pdftex.def)             Requested size: 910.61787pt x 682.98819pt.
+
+<../design_document/images/rpi_connection.png, id=40, 963.6pt x 722.7pt>
+File: ../design_document/images/rpi_connection.png Graphic file (type png)
+
+<use ../design_document/images/rpi_connection.png>
+Package pdftex.def Info: ../design_document/images/rpi_connection.png used on i
+nput line 177.
+(pdftex.def)             Requested size: 910.61787pt x 682.98819pt.
+
+<../design_document/images/491_web_interface_good.png, id=41, 785.93625pt x 806
+.01125pt>
+File: ../design_document/images/491_web_interface_good.png Graphic file (type p
+ng)
+ <use ../design_document/images/491_web_interface_good.png>
+Package pdftex.def Info: ../design_document/images/491_web_interface_good.png u
+sed on input line 214.
+(pdftex.def)             Requested size: 910.61787pt x 933.94061pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/minnetronix_logo.
-png>] (./poster.aux) ) 
+png> <../design_document/images/block_diagram.png> <../design_document/images/r
+pi_connection.png> <../design_document/images/491_web_interface_good.png>]
+(./poster.aux) ) 
 Here is how much of TeX's memory you used:
- 17955 strings out of 493054
- 386724 string characters out of 6140586
- 509137 words of memory out of 5000000
- 21081 multiletter control sequences out of 15000+600000
- 43041 words of font info for 86 fonts, out of 8000000 for 9000
+ 18022 strings out of 493054
+ 389051 string characters out of 6140586
+ 584493 words of memory out of 5000000
+ 21133 multiletter control sequences out of 15000+600000
+ 48277 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,94p,793b,708s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on poster.pdf (1 page, 66605 bytes).
+ 62i,9n,94p,793b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti12.pfb>
+Output written on poster.pdf (1 page, 225890 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
