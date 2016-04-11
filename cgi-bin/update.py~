@@ -28,8 +28,6 @@ print "<body>"
 print "<h1>Current Values:</h1>"
 print "<h3>Voltage: %s V</h3>" % (voltage_value)
 print "<h3>Frequency: %s Khz</h3>" % (frequency_value)
-print "</body>"
-print "</html>"
 
 # Reprint index.html so that the user may change the voltage again
 with open('/home/pi/cpre494/cpre492/www/index.html', 'r') as file:
@@ -39,4 +37,9 @@ with open('/home/pi/cpre494/cpre492/www/index.html', 'r') as file:
         #print "\""+line+"\""
         print line
         line = file.readline()
+
+print "</body>"
+print "</html>"
+
+
 
