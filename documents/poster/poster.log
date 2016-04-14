@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  10 APR 2016 21:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  14 APR 2016 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -635,34 +635,122 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (/usr/share/texmf-dist/tex/latex/tikzposter/tikzposterInnerblockstyles.tex)
 (/usr/share/texmf-dist/tex/latex/tikzposter/tikzposterNotestyles.tex)
 (/usr/share/texmf-dist/tex/latex/tikzposter/tikzposterLayoutthemes.tex))
-(./poster.aux)
+(/usr/share/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/share/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/share/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/share/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box70
+)
+\tc@llx=\dimen309
+\tc@lly=\dimen310
+\tc@urx=\dimen311
+\tc@ury=\dimen312
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen313
+\adjbox@Height=\dimen314
+\adjbox@Depth=\dimen315
+\adjbox@Totalheight=\dimen316
+
+(/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
+\c@checkoddpage=\count119
+)
+(/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box71
+\sift@deathcycles=\count120
+\@vwid@loff=\dimen317
+\@vwid@roff=\dimen318
+))
+(/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+\c@tracingmulticols=\count121
+\mult@box=\box72
+\multicol@leftmargin=\dimen319
+\c@unbalance=\count122
+\c@collectmore=\count123
+\doublecol@number=\count124
+\multicoltolerance=\count125
+\multicolpretolerance=\count126
+\full@width=\dimen320
+\page@free=\dimen321
+\premulticols=\dimen322
+\postmulticols=\dimen323
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box73
+\last@line=\box74
+\maxbalancingoverflow=\dimen324
+\mult@rightbox=\box75
+\mult@grightbox=\box76
+\mult@gfirstbox=\box77
+\mult@firstbox=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@columnbadness=\count127
+\c@finalcolumnbadness=\count128
+\last@try=\dimen325
+\multicolovershoot=\dimen326
+\multicolundershoot=\dimen327
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count129
+) (./poster.aux)
 \openout1 = `poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
- ABD: EveryShipout initializing macros
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+
+ABD: EveryShipout initializing macros
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
-\scratchdimen=\dimen309
-\scratchbox=\box70
-\nofMPsegments=\count120
-\nofMParguments=\count121
+\scratchcounter=\count130
+\scratchdimen=\dimen328
+\scratchbox=\box98
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count122
-\MPscratchDim=\dimen310
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen329
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -749,29 +837,39 @@ Package caption Info: End \AtBeginDocument code.
 File: images/minnetronix_logo.png Graphic file (type png)
 
 <use images/minnetronix_logo.png>
-Package pdftex.def Info: images/minnetronix_logo.png used on input line 44.
+Package pdftex.def Info: images/minnetronix_logo.png used on input line 47.
 (pdftex.def)             Requested size: 520.33604pt x 162.6288pt.
-LaTeX Font Info:    Try loading font information for OMS+aer on input line 92.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 97.
  (/usr/share/texmf-dist/tex/latex/ae/omsaer.fd
 File: omsaer.fd 1999/12/27
 )
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <29.86> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
- <../design_document/images/block_diagram.png, id=38, 963.6pt x 722.7pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
+[]\T1/aer/m/n/29.86 Communicates with Rasp-berry Pi
+ []
+
+<../design_document/images/block_diagram.png, id=38, 963.6pt x 722.7pt>
 File: ../design_document/images/block_diagram.png Graphic file (type png)
 
 <use ../design_document/images/block_diagram.png>
 Package pdftex.def Info: ../design_document/images/block_diagram.png used on in
-put line 141.
-(pdftex.def)             Requested size: 910.61787pt x 682.98819pt.
+put line 238.
+(pdftex.def)             Requested size: 520.33604pt x 390.26321pt.
 
 <../design_document/images/rpi_connection.png, id=40, 963.6pt x 722.7pt>
 File: ../design_document/images/rpi_connection.png Graphic file (type png)
 
 <use ../design_document/images/rpi_connection.png>
 Package pdftex.def Info: ../design_document/images/rpi_connection.png used on i
-nput line 177.
-(pdftex.def)             Requested size: 910.61787pt x 682.98819pt.
+nput line 296.
+(pdftex.def)             Requested size: 520.33604pt x 390.26321pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
+[]\T1/aer/bx/n/29.86 General Pur-pose In-put Out-put
+ []
+
 
 <../design_document/images/491_web_interface_good.png, id=41, 785.93625pt x 806
 .01125pt>
@@ -779,29 +877,48 @@ File: ../design_document/images/491_web_interface_good.png Graphic file (type p
 ng)
  <use ../design_document/images/491_web_interface_good.png>
 Package pdftex.def Info: ../design_document/images/491_web_interface_good.png u
-sed on input line 214.
-(pdftex.def)             Requested size: 910.61787pt x 933.94061pt.
- [1
+sed on input line 348.
+(pdftex.def)             Requested size: 520.33604pt x 533.66629pt.
+File: ../design_document/images/491_web_interface_good.png Graphic file (type p
+ng)
+
+<use ../design_document/images/491_web_interface_good.png>
+Package pdftex.def Info: ../design_document/images/491_web_interface_good.png u
+sed on input line 444.
+(pdftex.def)             Requested size: 520.33604pt x 533.66629pt.
+File: ../design_document/images/491_web_interface_good.png Graphic file (type p
+ng)
+
+<use ../design_document/images/491_web_interface_good.png>
+Package pdftex.def Info: ../design_document/images/491_web_interface_good.png u
+sed on input line 501.
+(pdftex.def)             Requested size: 520.33604pt x 533.66629pt.
+
+Overfull \hbox (29.03156pt too wide) in paragraph at lines 501--501
+[]\T1/aer/m/n/29.86 each ad-di-tional stage gives $[]$ 
+ []
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/minnetronix_logo.
 png> <../design_document/images/block_diagram.png> <../design_document/images/r
 pi_connection.png> <../design_document/images/491_web_interface_good.png>]
 (./poster.aux) ) 
 Here is how much of TeX's memory you used:
- 18022 strings out of 493054
- 389051 string characters out of 6140586
- 584493 words of memory out of 5000000
- 21133 multiletter control sequences out of 15000+600000
+ 18652 strings out of 493054
+ 399378 string characters out of 6140586
+ 598668 words of memory out of 5000000
+ 21735 multiletter control sequences out of 15000+600000
  48277 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,94p,793b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,94p,793b,1024s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
 b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb>
-Output written on poster.pdf (1 page, 225890 bytes).
+Output written on poster.pdf (1 page, 228278 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
