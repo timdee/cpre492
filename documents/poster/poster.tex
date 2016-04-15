@@ -3,6 +3,7 @@
 % useful packages
 \usepackage{adjustbox}
 \usepackage{multicol}
+\usepackage[colalign]{myposter}
 
 % define where to find graphics
 \graphicspath{ {images/} {../design_document/images/} }
@@ -15,7 +16,16 @@
 % define size of poster
 \geometry{paperwidth=36in,paperheight=48in}
 
-\author{Timothy Dee, Justin Long, \& Brandon, McDonnel}
+% define minnetronix logo
+%\newcommand\insertlogoi[2][]{\def\@insertlogoi{\includegraphics[#1]{#2}}}
+%\newcommand\insertlogoii[2][]{\def\@insertlogoii{\includegraphics[#1]{#2}}}
+%\newlength\LogoSep
+%\setlength\LogoSep{0pt}
+
+%\insertlogoi[width=5cm]{example-image-a}
+%\insertlogoii[width=5cm]{example-image-b}
+
+\author{Timothy Dee, Justin Long, \& Brandon McDonnell}
 
 \title{Remotely Connected Electric Field Generator \\
 for Particle Separation in a Fluid}
@@ -24,6 +34,7 @@ for Particle Separation in a Fluid}
 %\author{author}
 \institute{Team May1612}
 
+\renewcommand{\baselinestretch}{.8}
 \begin{document}
 
 \maketitle
@@ -34,7 +45,7 @@ for Particle Separation in a Fluid}
 \block{Minnetronix}
 {
 \begin{tikzfigure}
-\includegraphics[width=0.2\textwidth]{images/minnetronix_logo.png}
+\includegraphics[width=0.15\textwidth]{images/minnetronix_logo.png}
 \end{tikzfigure} 
 
 % say something about Minnetronix
@@ -53,7 +64,7 @@ This project is apart of this effort.
 {
 \begin{multicols}{2}
 
-Our project is part of a larger design to 
+This project is part of a larger design to 
 exploit the dielectrophoresis phenomenon for
 use in medical equipment.
 There are many medical applications which
@@ -99,6 +110,8 @@ varies its characteristics.
 %\begin{subcolumns}
 %\subcolumn{.5}
 
+\subcolumn{.25}
+
 \block{Requirements}
 {
 \begin{multicols}{2}
@@ -121,24 +134,16 @@ Given these constraints, the proposed solution seeks to create a device which is
 \end{multicols}
 }
 
-%\subcolumn{.5}
-
 \block{Solution}
 {
 \begin{multicols}{2}
-
-To fulfill the requirements we propose the use of 
-a Raspberry Pi in combination with 
-a number of circuit components connected to the the GPIO pins
-present on the Raspberry Pi.
-
 %TODO insert picture of Raspberry Pi
 %\begin{tikzfigure}
 %\includegraphics[width=0.2\textwidth]{images/rpi_real.png}
 %\end{tikzfigure}
 
-The following components will be created and connected to the Raspberry Pi.
-This will allow for the output of the circuit to be controlled using any computer on the LAN.
+A number of circuit components connected 
+to the the Raspberry Pi GPIO pins.
 \begin{itemize}
 \item Voltage Control
   \begin{itemize}
@@ -216,11 +221,14 @@ and thus this process began at the beginning.
 
 %\end{subcolumns}
 
-\column{.5}
-
 %
 % Design Approach
 %
+%\note[targetoffsetx=.1\textwidth,targetoffsety=9.5cm,innersep=.4cm,angle=-45,connection]
+%{
+%Colors denote different functional blocks.
+%}
+
 \block{Block Diagram}
 {
 \begin{multicols}{2}
@@ -228,14 +236,27 @@ and thus this process began at the beginning.
 % insert picture of block diagram
 \begin{center}
 %\includegraphics[width=0.35\textwidth,keepaspectratio]{block_diagram.png}
-\includegraphics[width=0.2\textwidth,keepaspectratio]{block_diagram.png}
+\includegraphics[width=0.2\textwidth,keepaspectratio]{block_diagram.pdf}
 \end{center}
 
 %TODO explain each of the functional modules
 %TODO explain how each of the functional modules fit together
+\textbf{Functional Blocks}
+\begin{itemize}
+\item Raspberry Pi
+  \begin{itemize}
+  \item web server
+  \item voltage, frequency control scripts
+  \end{itemize}
+\item MiniGen
+\item Amplifier Circuit
+%TODO
+\end{itemize}
 
 \end{multicols}
 }
+
+\column{.5}
 
 %
 % Technical Details
@@ -252,7 +273,7 @@ GPIO Pins to interact with the electronic circuit.
 
 % insert Raspberry Pi connection diagram
 \begin{center}
-\includegraphics[width=0.2\textwidth,keepaspectratio]{rpi_connection.png}
+\includegraphics[width=0.2\textwidth,keepaspectratio]{rpi_real.png}
 \end{center}
 
 %TODO describe what a Raspberry Pi is
@@ -302,7 +323,7 @@ GPIO Pins to interact with the electronic circuit.
 %TODO perhaps pictures can be done in note form
 
 \begin{center}
-\includegraphics[width=0.2\textwidth,keepaspectratio]{491_web_interface_good.png}
+\includegraphics[width=0.2\textwidth,keepaspectratio]{web_interface.pdf}
 \end{center}
 
 %TODO insert picture of 
@@ -350,16 +371,19 @@ GPIO Pins to interact with the electronic circuit.
 \block{Minigen}
 {
 \begin{multicols}{2}
-The voltage output by the Minigen is not variable.
-Given that the design specification requires a variable voltage,
-the voltage needs to be adjusted separately.
-Accordingly, the output of the Minigen 
-is supplied to the input of the amplifier circuit.
+%The voltage output by the Minigen is not variable.
+%Given that the design specification requires a variable voltage,
+%the voltage needs to be adjusted separately.
+%Accordingly, the output of the Minigen 
+%is supplied to the input of the amplifier circuit.
 
 %TODO insert picture of 
+%\begin{multicols}{2}
 \begin{center}
-\includegraphics[width=0.2\textwidth,keepaspectratio]{491_web_interface_good.png}
+\includegraphics[width=0.1\textwidth,keepaspectratio]{minigen_real.png}
 \end{center}
+%stuff
+%\end{multicols}
 
 %TODO describe role in design 
 \textbf{Specifications}
@@ -379,15 +403,15 @@ is supplied to the input of the amplifier circuit.
 \item Register Interactions
   \begin{itemize}
   \item 2 frequency registers
-    \begin{itemize}
-    \item 28-bit registers
-    \item one active register controlling output
-    \item can write inactive register
-    \item writing then switching avoids noise in writing register
-    \end{itemize}
+    %\begin{itemize}
+    %\item 28-bit registers
+    %\item one active register controlling output
+    %\item can write inactive register
+    %\item writing then switching avoids noise in writing register
+    %\end{itemize}
   \item 1 control register 
     \begin{itemize}
-    \item modify frequency writes, course or fine
+%    \item modify frequency writes, course or fine
     \item set output waveform
     \end{itemize}
   \end{itemize}
@@ -448,8 +472,10 @@ is supplied to the input of the amplifier circuit.
 \begin{multicols}{2}
 %TODO insert picture of amplifier diagram
 \begin{center}
-\includegraphics[width=0.2\textwidth,keepaspectratio]{491_web_interface_good.png}
+\includegraphics[width=0.23\textwidth,keepaspectratio]{circuit_diagram.pdf}
 \end{center}
+
+\newpage
 
 %TODO describe role in design 
 \textbf{Components}
@@ -463,7 +489,7 @@ is supplied to the input of the amplifier circuit.
 \item Amplification Stages
 \begin{itemize}
 \item 3 stages
-\item each additional stage gives $\frac{previous stage step size}{7}$
+\item each additional stage gives\\ $\frac{previous\_stage\_step\_size}{7}$
 \item takes output of PGA as input
 \item outputs to summing amplifier
 \end{itemize}
@@ -499,8 +525,6 @@ is supplied to the input of the amplifier circuit.
 
 \end{multicols}
 }
-
-%\note[targetoffsetx=-.05\textwidth,targetoffsety=9.5cm,innersep=.4cm,angle=-45,connection]{%Optional arguments for the format of the poster}
 
 \end{columns}
 \end{document}
