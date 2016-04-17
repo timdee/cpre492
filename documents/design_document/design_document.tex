@@ -213,46 +213,6 @@ The project will be described in terms of
 these components and
 their interactions.
 
-\subsection{Web Interface}
-The web interface is hosted on the Raspberry Pi using an Apache web server.
-This web server displays an interface which allows the user to
-set a voltage and frequency output by the system. 
-The interface is simple and interactive,
-implemented using cgi-scripts on the Apache web server.
-
-Our implementation provides several functionalities.
-Among these are
-the ability to set:
-voltage and frequency,
-sine or triangle or square waveforms,
-and the ability to set a voltage and frequency for an amount of time.
-The table displayed
-in the figure below
-provides the ability to set voltage and frequency for the number
-of minutes specified.
-The "Go" button will cause the first
-voltage and frequency to be set for the corresponding amount of time.
-After the time has expired,
-the next voltage and frequency will be set for the corresponding amount of time.
-This process continues until the table entries are completed or
-the user presses the "Stop" button.
-
-\begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface.pdf}
-\end{center}
-
-\subsection{Web Server}
-The primary function of the web server is to communicate with the Raspberry Pi.
-This is the primary method of control afforded 
-to the user by the system. 
-The web pages displayed by the server
-have the ability to control the voltage and frequency output by the circuit.
-
-Displaying this interface is accomplished by 
-running an Apache web server on the Raspberry Pi. 
-When the user clicks update, the server could executes 
-a cgi-script performing the update functionality.
-
 \subsection{Raspberry Pi}
 The Raspberry Pi will act as the bridge between the user and the circuit.
 The Raspberry Pi will host a web server allowing the user to interact with the system.
@@ -318,6 +278,10 @@ In the other mode,
 one write to the lower 14-bits of the 28-bit frequency register is used.
 This functionality affords the ability to accurately dial in small changes to the register values quickly.
 
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{minigen_real.png}
+\end{center}
+
 Until this point,
 several functional benefits of the Minigen Signal Generator have been discussed.
 An additional benefit which 
@@ -347,6 +311,17 @@ three different ranges.
 One component is used to adjust the voltage within each of the ranges while
 other comp are used to change the range the voltage adjuster is acting within.
 
+A schematic illustrating the amplifier circuit as a whole is 
+%TODO
+
+\begin{figure*}[!hbt]
+\begin{center}
+\includegraphics[width=0.8\textwidth,keepaspectratio]{circuit_diagram.pdf}
+\end{center}
+\caption{Amplifier circuit design to vary voltage 
+    within range $1V_{pp}$ to $60V_{pp}$. }
+\end{figure*}
+
 \subsubsection{Summing Amplifier}
 The summing amplifier is the last component
 in the amplifier circuit.
@@ -364,6 +339,7 @@ This could also be accomplished by using multiple PGA's.
 Utilizing the relays in increase the voltage instead of additional PGA's
 allows for reduced software and hardware complexity.
 
+%TODO replace this section
 \subsubsection{Relay}
 The overall voltage range,
 $1V_{pp}$ to $60V_{pp}$,
@@ -412,10 +388,50 @@ the hardware components used to accomplish this.
 This section describes the software counterparts
 used to control the hardware.
 
+\subsection{Web Interface}
+The web interface is hosted on the Raspberry Pi using an Apache web server.
+This web server displays an interface which allows the user to
+set a voltage and frequency output by the system. 
+The interface is simple and interactive,
+implemented using cgi-scripts on the Apache web server.
+
+Our implementation provides several functionalities.
+Among these are
+the ability to set:
+voltage and frequency,
+sine or triangle or square waveforms,
+and the ability to set a voltage and frequency for an amount of time.
+The table displayed
+in the figure below
+provides the ability to set voltage and frequency for the number
+of minutes specified.
+The "Go" button will cause the first
+voltage and frequency to be set for the corresponding amount of time.
+After the time has expired,
+the next voltage and frequency will be set for the corresponding amount of time.
+This process continues until the table entries are completed or
+the user presses the "Stop" button.
+
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface.pdf}
+\end{center}
+
+\subsection{Web Server}
+The primary function of the web server is to communicate with the Raspberry Pi.
+This is the primary method of control afforded 
+to the user by the system. 
+The web pages displayed by the server
+have the ability to control the voltage and frequency output by the circuit.
+
+Displaying this interface is accomplished by 
+running an Apache web server on the Raspberry Pi. 
+When the user clicks update, the server could executes 
+a cgi-script performing the update functionality.
+
 % code layout diagram
 %\begin{figure}[!hbt]
 \begin{center}
-\includegraphics[width=0.47\textwidth,keepaspectratio]{script_layout.png}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{script_layout.png}
 \end{center}
 %\caption{Script layout according to work delegation.}
 %\label{fig_script_layout}
@@ -740,12 +756,12 @@ and avert these situations problematically.
 Whenever bit 23 is set to high in a frequency register write,
 the current implementation sets bit 23 to low
 and sets all less significant bits to high.
+
+\subsection{other?}
 %TODO
 
 \section{Concluding Remarks}
 %TODO
-
-\end{multicols}
 
 % go to next page
 \pagebreak
@@ -843,8 +859,26 @@ This current leakage caused problems when input to the summing amplifier.
 For this reason, the BJT transistor switch ciruits were replaced with solid state relays.
 
 \subsubsection{Relay}
-%TODO explain how we decide whether to turn relays on or off
+The proposed use for the relays was
+similar to the to the transistor switch.
+The advantage the relays have is the use
+of an internal led to allow or disallow
+current though the relay.
+One way this might work is by
+connecting a GPIO pin from the Raspberry Pi to
+the led pin on the relay.
+Setting this GPIO pin to high would then
+cause the led to shine allowing the signal
+from the Minigen to flow through the relay.
 
+The problem which occurred with this solution
+was that the relays were incapable of
+operating at the desired frequency.
+The relays began to have problems at only $25K_{hz}$.
+Compare this to the required $1M_{hz}$ frequency, and
+it is obvious that the relays are not a good solution.
+
+\subsection{other?}
 %TODO
 
 \subsection{Software Components}
@@ -853,6 +887,8 @@ For this reason, the BJT transistor switch ciruits were replaced with solid stat
 \newpage
 \section{Other Considerations}
 %TODO
+
+\end{multicols}
 
 \newpage
 \section{Code}
