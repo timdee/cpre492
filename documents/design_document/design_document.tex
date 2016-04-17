@@ -25,6 +25,11 @@
 \textheight 9in			% Bottom margin is not set explicitly
 \columnsep -0.25in %0.25in		% separation between columns
 
+% vplace enviornment
+\newenvironment{vplace}[1][1]
+  {\par\vspace*{\stretch{#1}}}
+  {\vspace*{\stretch{1}}\par}
+
 % set listing settings
 \lstset{language=C, 
 		numbers=left,
@@ -52,9 +57,16 @@ for Particle Separation in a Fluid \\
 %% Header now finished
 %%
 
-\begin{document}		% Critical
-\thispagestyle{empty}		% Inhibit the page number on this page
-\maketitle			% Use the \author, \title and \date info
+\begin{document}
+
+%\begin{vplace}[0.7]
+\thispagestyle{empty}
+\maketitle
+%\end{vplace}
+
+\newpage
+\tableofcontents
+\newpage
 
 \begin{multicols}{2}
 
@@ -620,85 +632,134 @@ the current implementation sets bit 23 to low
 and sets all less significant bits to high.
 %TODO
 
-%\section{Conclusion}
+\section{Concluding Remarks}
 %TODO
 
 \end{multicols}
 
 % go to next page
 \pagebreak
+\appendix
 
-\section{Appendix}
+\section{Operation Manual}
+%TODO
+
+\subsection{Setup}
+%TODO
+
+\subsection{Demo}
+%TODO
+
+\newpage
+\section{Initial Designs}
+This section covers the designs that have been tried
+throughout the course of the project. 
+These were problems with each of these designs
+which motivated a change from that design to
+a more resent design.
+Designs are presented in roughly chronological order in each section
+to perhaps make it more clear what motivated
+a particular design choice.
+Each component underwent various adaptations 
+over the duration of the project.
+
+\subsection{Frequency Control}
+%TODO
+
+\subsection{Voltage Control}
+%TODO
+
+\subsection{Web Interface}
+%TODO
+
+\newpage
+\section{Other Considerations}
+%TODO
+
+\newpage
+\section{Code}
+% bash scripts
+\lstinputlisting[caption=Bash script used to evoke GPIO library]{../../cgi-bin/pga_calling_script.bash}
+
+% python scripts
+\lstinputlisting[caption=Update Website Script]{../../cgi-bin/update.py}
+\lstinputlisting[caption=Update Voltage and Frequency Script]{../../cgi-bin/update_voltage_frequency.py}
+%\lstinputlisting[caption=Voltage Control Script]{../../cgi-bin/voltageControl.py}
+%\lstinputlisting[caption=Voltage Control Script]{../../cgi-bin/voltage_regulator.py}
+\lstinputlisting[caption=Minigen Control Script]{../../cgi-bin/minigen.py}
+\lstinputlisting[caption=PGA Control Script]{../../cgi-bin/pga.py}
+\lstinputlisting[caption=Reset Script]{../../cgi-bin/reset.py}
+
 %TODO modify timeline
-\subsection{Project Timeline}
+%\subsection{Project Timeline}
 % Timeline in table format
-\begin{center}
-    \begin{tabularx}{\textwidth}{|X|X|X|}
-        \hline
-        
-        \textbf{Item} & 
-        \textbf{Completion Date} & 
-        \textbf{Description} \\
-        \hline
+%\begin{center}
+ %   \begin{tabularx}{\textwidth}{|X|X|X|}
+ %       \hline
+ %       
+ %       \textbf{Item} & 
+%         \textbf{Completion Date} & 
+%         \textbf{Description} \\
+%         \hline
 
-        Project Plan & 
-        01 Oct. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Create a project plan which specifies the pieces of the project.
-        } \\
-        \hline
+%         Project Plan & 
+%         01 Oct. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Create a project plan which specifies the pieces of the project.
+%         } \\
+%         \hline
 
-        Project Design & 
-        15 Oct. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Complete a detailed design of each component of our project. Assign people to work on the various pieces of the project.
-        } \\
-        \hline
+%         Project Design & 
+%         15 Oct. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Complete a detailed design of each component of our project. Assign people to work on the various pieces of the project.
+%         } \\
+%         \hline
 
-        Design Web Interface & 
-        01 Nov. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Design and build web interface.
-        Outline code for Communications with Minigen and Digital Potentiometers.
-        } \\
-        \hline
+%         Design Web Interface & 
+%         01 Nov. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Design and build web interface.
+%         Outline code for Communications with Minigen and Digital Potentiometers.
+%         } \\
+%         \hline
 
-        Hardware Communications and Design & 
-        15 Nov. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Get communications working between Raspberry Pi, Minigen, and Digital Potentiometers.
-        } \\
-        \hline
+%         Hardware Communications and Design & 
+%         15 Nov. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Get communications working between Raspberry Pi, Minigen, and Digital Potentiometers.
+%         } \\
+%         \hline
 
-        Prototype Completion & 
-        01 Dec. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Take final steps testing prototype. Device should be able to do everything in specification.
-        } \\
-        \hline
+%         Prototype Completion & 
+%         01 Dec. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Take final steps testing prototype. Device should be able to do everything in specification.
+%         } \\
+%         \hline
 
-        Senior Design I Presentation & 
-        15 Dec. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Present a working prototype of our project.
-        } \\
-        \hline
+%         Senior Design I Presentation & 
+%         15 Dec. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Present a working prototype of our project.
+%         } \\
+%         \hline
 
-        Begin Experimentation Component & 
-        01 Jan. 2015 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Begin working on Research component of the project.
-        } \\
-        \hline
+%         Begin Experimentation Component & 
+%         01 Jan. 2015 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Begin working on Research component of the project.
+%         } \\
+%         \hline
 
-        Continue Experimentation & 
-        01 Feb. 2016 - 05 May. 2016 & 
-        \multicolumn{1}{|p{12cm}|}{\centering 
-        Use the project to perform research.
-        } \\
-        \hline
-    \end{tabularx}
-\end{center}
+%         Continue Experimentation & 
+%         01 Feb. 2016 - 05 May. 2016 & 
+%         \multicolumn{1}{|p{12cm}|}{\centering 
+%         Use the project to perform research.
+%         } \\
+%         \hline
+%     \end{tabularx}
+% \end{center}
 
 %\subsection{Graphical Comprehension Aides}
 %\begin{figure}[!hbt]
@@ -710,16 +771,6 @@ and sets all less significant bits to high.
 
 %\subsection{Code Listing - HTML}
 %\lstinputlisting[caption=Main HTML Page]{../www/index.html}
-
-%\subsection{Code Listing - CGI Scripts}
-% use listinputlisting to list files
-%\lstinputlisting[caption=Update Website Script]{../cgi-bin/update.py}
-%\lstinputlisting[caption=Update Voltage and Frequency Script]{../cgi-bin/update_voltage_frequency.py}
-%\lstinputlisting[caption=Voltage Control Script]{../cgi-bin/voltageControl.py}
-%\lstinputlisting[caption=Voltage Control Script]{../cgi-bin/voltage_regulator.py}
-%\lstinputlisting[caption=Minigen Control Script]{../cgi-bin/minigen.py}
-%\lstinputlisting[caption=PGA Control Script]{../cgi-bin/pga.py}
-%\lstinputlisting[caption=Reset Script]{../cgi-bin/reset.py}
 
 %\bibliographystyle{unsrt}	% Order by citation
 %\bibliography{report}
