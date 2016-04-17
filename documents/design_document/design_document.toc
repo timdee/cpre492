@@ -1,37 +1,45 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Project Definition}{3}
-\contentsline {subsection}{\numberline {2.1}Deliverables}{3}
-\contentsline {subsection}{\numberline {2.2}Constraints}{3}
-\contentsline {subsection}{\numberline {2.3}System Analysis}{3}
-\contentsline {section}{\numberline {3}Functional Decomposition}{3}
-\contentsline {subsection}{\numberline {3.1}Web Interface}{3}
-\contentsline {subsection}{\numberline {3.2}Web Server}{5}
-\contentsline {subsection}{\numberline {3.3}Raspberry Pi}{5}
-\contentsline {subsection}{\numberline {3.4}Minigen}{5}
-\contentsline {subsection}{\numberline {3.5}Amplifier Circuit}{5}
-\contentsline {subsubsection}{\numberline {3.5.1}Summing Amplifier}{5}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {2}Project Definition}{4}
+\contentsline {subsection}{\numberline {2.1}Deliverables}{4}
+\contentsline {subsection}{\numberline {2.2}Constraints}{4}
+\contentsline {subsection}{\numberline {2.3}System Analysis}{4}
+\contentsline {section}{\numberline {3}Functional Decomposition}{4}
+\contentsline {subsection}{\numberline {3.1}Web Interface}{4}
+\contentsline {subsection}{\numberline {3.2}Web Server}{6}
+\contentsline {subsection}{\numberline {3.3}Raspberry Pi}{6}
+\contentsline {subsection}{\numberline {3.4}Minigen}{6}
+\contentsline {subsection}{\numberline {3.5}Amplifier Circuit}{6}
+\contentsline {subsubsection}{\numberline {3.5.1}Summing Amplifier}{6}
 \contentsline {subsubsection}{\numberline {3.5.2}Relay}{6}
-\contentsline {subsubsection}{\numberline {3.5.3}Programmable Gain Amplifier(PGA)}{6}
-\contentsline {section}{\numberline {4}Software Components}{6}
-\contentsline {subsection}{\numberline {4.1}Modifying Frequency}{6}
-\contentsline {subsection}{\numberline {4.2}Controlling Voltage}{6}
-\contentsline {subsubsection}{\numberline {4.2.1}Relay}{6}
-\contentsline {subsubsection}{\numberline {4.2.2}Programmable Gain Amplifier(PGA)}{6}
-\contentsline {section}{\numberline {5}Cost Considerations}{6}
-\contentsline {section}{\numberline {6}Redesigned Components}{6}
-\contentsline {subsection}{\numberline {6.1}Frequency Control}{7}
-\contentsline {subsection}{\numberline {6.2}Voltage Control}{7}
-\contentsline {subsubsection}{\numberline {6.2.1}Digital Potentiometer}{7}
-\contentsline {subsubsection}{\numberline {6.2.2}Transistor switch}{7}
-\contentsline {section}{\numberline {7}Known Issues}{7}
-\contentsline {subsection}{\numberline {7.1}B23}{7}
-\contentsline {section}{\numberline {8}Concluding Remarks}{7}
-\contentsline {section}{\numberline {A}Operation Manual}{8}
-\contentsline {subsection}{\numberline {A.1}Setup}{8}
-\contentsline {subsection}{\numberline {A.2}Demo}{8}
-\contentsline {section}{\numberline {B}Initial Designs}{9}
-\contentsline {subsection}{\numberline {B.1}Frequency Control}{9}
-\contentsline {subsection}{\numberline {B.2}Voltage Control}{9}
-\contentsline {subsection}{\numberline {B.3}Web Interface}{9}
-\contentsline {section}{\numberline {C}Other Considerations}{10}
-\contentsline {section}{\numberline {D}Code}{11}
+\contentsline {subsubsection}{\numberline {3.5.3}Programmable Gain Amplifier(PGA)}{7}
+\contentsline {section}{\numberline {4}Software Components}{7}
+\contentsline {subsection}{\numberline {4.1}Modifying Frequency}{7}
+\contentsline {subsection}{\numberline {4.2}Controlling Voltage}{7}
+\contentsline {subsubsection}{\numberline {4.2.1}Relay}{7}
+\contentsline {subsubsection}{\numberline {4.2.2}Programmable Gain Amplifier(PGA)}{7}
+\contentsline {section}{\numberline {5}Cost Considerations}{7}
+\contentsline {section}{\numberline {6}Redesigned Components}{7}
+\contentsline {subsection}{\numberline {6.1}Frequency Control}{8}
+\contentsline {subsection}{\numberline {6.2}Voltage Control}{8}
+\contentsline {subsubsection}{\numberline {6.2.1}Digital Potentiometer}{8}
+\contentsline {subsubsection}{\numberline {6.2.2}Transistor switch}{8}
+\contentsline {section}{\numberline {7}Testing}{8}
+\contentsline {subsection}{\numberline {7.1}Testing Process}{8}
+\contentsline {subsubsection}{\numberline {7.1.1}Theorize a design}{8}
+\contentsline {subsubsection}{\numberline {7.1.2}Acquire necessary components}{9}
+\contentsline {subsubsection}{\numberline {7.1.3}Implement design}{9}
+\contentsline {subsubsection}{\numberline {7.1.4}Understand problems}{9}
+\contentsline {subsubsection}{\numberline {7.1.5}Return to step 1}{9}
+\contentsline {subsection}{\numberline {7.2}Testing Results}{9}
+\contentsline {section}{\numberline {8}Known Issues}{9}
+\contentsline {subsection}{\numberline {8.1}B23}{9}
+\contentsline {section}{\numberline {9}Concluding Remarks}{9}
+\contentsline {section}{\numberline {A}Operation Manual}{10}
+\contentsline {subsection}{\numberline {A.1}Setup}{10}
+\contentsline {subsection}{\numberline {A.2}Demo}{10}
+\contentsline {section}{\numberline {B}Initial Designs}{11}
+\contentsline {subsection}{\numberline {B.1}Frequency Control}{11}
+\contentsline {subsection}{\numberline {B.2}Voltage Control}{11}
+\contentsline {subsection}{\numberline {B.3}Web Interface}{11}
+\contentsline {section}{\numberline {C}Other Considerations}{12}
+\contentsline {section}{\numberline {D}Code}{13}
