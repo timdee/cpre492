@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  18 APR 2016 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  18 APR 2016 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,7 +921,7 @@ pi_real.png> <./images/web_interface.pdf> <./images/minigen_real.png> <./images
 Here is how much of TeX's memory you used:
  18724 strings out of 493054
  400436 string characters out of 6140586
- 598438 words of memory out of 5000000
+ 598446 words of memory out of 5000000
  21799 multiletter control sequences out of 15000+600000
  48277 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -932,7 +932,7 @@ cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
 usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb>
-Output written on poster.pdf (1 page, 961525 bytes).
+Output written on poster.pdf (1 page, 961555 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  17 APR 2016 20:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  18 APR 2016 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,24 +372,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
  (./design_document.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-)
+ [2])
 \tf@toc=\write3
 \openout3 = `design_document.toc'.
 
- [2]
+ [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
 
-<images/block_diagram.png, id=12, 969.6225pt x 617.30624pt>
+<images/block_diagram.png, id=15, 969.6225pt x 617.30624pt>
 File: images/block_diagram.png Graphic file (type png)
 
 <use images/block_diagram.png>
 Package pdftex.def Info: images/block_diagram.png used on input line 200.
 (pdftex.def)             Requested size: 542.025pt x 345.09572pt.
 
-<images/rpi_real.png, id=14, 1284.8pt x 861.2175pt>
+<images/rpi_real.png, id=17, 1284.8pt x 861.2175pt>
 File: images/rpi_real.png Graphic file (type png)
  <use images/rpi_real.png>
 Package pdftex.def Info: images/rpi_real.png used on input line 235.
@@ -399,8 +399,8 @@ Overfull \hbox (13.86342pt too wide) in paragraph at lines 235--236
  [] 
  []
 
-[3] [4 <./images/block_diagram.png> <./images/rpi_real.png>]
-<../poster/images/minigen_real.png, id=22, 144.54pt x 144.54pt>
+[4] [5 <./images/block_diagram.png> <./images/rpi_real.png>]
+<../poster/images/minigen_real.png, id=25, 144.54pt x 144.54pt>
 File: ../poster/images/minigen_real.png Graphic file (type png)
 
 <use ../poster/images/minigen_real.png>
@@ -412,7 +412,7 @@ Overfull \hbox (13.86342pt too wide) in paragraph at lines 282--283
  [] 
  []
 
-<../poster/images/circuit_diagram.pdf, id=23, 794.97pt x 614.295pt>
+<../poster/images/circuit_diagram.pdf, id=26, 794.97pt x 614.295pt>
 File: ../poster/images/circuit_diagram.pdf Graphic file (type pdf)
 
 <use ../poster/images/circuit_diagram.pdf>
@@ -420,69 +420,69 @@ Package pdftex.def Info: ../poster/images/circuit_diagram.pdf used on input lin
 e 319.
 (pdftex.def)             Requested size: 433.62164pt x 335.07939pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--414
+Underfull \hbox (badness 10000) in paragraph at lines 382--398
 []\OT1/ptm/m/n/9 Our im-ple-men-ta-tion pro-vides sev-eral func-tion-al-i-ties.
 
  []
 
-<../poster/images/web_interface.pdf, id=24, 750.805pt x 748.7975pt>
+<../poster/images/web_interface.pdf, id=27, 750.805pt x 748.7975pt>
 File: ../poster/images/web_interface.pdf Graphic file (type pdf)
 
 <use ../poster/images/web_interface.pdf>
 Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
-416.
+400.
 (pdftex.def)             Requested size: 243.90959pt x 243.25346pt.
 
-Overfull \hbox (13.86342pt too wide) in paragraph at lines 416--417
+Overfull \hbox (13.86342pt too wide) in paragraph at lines 400--401
  [] 
  []
 
-[5 <../poster/images/minigen_real.png>]
-<script_layout.png, id=31, 963.6pt x 722.7pt>
+[6 <../poster/images/minigen_real.png>]
+<script_layout.png, id=34, 963.6pt x 722.7pt>
 File: script_layout.png Graphic file (type png)
  <use script_layout.png>
-Package pdftex.def Info: script_layout.png used on input line 434.
+Package pdftex.def Info: script_layout.png used on input line 418.
 (pdftex.def)             Requested size: 243.90959pt x 182.92416pt.
 
-Overfull \hbox (13.86342pt too wide) in paragraph at lines 434--435
+Overfull \hbox (13.86342pt too wide) in paragraph at lines 418--419
  [] 
  []
 
-[6 <../poster/images/circuit_diagram.pdf> <../poster/images/web_interface.pdf>]
+[7 <../poster/images/circuit_diagram.pdf> <../poster/images/web_interface.pdf>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []|\OT1/ptm/b/n/9 Raspberry
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []|\OT1/ptm/b/n/9 Minigen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 \OT1/ptm/b/n/9 Func-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []|\OT1/ptm/b/n/9 Resistor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []|\OT1/ptm/b/n/9 Capacitor
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 566.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 550.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 566.
- [7 <./script_layout.png>]
-[8] [9]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 550.
+ [8 <./script_layout.png>]
+[9] [10]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ˜ in font ptmr7t!
@@ -492,7 +492,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [10] [11] (../../cgi-bin/pga_calling_script.bash
+ [11] [12] [13] (../../cgi-bin/pga_calling_script.bash
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
 )
@@ -504,9 +504,9 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 23.
 
-[12]) (../../cgi-bin/update_voltage_frequency.py [13] [14])
-(../../cgi-bin/minigen.py [15] [16] [17] [18]) (../../cgi-bin/pga.py [19]
-[20]) (../../cgi-bin/reset.py) [21] (./design_document.aux) ) 
+[14]) (../../cgi-bin/update_voltage_frequency.py [15] [16])
+(../../cgi-bin/minigen.py [17] [18] [19] [20]) (../../cgi-bin/pga.py [21]
+[22]) (../../cgi-bin/reset.py) [23] (./design_document.aux) ) 
 Here is how much of TeX's memory you used:
  5458 strings out of 493054
  75384 string characters out of 6140586
@@ -517,19 +517,20 @@ Here is how much of TeX's memory you used:
  38i,8n,72p,572b,1505s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-
 dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/s
-hare/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts
-/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on design_document.pdf (21 pages, 1022836 bytes).
+onts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist
+/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
+e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on design_document.pdf (23 pages, 1036508 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

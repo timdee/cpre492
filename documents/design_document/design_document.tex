@@ -339,22 +339,6 @@ This could also be accomplished by using multiple PGA's.
 Utilizing the relays in increase the voltage instead of additional PGA's
 allows for reduced software and hardware complexity.
 
-%TODO replace this section
-\subsubsection{Relay}
-The overall voltage range,
-$1V_{pp}$ to $60V_{pp}$,
-is divided into three $20V_{pp}$ ranges.
-The relay's have two states,
-on and off,
-which allow for moment between the ranges.
-When on,
-the input the the Amplifier circuit is amplified to $20V_{pp}$.
-This $20V_{pp}$ signal is input to the summing amplifier.
-There are two of these relay circuits used.
-Turning them on or off allows the voltage range to be chosen.
-These relay circuits are controlled by 
-GPIO pins on the Raspberry Pi.
-
 \subsubsection{Programmable Gain Amplifier(PGA)}
 There are three $20V_{pp}$ voltage ranges.
 Which range being acted in is chosen by the relay circuits.
@@ -768,12 +752,107 @@ and sets all less significant bits to high.
 \appendix
 
 \section{Operation Manual}
-%TODO
-
 \subsection{Setup}
-%TODO
+This section details the materials needed and
+how to set them up.
+This section assumes you have nothing
+other than the
+circuit to connect to the Raspberry Pi and
+the controlling code which needs to be placed on
+the Raspberry Pi.
+
+Setup includes all necessary information
+for the Raspberry Pi configuration.
+Such information is provided
+for the purpose of understanding 
+how the system has been established
+in hopes that it might be easier to modify or
+change in the future.
+
+\textbf{Steps:}
+\begin{enumerate}
+\item Purchase a Raspberry Pi
+    \begin{enumerate}
+    \item micro SD card
+    \item micro USB power cord
+    \item (optional) USB wifi adapter
+    \item (optional) Ethernet cable
+    \end{enumerate}
+\item Install Rasbian Linux Operating System on Raspberry Pi
+\item Place circuit controlling software on the Raspberry Pi
+\item Install software packages on Raspberry Pi
+    \begin{enumerate}
+    \item Apache 2 Web Server
+    \item TODO python package
+    \item TODO python spi package
+    \item TODO gpio package
+    \end{enumerate}
+\item Modify configuration files on the Raspberry Pi
+\end{enumerate}
+
+% explain each of the steps
+\subsubsection{Purchase a Raspberry Pi}
+%TODO 
+
+\subsubsection{Install Rasbian Linux Operating System on Raspberry Pi}
+%TODO 
+
+\subsubsection{Place circuit controlling software on the Raspberry Pi}
+%TODO 
+
+\subsubsection{Install software packages on Raspberry Pi}
+%TODO 
+
+\subsubsection{Modify configuration files on the Raspberry Pi}
+%TODO 
 
 \subsection{Demo}
+This section details the process
+by which a device which has already
+been setup may be showcased.
+An example use of the system might be as follows.
+Connect the output of the circuit to the pair
+of capacitive plates which will drive 
+the dielectrophoresis experiment.
+Once connected,
+Connect to the raspberry pi over
+the local area network from
+any computer on the network and
+use the interface to modify the
+voltage and frequency output of the circuit.
+
+\textbf{Steps:}
+\begin{enumerate}
+\item{Power on the Raspberry Pi}
+\item{Connect the Raspberry Pi to the network}
+\item{The output of the circuit should connect to capacitive plates used for dielectrophoresis}
+\item{Acquire the IP address of the Raspberry Pi}
+\item{Enter the IP address in the navigation bar of a web browser}
+\item{Input the desired voltage and frequency values and click update}
+\item{The output of the circuit can be seen to change to the desired values}
+\end{enumerate}
+
+% discuss each step
+%TODO pictues of each step
+\subsubsection{Power on the Raspberry Pi}
+%TODO
+
+\subsubsection{Connect the Raspberry Pi to the network}
+%TODO
+
+\subsubsection{The output of the circuit should connect to capacitive plates used for dielectrophoresis}
+%TODO
+
+\subsubsection{Acquire the IP address of the Raspberry Pi}
+%TODO
+
+\subsubsection{Enter the IP address in the navigation bar of a web browser}
+%TODO
+
+\subsubsection{Input the desired voltage and frequency values and click update}
+%TODO
+
+\subsubsection{The output of the circuit can be seen to change to the desired values}
 %TODO
 
 \newpage
@@ -871,6 +950,20 @@ Setting this GPIO pin to high would then
 cause the led to shine allowing the signal
 from the Minigen to flow through the relay.
 
+The overall voltage range,
+$1V_{pp}$ to $60V_{pp}$,
+is divided into three $20V_{pp}$ ranges.
+The relay's have two states,
+on and off,
+which allow for moment between the ranges.
+When on,
+the input the the Amplifier circuit is amplified to $20V_{pp}$.
+This $20V_{pp}$ signal is input to the summing amplifier.
+There are two of these relay circuits used.
+Turning them on or off allows the voltage range to be chosen.
+These relay circuits are controlled by 
+GPIO pins on the Raspberry Pi.
+
 The problem which occurred with this solution
 was that the relays were incapable of
 operating at the desired frequency.
@@ -882,6 +975,8 @@ it is obvious that the relays are not a good solution.
 %TODO
 
 \subsection{Software Components}
+\subsubsection{Simlink cgi-bin}
+
 %TODO
 
 \newpage
@@ -917,13 +1012,63 @@ undergraduate computer engineering work at Iowa State University.
 
 The fundamental issue with the portions of the project
 more suited to an electrical engineer is
-tour models are oversimplifications of 
+our models are oversimplifications of 
 the physical circuit components.
+Being unable to model the circuit
+accurately at the design phase led to
+a lot of unnecessary implementation time.
+Where this is a lot of experiential learning in
+such a process there is also great expense in the time domain.
 This coupled with a lack of advanced knowledge about
 circuits in general led our group
 the have a tough time with the circuits component.
 
-%TODO example of our model being too simple
+% example of our model being too simple
+One instance where our group's oversimplification of
+components hampered progress was in the design of the
+amplification portion of the circuit.
+We originally intended that the amplification 
+would happen in three stages.
+The op-amp chosen to preform the amplification turned
+out to only work for gains greater than 5 unless
+capacitors were used to connect the inverting input and output to ground.
+A capacitor also needed to be used in the feedback loop.
+We need a gain slightly over unity,
+thus the use of this is necessary.
+These capacitors did indeed make the op-amp work at the gain we need, but
+they have the adverse effect of turning the op-amp into a filter and
+applying a phase shift the the output of the op-amp.
+
+% useful information
+This scenario presented us with a choice,
+either abandon the current op-amp, or
+try to design all the stages such that 
+the cutoff frequency is greater than $1M_{hz}$
+with a phase shift equal to the other stages.
+Given that we couldn't find any other op-amps 
+in our price range which met the slew-rate, bandwidth,
+and voltage rail requirements of our project,
+the later was chosen.
+This made designing the stages significantly more difficult.
+For this reason we decided to only use two stages as
+this would be easier to match up precisely.
+With three stages it would be very difficult to 
+create a uniform phase shift among the stages.
+This would make it difficult to produce a precise output voltage.
+
+% even though we knew the goal it was hard to design
+Even though the goal was known,
+to design two amplifiers with different gains 
+having equal phase shifts,
+accomplishing this was not trivial for us.
+Our group did not understand how to model this circuit.
+Knowing this would allow us to change components in
+order to modify the phase shift without changing the gain.
+Eventually we found that if, in the feedback loop,
+we increased the value of the resistor by the same
+factor which we reduced the capacitor by we could
+produce a gain given by $\frac{R_F}{R_{IN}}$
+while maintaining a phase shift.
 
 % example of a lack general circuits knowledge
 Many issues throughout the semester arose 
@@ -952,8 +1097,6 @@ and checking all the connections.
 Eventually we learned what certain types of
 oscilloscope traces might imply about the problem, but
 experience would have made this process much faster.
-
-%TODO
 
 \end{multicols}
 
