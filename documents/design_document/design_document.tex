@@ -469,20 +469,20 @@ a capacitor kit, and
 a handful of op-amps 
 must be included.
 
-The Minigen Function Generator may be acquired from 
-\textit{http://www.sparkfun.com}.
-This website also provides 
-a resistor kit for \$7.95 
-which includes all necessary resistors. 
-From this same website,
-individual capacitors may be purchased
-at a rate of \$0.25 per capacitor.
-Operational amplifiers may also be purchased at
-a rate of \$0.95 per amplifier.
-Given this,
-the total cost is approximated at \$152.35. 
-This is far below the maximum allotted funds of \$1,000
-specified in the project description.
+%The Minigen Function Generator may be acquired from 
+%\textit{http://www.sparkfun.com}.
+%This website also provides 
+%a resistor kit for \$7.95 
+%which includes all necessary resistors. 
+%From this same website,
+%individual capacitors may be purchased
+%at a rate of \$0.25 per capacitor.
+%Operational amplifiers may also be purchased at
+%a rate of \$0.95 per amplifier.
+%Given this,
+%the total cost is approximated at \$152.35. 
+%This is far below the maximum allotted funds of \$1,000
+%specified in the project description.
 
 %TODO table of costs
 \begin{center}
@@ -495,10 +495,10 @@ specified in the project description.
         \textbf{Price(\$)} \\
         \hline
 
-        \textbf{Raspberry Pi 2 Kit} &
+        \textbf{Raspberry Pi 3 Kit} &
         \textbf{-} &
         \textbf{1} &
-        \textbf{99.95} \\
+        \textbf{49.99} \\
         \hline
 
         \textbf{Minigen Function Generator} &
@@ -516,7 +516,7 @@ specified in the project description.
         \textbf{Capacitor Pack} &
         \textbf{-} &
         \textbf{1} &
-        \textbf{5.00} \\
+        \textbf{7.95} \\
         \hline
 
         \textbf{Op Amps} &
@@ -528,7 +528,7 @@ specified in the project description.
         \textbf{Total} &
         \textbf{-} &
         \textbf{-} &
-        \textbf{152.35} \\
+        \textbf{102.35} \\
 
         \hline
     \end{tabularx}
@@ -613,7 +613,17 @@ contained in the current design is incapable of
 working at a high enough frequency to
 produce the overall output.
 
-%TODO cover hardware and software components and differances in this phase between them
+% cover hardware and software components and differances in this phase between them
+While the theory of testing hardware and software is similar,
+in practice these activities can be very different.
+In this project, however,
+they became somewhat similar 
+due to the fact that program code is written in order to 
+interact with hardware components.
+In both cases,
+the physical output of either GPIO pins on the Raspberry Pi
+or output of a circuit component must be view on
+an oscilloscope.
 
 \subsubsection{Acquire necessary components}
 The goal of this phase is self-explanatory.
@@ -638,7 +648,31 @@ Often times it is necessary to return to the
 theorizing phase and reconstitute the design
 given new information which has been acquired.
 
-%TODO illustrate the differences between acquireing hardware and software components
+% illustrate the differences between acquiring hardware and software components
+Acquiring components phase has analogs in both hardware and software domains.
+In the software domain,
+acquiring components consists of
+software packages, such a Apache 2, or
+knowledge assets necessary to complete a program.
+In the case of this project,
+we needed to learn how to use and configure apache,
+write Python code on the Raspberry Pi,
+use py-spi in order to communicate with the Minigen, and
+use GPIO library on Raspberry Pi to communicate with the PGA components.
+
+Compare this to the hardware domain where
+the acquisition of components is fairly straightforward.
+Components are necessary to be purchased.
+This process takes much longer when compared
+to downloading a software package.
+Thus, it is useful, wise, and resource efficient to
+spend much more time in the theorizing a design phase.
+Having an increased degree of certainty that 
+a given component will preform as expected
+alleviates the time and money required to determine 
+that a component will not work empirically.
+This certainty can be developed though simulations, or
+developing a mathematical description of the output of a design.
 
 \subsubsection{Implement design}
 Of all the phases, 
@@ -661,10 +695,67 @@ issues which arise from the interplay between devices are not present.
 This helps to isolate issues which are a product
 of the specific aspect of the project which is being implemented.
 
-%TODO discuss differences between hardware and software implementations
+% discuss differences between hardware and software implementations
+Implementing designs in hardware is significantly different compared to software.
+Hardware designs must be constructed with physical components on a breadboard.
+These components must be connected and measured with lab equipment
+in order to determine if the components are having the correct output.
+All the steps in this process take time.
+Other issues also exist due to the physical nature of 
+hardware components.
+A component might be partially burned out and providing output
+which is not correct, but still proving output.
+The difficulty with this is that the component appears
+the same as it would if it were connected incorrectly.
+For these reasons,
+the Implementing a design phase 
+consumes many more resources in the time and economic
+domains compared to software implementations.
 
 \subsubsection{Understand problems}
-%TODO
+After implementation of the design is complete,
+it must be determined whether or not the device functions
+as expected.
+Often times this means looking at the input and
+output waveforms on an oscilloscope for hardware or
+observing the change in state of the GPIO pins for
+testing software.
+Once a problem has been identified,
+the source of the problem must be located.
+
+To clarify the above point, consider 
+an example of a problem which might be observed is
+a difference in amplitude of the output waveform
+compared to what was expected.
+The problem might be any component which is
+connected to the measured point.
+This includes components which are connected
+via other components.
+
+Often times to identify the source of an issue,
+it is necessary to understand what should be
+the input and output of all components in the circuit.
+Testing the inputs and outputs of each component in turn
+moving away from the originally observed wrong output can
+help to find where the origin of the problem occurred.
+Perhaps the component which gives input the component
+previous the the component with the observed problem
+is connected incorrectly.
+This could cause the output of all future components to become incorrect.
+
+A similarity between debugging code and
+finding issues in hardware implementations is
+the effect of mistakes.
+The way a mistake propagates though a
+program is similar to the way mistakes
+propagate though hardware implementations.
+All events after the first error are
+often a result of the first error.
+There fore these events are also in error.
+Often times a good debugging strategy is
+to approach solving the first error.
+The benefit in doing this is that future errors
+might be solved indirectly.
 
 \subsubsection{Return to step 1}
 Many times it is found that designs would not work
@@ -692,10 +783,28 @@ Often times this can be reduced to answering the following question honestly,
 is it wise to invest in the current course of action, or
 is there something else which might have an improved probability of success"
 
-%TODO discuss the difficulties with this with respect to hardware components
+% discuss the difficulties with this with respect to hardware components
+In software,
+returning to theorizing a consumes far fewer resources compared
+to redesigning a hardware implementation.
+In software,
+new packages may be downloaded nearly instantaneously.
+Compare this with hardware where new components must
+be chosen, bought, and shipped.
+The need to redesign can be expensive and time consuming, but
+often times it is wise to do if the current design is not working as expected
+to such an extent that another design would be a smarter investment.
 
 \subsection{Testing Results}
-%TODO
+Testing occurred in an iterative process
+as described above throughout the semester.
+Each time a new design would be reached,
+the steps above were used to uncover what
+the issues were, 
+how to solve them, and
+whether it was wise to solve them at all.
+The alternative to solving current issues is
+establishing a new design.
 
 A typical testing environment includes:
 \begin{itemize}
@@ -716,6 +825,12 @@ A typical testing environment includes:
 %TODO explain testing results for each of the components
 
 \subsection{Known Issues}
+Below are some of the issues found
+through the course of our testing
+which have not been resolved.
+These issues are fairly minor compared
+to the overall functionality.
+
 The current solution has some noteworthy issues
 which need to be addressed.
 Issues are defined as unintended issues of unknown origin.
@@ -741,10 +856,15 @@ Whenever bit 23 is set to high in a frequency register write,
 the current implementation sets bit 23 to low
 and sets all less significant bits to high.
 
-\subsection{other?}
+%\subsection{other?}
 %TODO
 
+% compare what has been accomplished to the project description
+% note the dependencies between them
+% detail each difference and highlight why it happened
+% conclude with the final state of the project
 \section{Concluding Remarks}
+
 %TODO
 
 % go to next page
@@ -792,6 +912,7 @@ change in the future.
 
 % explain each of the steps
 \subsubsection{Purchase a Raspberry Pi}
+
 %TODO 
 
 \subsubsection{Install Rasbian Linux Operating System on Raspberry Pi}
@@ -833,27 +954,100 @@ voltage and frequency output of the circuit.
 \end{enumerate}
 
 % discuss each step
-%TODO pictues of each step
+% pictues of each step
 \subsubsection{Power on the Raspberry Pi}
+In order to power on the Raspberry Pi,
+It must be plugged into a wall output.
+The power adapter for this device is
+the same as any micro USB smart phone adapter.
+Once plugged in,
+The Raspberry Pi will power up automatically.
+
+Below is pictured the process of
+powering on the Raspberry Pi.
 %TODO
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{power_on_pi.png}
+\end{center}
 
 \subsubsection{Connect the Raspberry Pi to the network}
-%TODO
+Connecting the Raspberry Pi to the network may
+be done in a couple of way:
+through the Ethernet port on the Raspberry Pi, or
+through a wireless network adapter connected to
+one of the Raspberry Pi's USB ports.
+Either method of connection will allow
+any computer on the local network to 
+connect to the web server running on the Raspberry Pi.
 
 \subsubsection{The output of the circuit should connect to capacitive plates used for dielectrophoresis}
-%TODO
+Ensure all of the outputs to the circuit are connected properly.
+Preforming this step incorrectly can cause damage to the equipment.
 
 \subsubsection{Acquire the IP address of the Raspberry Pi}
-%TODO
+Finding the Raspberry pi on the network can be somewhat tricky.
+The Raspberry Pi has a display output on board.
+If access to this display is available,
+a keyboard may be connected to the pi in order to
+interact with it.
+
+To acquire the IP address of the Raspberry Pi,
+login and run the 'hostname' command with arguments '-i'.
+This command is depicted below.
+\begin{lstlisting}
+# username: pi
+# password: pi
+# hostname -i
+\end{lstlisting}
+The output of this command will the the IP address of
+the Raspberry Pi on the network.
+
+There are other ways to acquire the IP address
+which involve scanning the network from
+another computer on the network.
+Another way would be to configure a static IP address
+for the Raspberry Pi.
+
+Configuring a static IP can be done in a few ways.
+One way to accomplish this is
+to modify the router setup to assign the Raspberry PI a specific IP.
+Another method is to configure the PI to request a specific IP address.
 
 \subsubsection{Enter the IP address in the navigation bar of a web browser}
+On any computer connected to the same network as the Raspberry Pi,
+open a web browser.
+In the navigation bar of this browser,
+enter the IP address retrieved from the 'hostname' utility.
+
 %TODO
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
+\end{center}
 
 \subsubsection{Input the desired voltage and frequency values and click update}
+The web interface contains fields to input the desired frequency and voltage values.
+Enter these values and click the 'update' button.
+Doing so will cause scripts to Run on the Raspberry Pi that
+set the values of the GPIO pins in such a way that the output is produced
+by the circuit.
+There is also a Radio Button group which will allow the 
+output waveform to be modified among triangle, square, and sine.
+
 %TODO
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface_updating_values.png}
+\end{center}
 
 \subsubsection{The output of the circuit can be seen to change to the desired values}
-%TODO
+After the 'update' button is pressed,
+the output of the circuit will be modified
+to the closest possible values.
+The voltage and frequency resolution are limited,
+thus the output may not be exactly the value entered.
+
+After update is pressed,
+the web interface will be re-displayed.
+This will allow the modification of voltage and frequency again.
 
 \newpage
 \section{Initial Designs}
@@ -904,8 +1098,17 @@ the issues encountered which motivated deviation from them.
 The Raspberry pi is capable of producing square waves by turning the GPIO pins on and off rapidly. We can use this functionality to produce a wave of the frequency indicated by the user. The GPIO pins can also be used to set the voltage by communicating with the circuit how much the output waveform should be amplified. The downside to this approach is the analog circuit component will need to be more complex. The analog circuit needs to output a sine wave. With this approach we would need to integrate the square wave produced by the GPIO pin.
 
 There exist alternatives to using the GPIO pins to generate a signal with a given frequency. We could instead use the GPIO pins on the raspberry pi to communicate with a small signal generator, such as \textit{sparkfun.com}‘s Minigen Function Generator. This would make programming the Raspberry pi more complex, but could lead to higher quality waveforms. Producing a sine wave using the Minigen signal generator is likely to to produce fewer distortions compared to integrating a square wave produced by the RPI’s GPIO pin twice. 
-%TODO
 
+This design was scrapped due to the increased complexity of programming on
+the Raspberry pi in conjunction with
+concerns about the maximum amount of current which could be output
+by the Raspberry Pi.
+These concerns in conjunction with the ease of SPI communications
+with the Minigen drove the choice to use the Minigen to generate the
+frequency of the output.
+
+% what component was tried
+% what were the issues with the component which motivated a change
 \subsection{Voltage Control}
 \subsubsection{Digital Potentiometer}
 The output of the digital potentiometer has 128 steps. This Translates into our ability to set 128 different gains on our amplifier. We will need multiple stages of amplifier to go between 1 and 60 Vpp. The most prominent reason for this is due to the gain bandwidth of the op-amps. We will not be able to have a large gain while still producing a frequency of 1Mhz.
@@ -971,12 +1174,44 @@ The relays began to have problems at only $25K_{hz}$.
 Compare this to the required $1M_{hz}$ frequency, and
 it is obvious that the relays are not a good solution.
 
-\subsection{other?}
+\subsection{Amplification Stages}
+The initial design for the amplification stages
+utilized three stages.
+Two of these stages were used to increase the voltage by a constant amount while
+the third stage is used to adjust the voltage within the range.
+This give the variability of one pga multiplied by the number of stages,
+in this case three were used.
+
+There are three $20V_{pp}$ voltage ranges.
+Which range being acted in is chosen by the relay circuits.
+Within a given range,
+however,
+a PGA is used to control the voltage output.
+In our implementation,
+a PGA has control over a $20V_{pp}$ range.
+The PGA has 8 steps within this range.
+This Device is controlled by 
+the SPI interface on the Raspberry Pi.
+
+The problem with this design which motivated change was
+the switches used to increase the voltage
+by $20V_{pp}$ would introduce noise into the signal.
+Another issue with this design was that
+it used the PGA's in a very limited way.
+Theoretically, if all PGA steps were able to
+be used for each step of the other PGA's
+this gives $3^7 = 343$ steps.
+This means we have reduced the number of possible
+steps by a factor of $49$ in order to accomplish
+this design; better implementations must exist.
+
 %TODO
 
 \subsection{Software Components}
-\subsubsection{Simlink cgi-bin}
+\subsection{Web Server}
+%TODO
 
+\subsubsection{Simlink cgi-bin}
 %TODO
 
 \newpage
