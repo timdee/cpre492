@@ -14,6 +14,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{amsmath}
+\usepackage{hyperref}
 
 %% Set the folder where pictures are located
 \graphicspath{ {images/} {../poster/images/} }
@@ -1002,20 +1003,133 @@ a power cord and
 micro SD card.
 
 \subsubsection{Install Rasbian Linux Operating System on Raspberry Pi}
+It is recommended that Rasbian Linux distribution is used
+as the operating system for the Raspberry Pi.
+This system will work with other operating systems,
+but Rasbian has many of the necessary libraries available
+at install.
+In addition, Rasbian is optimized for the hardware of the Raspberry Pi.
+Other distributions may run slower, or
+not have all of the correct drivers at installation.
+There are no current factors which would motivate the
+use of another distribution.
 
-%TODO
-\begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
-\end{center}
-%TODO 
+The latest version of Rasbian can be downloaded from:
+\url{https://www.raspberrypi.org/}
+
+This website also has a lot of good documentation for
+the Raspberry Pi.
+It can be a useful resource for troubleshooting issues.
+For this purpose,
+there are many guides provided.
+
+One such guide describes how to install Rasbian to the Raspberry Pi.
+This guide can be viewed here:
+\url{https://www.raspberrypi.org/learning/noobs-install/}
+
+The previous guide describes the process
+of installing the operating system with NOOBS.
+Another way to install Rasbian could be as follows:
+\begin{enumerate}
+\item Acquire a micro SD card 
+\item Download Rasbian Linux Operating System
+\item Acquire a program capable of writing an image
+    to a micro SD card on a computer with a micro SD card interface
+\item Write the image to the micro SD card
+\item Place the micro SD card in the Raspberry Pi
+\item Power on the Raspberry Pi and complete configuration
+\end{enumerate}
+
+In general,
+the processes can be summarized as 
+writing an image of the Rasbian Linux Operating System to
+an SD card.
+While this brief description does not capture the nuances
+associated with installation,
+it is enough to understand the correct
+course of action.
+
+\textbf{Interfacing With the Pi}
+%TODO talk about how to connect the pi to a computer and interact with it
+%TODO recommend that ssh be setup to control the pi remotely
 
 \subsubsection{Place circuit controlling software on the Raspberry Pi}
+%TODO picture of installing Rasbian.
+%\begin{center}
+%\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
+%\end{center}
 %TODO 
 
 \subsubsection{Install software packages on Raspberry Pi}
-%TODO 
+In order for the software written to
+control the circuit to preform it's task,
+a few additional software packages must be installed.
+These packages are necessary for:
+running the web server
+and modifying the values of the GPIO pins.
+The names of the packages are as follows
+
+\begin{itemize}
+\item apache2
+\item RPi.GPIO
+\end{itemize}
+
+In order to install the packages,
+it is necessary to run the following command:
+
+\begin{lstlisting}
+sudo apt-get install [package name] -y
+\end{lstlisting}
+
+The above command will install the desired package.
+This may be done for apache as follows:
+
+\begin{lstlisting}
+sudo apt-get apache2 -y
+\end{lstlisting}
+
+The process for installing RPi.GPIO is slightly different.
+The package must first be downloaded from:
+\url{https://pypi.python.org/pypi/RPi.GPIO}
+
+After the package has been downloaded,
+it needs to be extracted and moved to the
+the cgi-bin directory of the apache web server.
+Such a process might look like the following:
+
+\begin{lstlisting}
+[pi@raspberrypi ~]$ cd Downloads
+[pi@raspberrypi Downloads]$ tar -zxvf RPi.GPIO.tar.gz
+[pi@raspberrypi Downloads]$ mv RPi.GPIO ~/apache2/path/cgi-bin/
+\end{lstlisting}
+
+The process outlined above may not be necessary if
+RPi.GPIO is included in the provided softwares.
+If this is the case, then
+the above procedure may still be useful for updating
+the library.
+This may be necessary to fix unforeseen, obscure bugs.
 
 \subsubsection{Modify configuration files on the Raspberry Pi}
+The configuration files which need to be modified are
+related to Apache 2 web server.
+The files which need to be modified for the following reasons.
+First, the apache user does not have the permissions necessary
+to run some of the library functionalities.
+One solution to this issues is to run apache as 
+a user which does have permissions.
+In this case,
+we choose to use the default user, pi for this purpose.
+Second, the apache package needs to be told where
+the files for the web server have been placed,
+otherwise apache will load the default configuration
+which is not what is wanted.
+This is another simple modification to one of the configuration files
+
+\textbf{Running Apache as User pi}
+%TODO 
+
+\textbf{Modifying Web Site Files Location}
 %TODO 
 
 \subsection{Demo}
