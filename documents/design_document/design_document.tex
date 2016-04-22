@@ -13,6 +13,7 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{amsmath}
 
 %% Set the folder where pictures are located
 \graphicspath{ {images/} {../poster/images/} }
@@ -312,7 +313,23 @@ One component is used to adjust the voltage within each of the ranges while
 other comp are used to change the range the voltage adjuster is acting within.
 
 A schematic illustrating the amplifier circuit as a whole is 
-%TODO
+depicted in Figure \ref{figure_amplifier_circuit}.
+This diagram follows the signal from
+the output of the Minigen Function Generator to
+the overall output of the circuit after the summing amplifier.
+The Minigen output feeds directly into two stages of amplification.
+Each stage containing a PGA and an amplifier.
+The upper stage in the diagram contains a gain of 7.5 while
+the lower stage contains a gain of 1.
+
+The lower stage has many more components than the top stage.
+The reason for this is the OPA552 operational amplifier which is
+being used to preform the amplification,
+is optimized for a gain of five or more.
+For gains lower than five,
+there must be additional components added.
+The effect of not adding these components is a dramatic
+increase in the frequency of the output.
 
 \begin{figure*}[!hbt]
 \begin{center}
@@ -320,24 +337,91 @@ A schematic illustrating the amplifier circuit as a whole is
 \end{center}
 \caption{Amplifier circuit design to vary voltage 
     within range $1V_{pp}$ to $60V_{pp}$. }
+\label{figure_amplifier_circuit}
 \end{figure*}
+
+\subsubsection{Amplification Stages}
+There are two amplification stages pictured in
+Figure \ref{figure_amplifier_circuit}.
+Each of these stages takes input from the Minigen.
+The first component in each stage, the PGA,
+takes this input,
+applies a gain $K$ in range $0 to 7$, then
+inputs this signal to an OPA552 operational amplifier.
+These amplifiers output to the input of the summing amplifier.
+
+The gain, $A$, of these amplifiers after the PGA's are chosen
+to maximize the voltage resolution.
+The overall voltage requirement is the circuit must output $1 to 60V_{pp}$.
+In order for the output of the summing amplifier,
+which follows the amplification stages,
+to be capable of outputting $60V_{pp}$ the output of all voltage
+stages must sum to this value.
+
+% voltage stage amplification computation
+\begin{gather*}
+A_1 = gain of stage 1 amp \\ 
+A_2 = gain of stage 2 amp\\
+V_{m1} = max voltage of stage 1\\
+V_{m2} = max voltage of stage 2\\
+V_{m1} + V_{m2} = 30V\\
+V_{m1} = \frac{V_{m2}}{7}\\
+V_{m1} + 7V_{m1} = 30V\\
+8V_{m1} = 30V\\
+V_{m1} = \frac{30V}{8}\\
+V_{m1} = 7.25V\\
+V_{m2} = 22.75V\\
+A_1 = \frac{V_{m1}}{7}\\
+A_2 = \frac{V_{m2}}{7}\\
+A_1 = 1.0357\frac{V}{V}\\
+A_2 = 3.25\frac{V}{V}\\
+\end{gather*}
+
+The above equation derives the appropriate
+gain for the amplifier in both stages
+of the circuit.
+These Gains $A_1$ and $A_2$ represent these gains.
+Notice that one of the gains is greater than
+5 while the other has a gain close to unity.
+This is an issue for us because the op-amp,
+OPA552, which we are using in our circuit is 
+optimized for a gain of 5 or greater.
+
+If the gain is under 5 additional components
+are necessary to make the op-amp stable.
+Unfortunately these components have two negate affects.
+First, these components act as a filter.
+Second, there components apply a phase shift to the output.
+This increases the complexity of the circuit.
+There must be some additional components added
+to ensure the phase shift of both amplification stages are the same.
+
+%TODO discuss the complexity associated with making the phase shifts the same
+%TODO potentailly list the transfer function of a single amplifier?
 
 \subsubsection{Summing Amplifier}
 The summing amplifier is the last component
 in the amplifier circuit.
-The overall voltage range which needs to be produced is divided into three segments.
+The overall voltage range which needs to be produced is divided into two segments.
 Each of these segments have their output connected as
 input to the summing amplifier.
-One of the segments utilizes a programmable gain amplifier(PGA)
-to vary the voltage within one third of the range.
-While the relays are used to increase the voltage by one third of the overall voltage range when they are turned on.
-
 The advantage of this design is that
-it allows for three times the number of voltage steps
-allowed for by a single PGA.
-This could also be accomplished by using multiple PGA's.
-Utilizing the relays in increase the voltage instead of additional PGA's
-allows for reduced software and hardware complexity.
+it allows for an increased number of voltage steps
+compared to what is allowed for by a single PGA.
+
+% insert summing amplifier picture
+%\begin{center}
+%\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface.pdf}
+%\end{center}
+
+The output of the summing amplifier conforms to
+the above equation.
+As can be seen in this listing,
+the amplifier will take take the input signals
+and sum them.
+If, for example, 
+the input voltages are $3V$ and $10V$, the
+output will be $13V$.
 
 \subsubsection{Programmable Gain Amplifier(PGA)}
 There are three $20V_{pp}$ voltage ranges.
@@ -352,11 +436,6 @@ This Device is controlled by
 the SPI interface on the Raspberry Pi.
 
 %TODO
-
-%TODO insert a diagram of the amplifier circuit
-%\begin{center}
-%\includegraphics[width=0.45\textwidth,keepaspectratio]{amplifier_circuit.png}
-%\end{center}
 
 \section{Software Components}
 The web interface displayed by
@@ -912,10 +991,22 @@ change in the future.
 
 % explain each of the steps
 \subsubsection{Purchase a Raspberry Pi}
-
-%TODO 
+The object of this step is self-explanatory, however,
+there are some useful points to note when purchasing
+a Raspberry Pi.
+Often times the Raspberry Pi is not sold with any accessories.
+This means a few additional items must be purchased
+in order run and use the device.
+The additional items which must be purchased are:
+a power cord and
+micro SD card.
 
 \subsubsection{Install Rasbian Linux Operating System on Raspberry Pi}
+
+%TODO
+\begin{center}
+\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
+\end{center}
 %TODO 
 
 \subsubsection{Place circuit controlling software on the Raspberry Pi}
