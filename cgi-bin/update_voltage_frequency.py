@@ -5,6 +5,7 @@ import minigen
 #import cPickle as pickle
 #import pga
 import subprocess
+import math
 
 #Designed to communicate with a Minigen connected to the GPIO pins
 spi = spidev.SpiDev()
@@ -27,30 +28,44 @@ def main():
 # This is not the voltage output by the minigen,
 # Instead it is the voltage output by the circuit as a whole.
 def update_voltage(voltage):  
-  # range of each step fed into the summer
-  # pga will have many steps between 0 -> step_range
-  # ex: if max value of the pga is 10vpp, then step_range is 10
-  # ADJUST STEP RANGE TO COSNTANT AMPLIFIER OUTPUT
-  step_range = 10
-  pga_step_size = step_range / 7.0
+  # determine the values for the two pga's based on the voltage
+  # pga_0 has amplifier of 7.5 gain after it
+  # pga_1 has amplifier of 1 gain after it
+  amp_gain_0 = 7.5;
+  amp_gain_1 = 1.0;
 
   # compute voltage values
   pga_voltage = int(voltage)
 
-  if ( pga_voltage > step_range ):  
-    state_0 = "1"
-    pga_voltage -= step_range
-  else:
-    state_0 = "0"
+  # pga voltages
+  pga_0_gain = math.floor(pga_voltage / amp_gain_0);
+  pga_1_voltage = pga_voltage - pga_0_gain * amp_gain_0;
+
+  # pga gains
+  #pga_0_gain = pga_0_voltage / amp_gain_0;
+  pga_1_gain = pga_1_voltage / amp_gain_1;
+
+  # range of each step fed into the summer
+  # pga will have many steps between 0 -> step_range
+  # ex: if max value of the pga is 10vpp, then step_range is 10
+  # ADJUST STEP RANGE TO COSNTANT AMPLIFIER OUTPUT
+  #step_range = 10
+  #pga_step_size = step_range / 7.0
+
+#  if ( pga_voltage > step_range ):  
+#    state_0 = "1"
+#    pga_voltage -= step_range
+#  else:
+#    state_0 = "0"
   
-  if ( pga_voltage > step_range ):  
-    state_1 = "1"
-    pga_voltage -= step_range
-  else:
-    state_1 = "0"
+#  if ( pga_voltage > step_range ):  
+#    state_1 = "1"
+#    pga_voltage -= step_range
+#  else:
+#    state_1 = "0"
 
   # convert the pga voltage into a pga gain
-  pga_gain = pga_voltage / pga_step_size
+  #pga_gain = pga_voltage / pga_step_size
 
   # debug: print out pga_voltage and states of pins
 #  print str(pga_voltage)
@@ -58,14 +73,28 @@ def update_voltage(voltage):
   #print str(state_1)
 #  print str(int(round(pga_gain)))
 
+  #TEST PRINTS FOR 2 STAGE AMPLIFIER
+  #print "pga_voltage " + str(pga_voltage)
+
+  #print "pga_0_voltage " + str(pga_0_voltage)
+  #print "pga_1_voltage " + str(pga_1_voltage)
+
+  #print "pga_0_gain " + str(pga_0_gain)
+  #print "pga_1_gain " + str(pga_1_gain)
+
+  #print "pga_0_gain_script " + str(int(round(-1*pga_0_gain)))
+  #print "pga_1_gain_script " + str(int(round(-1*pga_1_gain)))
+
   # call a script that will set the pga values
-  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_gain))), shell=True)
+  # TODO be able to choose pga pins set based on this call
+  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_0_gain))), shell=True)
+  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_1_gain))), shell=True)
 
   # set switch 0
-  subprocess.call("./switch_calling_script.bash 0 " + state_0, shell=True)
+  #subprocess.call("./switch_calling_script.bash 0 " + state_0, shell=True)
 
   # set switch 1
-  subprocess.call("./switch_calling_script.bash 1 " + state_1, shell=True)
+  #subprocess.call("./switch_calling_script.bash 1 " + state_1, shell=True)
 
   #print 'voltage updated'
 

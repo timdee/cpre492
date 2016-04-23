@@ -32,7 +32,7 @@ print "</body>"
 print "</html>"
 
 # Reprint index.html so that the user may change the voltage again
-with open('/home/pi/cpre494/cpre492/www/index.html', 'r') as file:
+with open('/home/pi/cpre492/www/html/index.html', 'r') as file:
     line = file.readline()
   
     while line:
