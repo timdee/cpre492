@@ -4,6 +4,15 @@ import cgi
 import cgitb
 import update_voltage_frequency
 
+def print_file(file_name):
+    with open(file_name, 'r') as file:
+        line = file.readline()
+      
+        while line:
+            #print "\""+line+"\""
+            print line
+            line = file.readline()
+            
 # create instance of field storage to get values
 parameters = cgi.FieldStorage()
 
@@ -31,12 +40,12 @@ print "Content-type:text/html\r\n\r\n"
 #print "</body>"
 #print "</html>"
 
-# Reprint index.html so that the user may change the voltage again
-with open('/home/pi/cpre492/www/html/index.html', 'r') as file:
-    line = file.readline()
-  
-    while line:
-        #print "\""+line+"\""
-        print line
-        line = file.readline()
+# print out css to be applied
+print '<link href="/html/css/bootstrap.min.css" rel="stylesheet" type="text/css">'
+print '<link href="/html/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">'
+#print_file('/home/pi/cpre492/www/html/css/bootstrap.min.css')
+#print_file('/home/pi/cpre492/www/html/css/bootstrap-theme.min.css')
 
+# Reprint index.html so that the user may change the voltage again
+print_file('/home/pi/cpre492/www/html/index.html')
+        
