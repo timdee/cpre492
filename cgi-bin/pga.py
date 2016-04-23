@@ -7,14 +7,15 @@ import sys
 
 class pga:
 
-	def __init__(self):
+	def __init__(self, pin_0, pin_1, pin_2):
 		#Switch user
 		#sudoPassword = 'root'
 		#command = 'sudo -i'
 		#p = os.system('echo %s|sudo -S %s' % (sudoPassword, command))
 
 		#Default Gx pins
-		self.pinGx = [4, 17, 27]
+		self.pinGx = [pin_0, pin_1, pin_2]	
+		#self.pinGx = [4, 17, 27]
 		
 		#6910-3
 		self.gainList = [0, -1, -2, -3, -4, -5, -6, -7]
@@ -77,7 +78,7 @@ class pga:
 
 def main():
 	print "Running PGA test"
-	p = pga()
+	p = pga(4, 17, 27)
 	p.setGain(int(sys.argv[1]))
 
 

@@ -20,16 +20,16 @@ update_voltage_frequency.update_frequency(frequency_value)
 
 # This script is designed to count as a test
 print "Content-type:text/html\r\n\r\n"
-print "<html>"
-print "<head>"
-print "<title>CGI-Update-Procedure</title>"
-print "<head>"
-print "<body>"
-print "<h1>Current Values:</h1>"
-print "<h3>Voltage: %s V</h3>" % (voltage_value)
-print "<h3>Frequency: %s Khz</h3>" % (frequency_value)
-print "</body>"
-print "</html>"
+#print "<html>"
+#print "<head>"
+#print "<title>CGI-Update-Procedure</title>"
+#print "<head>"
+#print "<body>"
+#print "<h1>Current Values:</h1>"
+#print "<h3>Voltage: %s V</h3>" % (voltage_value)
+#print "<h3>Frequency: %s Khz</h3>" % (frequency_value)
+#print "</body>"
+#print "</html>"
 
 # Reprint index.html so that the user may change the voltage again
 with open('/home/pi/cpre492/www/html/index.html', 'r') as file:

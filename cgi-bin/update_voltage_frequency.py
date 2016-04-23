@@ -18,7 +18,7 @@ def main():
   #update_frequency(100)
 
   # Test setting the voltage using I2c
-  update_voltage("22")
+  update_voltage("3")
 
 # define variables
 #minigen_pickle_file = "/tmp/mini_pickle"
@@ -86,9 +86,9 @@ def update_voltage(voltage):
   #print "pga_1_gain_script " + str(int(round(-1*pga_1_gain)))
 
   # call a script that will set the pga values
-  # TODO be able to choose pga pins set based on this call
-  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_0_gain))), shell=True)
-  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_1_gain))), shell=True)
+  # be able to choose pga pins set based on this call
+  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_0_gain))) + " 5 6 13", shell=True)
+  subprocess.call("./pga_calling_script.bash " + str(int(round(-1*pga_1_gain))) + " 4 17 27", shell=True)
 
   # set switch 0
   #subprocess.call("./switch_calling_script.bash 0 " + state_0, shell=True)
