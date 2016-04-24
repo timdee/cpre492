@@ -17,7 +17,7 @@
 \usepackage{hyperref}
 
 %% Set the folder where pictures are located
-\graphicspath{ {images/} {../poster/images/} }
+\graphicspath{ {pi_images/} {images/} {../poster/images/} }
 
 %% Here I adjust the margins
 
@@ -74,15 +74,18 @@ for Particle Separation in a Fluid \\
 
 \abstract{
 This document details the design and implementation of a
-remotely connected electric field generator.
+remotely controlled electric field generator.
 The goal of this design is to provide an easy interface for
 manipulating the output voltage and frequency of a circuit
-remotely in order to generate an electric field.
+utilizing network communications in order to generate an electric field.
 This electric field,
 when applied to a fluid over a long period of time
 will cause particles in the fluid to separate.
 The hardware and software components used to accomplish
-the aforementioned goal are described in detail.
+the aforementioned goal are described in detail as well as
+the interconnections between these components.
+A guide describing the procedure by which a person may
+set up and use this implementation is provided.
 }
 
 % Make an argument for why this project is:
@@ -99,29 +102,57 @@ by varying the voltage and frequency of the electronics driving the field.
 
 This technology has many useful applications in health care.
 The proposed end use of this equipment is
-for separating particles bodily fluids,
+for separating particles contained in bodily fluids,
 such as spinal fluid.
 Such medial applications could be useful
-in testing or filtering these fluids.
+in filtering these fluids for testing purposes.
 
 Being capable of separating though the
 application of an electric field would represent
 an advancement over existing solutions.
-It introduces a new method of testing which
+Separation in this way introduces a new method of testing which
 could be more precise when compared
 to existing technologies.
-% TODO
+
+Imagine if a centrifuge, an expensive piece of medical testing equipment which
+separates particles in bodily fluids, 
+could be replaced by a
+much cheaper device.
+This cheaper device could even have the potential for
+more well-defined separation among particles.
+Such a device, if it could be made to exist,
+would have large, positive, economic consequences for creator.
+This project could construct the foundation for
+such a device.
+
+% describe how dielectrophoresis works
+This project is part of a larger initiative to build a device
+which is capable of separating particles in fluids
+utilizing the dielectrophoresis phenomenon.
+This phenomenon works though the
+application of a quickly changing electric field.
+The change in the electric field affects
+different types of particles differently leading
+to a separation among types of particles.
+This process must continue for a long period of time
+in order for a great degree of separation to occur.
+Often times this process can take hours.
+
+% TODO spend more time telling a story and developing a need
 
 \section{Project Definition}
-In our implementation, an electric field is applied 
+In this implementation, an electric field is applied 
 to two metal plates.
 Through varying the voltage and frequency
 applied to these plates, 
 the properties of the electric field may be changed.
+Modifying the properties of the electric field will
+affect separation of fluids and
+is therefore desirable.
 
 Our job is to construct a system 
 containing an electronic circuit capable of providing
-the necessary voltages and frequencies required 
+the voltages and frequencies required 
 to drive a pair of metal plates.
 This system must enable the circuit to be controllable 
 through the use of a web interface.
@@ -129,10 +160,20 @@ In addition, a small form factor must be maintained.
 
 The system must be able to generate up to a 60 V peak-peak sine wave with
 user-controlled variable frequency from 10 kHz to 1 MHz. 
-% TODO
+Due to the time requirements of dielectrophoresis,
+this output must also be capable of being maintained for long periods of time.
+In addition,
+the user of this system should be capable of controlling it
+remotely.
+The implications of this on the implementation are that
+there must be some way of 
+communicating with the device through a network.
 
 \subsection{Deliverables}
-There are four items which must be constructed for this project:
+There are three items which must be constructed for this project:
+frequency control circuit,
+voltage control circuit, and
+software components.
 % TODO list the components which must be constructed
 
 For the analog circuit components,
@@ -230,11 +271,12 @@ This communication is accomplished via
 the Raspberry Pi's SPI interface and
 GPIO pins respectively.
 
-%TODO
+%TODO the reason a raspberry pi was chosen
+%TODO the advantages of choosing a raspberry pi over alternatives
 
-%TODO insert Raspberry Pi connection diagram
+% insert Raspberry Pi connection diagram
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{rpi_real.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{rpi_real.png}
 \end{center}
 
 \subsection{Minigen}
@@ -281,7 +323,7 @@ one write to the lower 14-bits of the 28-bit frequency register is used.
 This functionality affords the ability to accurately dial in small changes to the register values quickly.
 
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{minigen_real.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{minigen_real.png}
 \end{center}
 
 Until this point,
@@ -397,8 +439,28 @@ This increases the complexity of the circuit.
 There must be some additional components added
 to ensure the phase shift of both amplification stages are the same.
 
-%TODO discuss the complexity associated with making the phase shifts the same
-%TODO potentailly list the transfer function of a single amplifier?
+% discuss the complexity associated with making the phase shifts the same
+% potentially list the transfer function of a single amplifier?
+\begin{center}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{gain_one_552.pdf}
+gain of 1 op-amp with\\ frequency compensation and phase shift correction.
+\end{center}
+
+There are two amplification stages.
+Due to the frequency compensation necessary one one stage,
+the phase shifts of these stages were initially different.
+In order to make the phase shits the same,
+a resistor in series with a capacitor to ground were applied
+to both the input and output of the frequency compensation amplifier.
+The end result is that we are able to modify the phase shift according
+to this transfer function:
+\begin{gather*}
+\frac{V_{out}}{V_{in}} = \frac{-R_f}{(-j * \omega * C_{12} * R_{12} + 1)*(j * \omega * C_f * R_f + 1)*R_1}
+\end{gather*}
+
+This function allowed us to predict the phase shift amount for a given frequency.
+This knowledge allowed the modification of the values to reproduce the
+phase shift present in the other stage.
 
 \subsubsection{Summing Amplifier}
 The summing amplifier is the last component
@@ -410,11 +472,6 @@ The advantage of this design is that
 it allows for an increased number of voltage steps
 compared to what is allowed for by a single PGA.
 
-% insert summing amplifier picture
-%\begin{center}
-%\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface.pdf}
-%\end{center}
-
 The output of the summing amplifier conforms to
 the above equation.
 As can be seen in this listing,
@@ -423,6 +480,16 @@ and sum them.
 If, for example, 
 the input voltages are $3V$ and $10V$, the
 output will be $13V$.
+
+The negative effects of choosing to 
+implement the summing in this way is
+that large constraints are placed on the amplifier.
+The summing amplifier will need to be capable
+of producing a sine wave at $60V_{pp}$ and $1M_{hz}$.
+This means the slew rate of this op-amp will need to be
+$120 \frac{V}{\mu s}$.
+These constraints are fairly limiting and require
+an expensive op-amp to meet.
 
 \subsubsection{Programmable Gain Amplifier(PGA)}
 There are three $20V_{pp}$ voltage ranges.
@@ -452,6 +519,11 @@ the hardware components used to accomplish this.
 This section describes the software counterparts
 used to control the hardware.
 
+% justify all technology choices
+\subsection{Technology Choices}
+%TODO apache 2
+%TODO python
+
 \subsection{Web Interface}
 The web interface is hosted on the Raspberry Pi using an Apache web server.
 This web server displays an interface which allows the user to
@@ -477,7 +549,7 @@ This process continues until the table entries are completed or
 the user presses the "Stop" button.
 
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface.pdf}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{web_interface.pdf}
 \end{center}
 
 \subsection{Web Server}
@@ -495,7 +567,7 @@ a cgi-script performing the update functionality.
 % code layout diagram
 %\begin{figure}[!hbt]
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{script_layout.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{script_layout.png}
 \end{center}
 %\caption{Script layout according to work delegation.}
 %\label{fig_script_layout}
@@ -539,32 +611,13 @@ The projected cost of op-amps and other electronic components is minimal.
 The largest expenditure of the project is
 the purchase of the 
 Raspberry Pi 2 and 
-Minigen Function Generator. 
-The Raspberry Pi 2 package is currently priced at \$99.95 and
-the Minigen cost at \$29.95.
-Thinking conservatively the cost of the major hardware will be \$129.90. 
-In addition, the cost of 
-a resistor kit, 
-a capacitor kit, and 
-a handful of op-amps 
-must be included.
+Minigen Function Generator.
+Other necessary components are a micro SD card,
+resistors, capacitors, and op amps.
 
-%The Minigen Function Generator may be acquired from 
-%\textit{http://www.sparkfun.com}.
-%This website also provides 
-%a resistor kit for \$7.95 
-%which includes all necessary resistors. 
-%From this same website,
-%individual capacitors may be purchased
-%at a rate of \$0.25 per capacitor.
-%Operational amplifiers may also be purchased at
-%a rate of \$0.95 per amplifier.
-%Given this,
-%the total cost is approximated at \$152.35. 
-%This is far below the maximum allotted funds of \$1,000
-%specified in the project description.
-
-%TODO table of costs
+% table of costs
+In the following table,
+costs for capacitors and resistors are computed at .1 dollars each.
 \begin{center}
     \begin{tabularx}{0.4\textwidth}{|X|X|X|X|}
         \hline
@@ -581,34 +634,71 @@ must be included.
         \textbf{49.99} \\
         \hline
 
+        \textbf{Micro SD card} &
+        \textbf{-} &
+        \textbf{1} &
+        \textbf{9.99} \\
+        \hline
+
         \textbf{Minigen Function Generator} &
         \textbf{AD9837} &
         \textbf{1} &
         \textbf{29.95} \\
         \hline
 
-        \textbf{Resistor Pack} &
-        \textbf{-} &
+        \textbf{Resistor} &
+        \textbf{10$K$ Ohm} &
         \textbf{1} &
-        \textbf{7.95} \\
+        \textbf{0.10} \\
         \hline
 
-        \textbf{Capacitor Pack} &
-        \textbf{-} &
+        \textbf{Resistor} &
+        \textbf{1$K$ Ohm } &
         \textbf{1} &
-        \textbf{7.95} \\
+        \textbf{0.10} \\
+        \hline
+
+        \textbf{Resistor} &
+        \textbf{330 Ohm } &
+        \textbf{1} &
+        \textbf{0.10} \\
+        \hline
+
+        \textbf{Resistor} &
+        \textbf{220 Ohm} &
+        \textbf{3} &
+        \textbf{0.30} \\
+        \hline
+
+        \textbf{Capacitor} &
+        \textbf{1$uF$ } &
+        \textbf{2} &
+        \textbf{0.20} \\
+        \hline
+
+        \textbf{Capacitor} &
+        \textbf{.1$uF$} &
+        \textbf{11} &
+        \textbf{1.10} \\
+        \hline
+
+        \textbf{Capacitor} &
+        \textbf{.1$nF$} &
+        \textbf{6} &
+        \textbf{0.60} \\
         \hline
 
         \textbf{Op Amps} &
-        \textbf{-} &
-        \textbf{8} &
-        \textbf{9.50} \\
+        \textbf{OPA552} &
+        \textbf{3} &
+        \textbf{4.41} \\
         \hline
 
+        \hline
         \textbf{Total} &
         \textbf{-} &
         \textbf{-} &
-        \textbf{102.35} \\
+        \textbf{96.84} \\
 
         \hline
     \end{tabularx}
@@ -902,9 +992,7 @@ A typical testing environment includes:
   \end{itemize}
 \end{itemize}
 
-%TODO explain testing results for each of the components
-
-\subsection{Known Issues}
+\subsubsection{Known Issues}
 Below are some of the issues found
 through the course of our testing
 which have not been resolved.
@@ -918,7 +1006,7 @@ Possible reasons for each of the issues are discussed as
 well as the accommodations made in this implementation to lessen their impact.
 Potential solutions are also mentioned.
 
-\subsubsection{B23}
+\textbf{B23}\\
 In the current prototype,
 there is an ongoing issue with the Minigen Function Generator.
 This device works as expected in most cases.
@@ -936,15 +1024,50 @@ Whenever bit 23 is set to high in a frequency register write,
 the current implementation sets bit 23 to low
 and sets all less significant bits to high.
 
-%\subsection{other?}
-%TODO
+\textbf{Current Draw from Raspberry Pi}\\
+Throughout the course of our testing,
+the Raspberry Pi turned off at random several times.
+After this happened in a few different scenarios,
+it was determined that this problem
+did occur when an active display adapter was used and
+did not happen when a passive adapter was used 
+to connect the display.
+The difference between these adapter types is,
+active adapters require power while,
+passive adapters do not.
+The question becomes,
+"what about requiring more power from the Raspberry Pi creates issues?".
+
+After doing some research on the Internet,
+we found several sources which describe 
+a relevant protection mechanism of the Raspberry Pi.
+When there is more power demanded from the Pi than
+the Pi can supply then
+the Raspberry Pi will turn off to protect itself.
+This is a useful mechanism and must have 
+saved our test Raspberry Pi a dozen times.
+
+The amount of power this implementation
+requires from the Raspberry Pi is somewhat high.
+The $3.3V$ output rails are used to power the
+Minigen Function Generator, and
+other GPIO pins are also used for interacting
+with the PGA's.
+Given these conditions,
+it is not surprising that the Rasberry Pi 
+protection mechanism was necessary
+when additional power was required
+through the Pi's HDMI port.
+
+\textbf{Amplifier Circuit}
+%TODO break into multiple sections
+%TODO talk about current issues with the amplifier circuit
 
 % compare what has been accomplished to the project description
 % note the dependencies between them
 % detail each difference and highlight why it happened
 % conclude with the final state of the project
 \section{Concluding Remarks}
-
 %TODO
 
 % go to next page
@@ -952,6 +1075,52 @@ and sets all less significant bits to high.
 \appendix
 
 \section{Operation Manual}
+\subsection{Quick Setup}
+Here are listed the setup steps
+as succinctly as possible.
+If more detail is required,
+the below Setup section covers
+each step in more detail.
+\begin{enumerate}
+\item sudo raspi-config
+    \begin{enumerate}
+    \item expand file system
+    \item enable SPI in advanced options
+    \item (optional) enable SSH in advanced options
+    \item Finish > Reboot
+    \end{enumerate}
+
+\item Acquire Project Codes
+    \begin{enumerate}
+    \item git clone http://github.com/timdee/cpre492
+    \end{enumerate}
+
+\item Modify apache2 document directory
+    \begin{enumerate}
+    \item sudo rm -r /var/www
+    \item sudo ln -s /home/pi/cpre492/www /var/www
+    \end{enumerate}
+
+\item Enable cgi-bin
+    \begin{enumerate}
+    \item sudo a2enmod cgi
+    \end{enumerate}
+
+\item Modify cgi-bin Directory
+    \begin{enumerate}
+    \item sudo rm -r cgi-bin /usr/lib/cgi-bin
+    \item sudo ln -s /home/pi/cpre492/cgi-bin /usr/lib/cgi-bin
+    \end{enumerate}
+
+\item Modify apache to run as user pi
+    \begin{enumerate}
+    \item sudo nano /etc/apache2/envvars
+    \item export APACHE\_RUN\_USER=pi
+    \item export APACHE\_RUN\_GROUP=pi
+    \end{enumerate}
+\item sudo reboot
+\end{enumerate}
+
 \subsection{Setup}
 This section details the materials needed and
 how to set them up.
@@ -979,15 +1148,16 @@ change in the future.
     \item (optional) Ethernet cable
     \end{enumerate}
 \item Install Rasbian Linux Operating System on Raspberry Pi
+\item Configure Installation
 \item Place circuit controlling software on the Raspberry Pi
 \item Install software packages on Raspberry Pi
     \begin{enumerate}
     \item Apache 2 Web Server
-    \item TODO python package
-    \item TODO python spi package
-    \item TODO gpio package
+    \item RPi.GPIO
+    \item spidev
     \end{enumerate}
 \item Modify configuration files on the Raspberry Pi
+\item Verify configuration
 \end{enumerate}
 
 % explain each of the steps
@@ -1050,15 +1220,103 @@ it is enough to understand the correct
 course of action.
 
 \textbf{Interfacing With the Pi}
-%TODO talk about how to connect the pi to a computer and interact with it
-%TODO recommend that ssh be setup to control the pi remotely
+% talk about how to connect the pi to a computer and interact with it
+% recommend that ssh be setup to control the pi remotely
+During the setup process,
+there will be need to interact with the Raspberry Pi.
+This can be done in a couple ways.
+One way to interface with the Pi is to use
+it directly.
+Direct use can be done by using the HDMI output
+on the Raspberry Pi to input to a monitor.
+A keyboard an mouse may also be inserted into
+the USB ports on the Raspberry Pi.
+Interactions using this method are similar to 
+using a standard desktop computer.
+
+Another useful way to interact with the Raspberry Pi
+might be to use the secure shell program (SSH).
+SSH allows remote communication with the Pi as
+long as it is on the same network.
+An example of how this might work is this,
+plug the power cord and Ethernet cable into
+the Raspberry Pi,
+after the Pi has booted fully,
+another computer runs the following command.
+\begin{lstlisting}
+ssh [raspberry pi ip address]
+\end{lstlisting}
+After running this command,
+the user will be present with a login prompt.
+After login is complete,
+a command prompt will be displayed.
+This will enable the user to interact with the pi
+as if the interaction was direct while still
+being connected to the Pi over the network.
+
+\subsubsection{Configure Installation}
+% discuss raspi config
+It is necessary to configure the installation
+for two reasons.
+First, when the installation material was
+written to the installation medium,
+it's partition was only exactly the size it needed to be in order to 
+preform the install.
+In order to put additional files on the system,
+the file system must be expanded.
+Second, this project utilizes the SPI interface
+on the Raspberry Pi.
+In order to use this interface,
+SPI module needs to be enabled.
+
+Thankfully Rasbian Operating system
+provides an easy setup script for preforming 
+both of these actions.
+To run this setup script in order to configure the
+installation,
+the following command can be executed as user Pi.
+
+\begin{lstlisting}
+[pi@raspberrypi ~]$ sudo raspi-config
+\end{lstlisting}
+
+The following screen should present itself
+after running the above command.
+
+\begin{center}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{raspi_config.png}
+\end{center}
+
+Follow the prompts in order to expand the file system.
+To enable SPI, it is necessary to first
+select "advanced options" followed by "enable SPI".
+Optionally, SSH may be enable.
+Enabling this option will cause an SSH server
+to be run on the Pi after the next reboot. 
+Make sure to reboot;
+acquiring program code in the next step will require
+that the file system has been expanded.
 
 \subsubsection{Place circuit controlling software on the Raspberry Pi}
-%TODO picture of installing Rasbian.
-%\begin{center}
-%\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
-%\end{center}
-%TODO 
+In order to acquire the project code constructed to 
+allow the Raspberry Pi to control the rest of the circuit,
+the following command may be used.
+This command should be run in user pi's home directory, "/home/pi".
+The rest of the guide assumes this location for the files.
+If this is not the chosen location on the
+Raspberry Pi,
+simply use the chosen location in place of "/home/pi".
+
+\begin{lstlisting}
+git clone http://github.com/timdee/cpre492
+\end{lstlisting}
+
+This command will download the code from
+a github repository.
+There should now be a folder "/home/pi/cpre492" with
+all of the code and documents present.
+If an error occurs which indicates there is no more disk space,
+then it is likely that rebooting the Raspberry Pi will fix this issue.
 
 \subsubsection{Install software packages on Raspberry Pi}
 In order for the software written to
@@ -1071,6 +1329,7 @@ The names of the packages are as follows
 
 \begin{itemize}
 \item apache2
+\item spidev
 \item RPi.GPIO
 \end{itemize}
 
@@ -1088,7 +1347,10 @@ This may be done for apache as follows:
 sudo apt-get apache2 -y
 \end{lstlisting}
 
-The process for installing RPi.GPIO is slightly different.
+Note, RPi.GPIO is usually installed with the installation
+medium.
+If it is not,
+the process for installing RPi.GPIO is slightly different.
 The package must first be downloaded from:
 \url{https://pypi.python.org/pypi/RPi.GPIO}
 
@@ -1110,27 +1372,76 @@ the above procedure may still be useful for updating
 the library.
 This may be necessary to fix unforeseen, obscure bugs.
 
+A possibly old version of spidev is included with the provided codes.
+If an upgrade is required,
+the process for doing so is similar to RPi.GPIO process.
+The only difference being the package
+will be downloaded from a different place.
+
 \subsubsection{Modify configuration files on the Raspberry Pi}
 The configuration files which need to be modified are
 related to Apache 2 web server.
 The files which need to be modified for the following reasons.
-First, the apache user does not have the permissions necessary
+First, the apache user (www-data) does not have the permissions necessary
 to run some of the library functionalities.
 One solution to this issues is to run apache as 
 a user which does have permissions.
 In this case,
 we choose to use the default user, pi for this purpose.
+
 Second, the apache package needs to be told where
 the files for the web server have been placed,
 otherwise apache will load the default configuration
 which is not what is wanted.
 This is another simple modification to one of the configuration files
+There is, however, an alternative to modifying the configuration of the server
+in specifying the directory where the web server files are located.
+The alternative is to create symbolic links at the default locations 
+loaded by the web server.
+This option is chosen for compatibility purposes.
+Taking the former approach assumes the configuration files will
+be setup the same with every iteration of apache2.
+This is not always the case.
 
 \textbf{Running Apache as User pi}
-%TODO 
+To change the run user for apache,
+run the following command.
+\begin{lstlisting}
+[pi@raspberrypi ~]$ cd Downloads
+\end{lstlisting}
+This will initiate a command-line
+text editor which should be used to 
+modify the APACHE\_RUN\_USER and APACHE\_RUN\_GROUP
+to be the following:
+\begin{lstlisting}
+APACHE_RUN_USER = pi
+APACHE_RUN_GROUP = pi
+\end{lstlisting}
 
 \textbf{Modifying Web Site Files Location}
-%TODO 
+There are two relevant directories,
+\textit{www} and \textit{cgi-bin}.
+The method chosen to modify these
+directories are though the creation of
+symbolic links at the default file locations.
+This may be accomplished though the following command sequence:
+
+\begin{lstlisting}
+[pi@raspberrypi ~]$ sudo rm -r /var/www
+[pi@raspberrypi ~]$ sudo ln -s /home/pi/cpre492/www /var/www 
+[pi@raspberrypi ~]$ sudo rm -r /usr/lib/cgi-bin
+[pi@raspberrypi ~]$ sudo ln -s /home/pi/cpre492/cgi-bin /usr/lib/cgi-bin 
+\end{lstlisting}
+
+\subsubsection{Verify Configuration}
+In order to verify that the configuration
+is working properly,
+open a web browser,
+type localhost in the navigation bar, and
+press enter.
+If a web interface used to update
+voltage and frequency values is loaded then
+the configuration is correct.
 
 \subsection{Demo}
 This section details the process
@@ -1168,12 +1479,25 @@ the same as any micro USB smart phone adapter.
 Once plugged in,
 The Raspberry Pi will power up automatically.
 
-Below is pictured the process of
-powering on the Raspberry Pi.
-%TODO
-\begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{power_on_pi.png}
-\end{center}
+If the Raspberry Pi is connected to a monitor,
+there should be many lines of output to the screen.
+The powering on process takes about a minute,
+so be patient.
+After startup has completed,
+one of two scenarios will be the case.
+Scenario 1, the Pi boots to a graphical
+user interface.
+If this is the case,
+then continue with the succeeding steps.
+
+If however, there is a command line displayed instead,
+this is scenario 2.
+In scenario 2 it is necessary to log into the pi.
+This may be done with the default user name and password listed below.
+\begin{lstlisting}
+# username: pi
+# password: raspberry
+\end{lstlisting}
 
 \subsubsection{Connect the Raspberry Pi to the network}
 Connecting the Raspberry Pi to the network may
@@ -1200,12 +1524,13 @@ To acquire the IP address of the Raspberry Pi,
 login and run the 'hostname' command with arguments '-i'.
 This command is depicted below.
 \begin{lstlisting}
-# username: pi
-# password: pi
 # hostname -i
 \end{lstlisting}
 The output of this command will the the IP address of
 the Raspberry Pi on the network.
+Note the raspberry pi may be configured to 
+login automatically at start up.
+This depends on the installation medium.
 
 There are other ways to acquire the IP address
 which involve scanning the network from
@@ -1223,10 +1548,16 @@ On any computer connected to the same network as the Raspberry Pi,
 open a web browser.
 In the navigation bar of this browser,
 enter the IP address retrieved from the 'hostname' utility.
+In the below example,
+The web browser is instructed to navigate to localhost.
+This can be used to access a web server running on the current machine.
+If the goal is to navigate to a web server running on a different
+machine, thee
+entering the IP address of this machine in place of localhost will
+accomplish this goal.
 
-%TODO
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{ip_in_navigation_bar.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{localhost_navigation.png}
 \end{center}
 
 \subsubsection{Input the desired voltage and frequency values and click update}
@@ -1238,9 +1569,8 @@ by the circuit.
 There is also a Radio Button group which will allow the 
 output waveform to be modified among triangle, square, and sine.
 
-%TODO
 \begin{center}
-\includegraphics[width=0.45\textwidth,keepaspectratio]{web_interface_updating_values.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{web_interface_updating_values.png}
 \end{center}
 
 \subsubsection{The output of the circuit can be seen to change to the desired values}
@@ -1410,15 +1740,6 @@ This means we have reduced the number of possible
 steps by a factor of $49$ in order to accomplish
 this design; better implementations must exist.
 
-%TODO
-
-\subsection{Software Components}
-\subsection{Web Server}
-%TODO
-
-\subsubsection{Simlink cgi-bin}
-%TODO
-
 \newpage
 \section{Other Considerations}
 An argument can be made that there
@@ -1554,7 +1875,7 @@ experience would have made this process much faster.
 \lstinputlisting[caption=PGA Control Script]{../../cgi-bin/pga.py}
 \lstinputlisting[caption=Reset Script]{../../cgi-bin/reset.py}
 
-%TODO modify timeline
+% modify timeline
 %\subsection{Project Timeline}
 % Timeline in table format
 %\begin{center}

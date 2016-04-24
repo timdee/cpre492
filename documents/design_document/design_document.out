@@ -11,47 +11,47 @@
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Summing Amplifier}{subsection.3.3}% 11
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Programmable Gain Amplifier\(PGA\)}{subsection.3.3}% 12
 \BOOKMARK [1][-]{section.4}{Software Components}{}% 13
-\BOOKMARK [2][-]{subsection.4.1}{Web Interface}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.2}{Web Server}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.3}{Modifying Frequency}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.4}{Controlling Voltage}{section.4}% 17
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Programmable Gain Amplifier\(PGA\)}{subsection.4.4}% 18
-\BOOKMARK [1][-]{section.5}{Cost Considerations}{}% 19
-\BOOKMARK [1][-]{section.6}{Testing}{}% 20
-\BOOKMARK [2][-]{subsection.6.1}{Testing Process}{section.6}% 21
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Theorize a design}{subsection.6.1}% 22
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Acquire necessary components}{subsection.6.1}% 23
-\BOOKMARK [3][-]{subsubsection.6.1.3}{Implement design}{subsection.6.1}% 24
-\BOOKMARK [3][-]{subsubsection.6.1.4}{Understand problems}{subsection.6.1}% 25
-\BOOKMARK [3][-]{subsubsection.6.1.5}{Return to step 1}{subsection.6.1}% 26
-\BOOKMARK [2][-]{subsection.6.2}{Testing Results}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.3}{Known Issues}{section.6}% 28
-\BOOKMARK [3][-]{subsubsection.6.3.1}{B23}{subsection.6.3}% 29
+\BOOKMARK [2][-]{subsection.4.1}{Technology Choices}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Web Interface}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Web Server}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{Modifying Frequency}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.5}{Controlling Voltage}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Programmable Gain Amplifier\(PGA\)}{subsection.4.5}% 19
+\BOOKMARK [1][-]{section.5}{Cost Considerations}{}% 20
+\BOOKMARK [1][-]{section.6}{Testing}{}% 21
+\BOOKMARK [2][-]{subsection.6.1}{Testing Process}{section.6}% 22
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Theorize a design}{subsection.6.1}% 23
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Acquire necessary components}{subsection.6.1}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Implement design}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Understand problems}{subsection.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.6.1.5}{Return to step 1}{subsection.6.1}% 27
+\BOOKMARK [2][-]{subsection.6.2}{Testing Results}{section.6}% 28
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Known Issues}{subsection.6.2}% 29
 \BOOKMARK [1][-]{section.7}{Concluding Remarks}{}% 30
 \BOOKMARK [1][-]{appendix.A}{Operation Manual}{}% 31
-\BOOKMARK [2][-]{subsection.A.1}{Setup}{appendix.A}% 32
-\BOOKMARK [3][-]{subsubsection.A.1.1}{Purchase a Raspberry Pi}{subsection.A.1}% 33
-\BOOKMARK [3][-]{subsubsection.A.1.2}{Install Rasbian Linux Operating System on Raspberry Pi}{subsection.A.1}% 34
-\BOOKMARK [3][-]{subsubsection.A.1.3}{Place circuit controlling software on the Raspberry Pi}{subsection.A.1}% 35
-\BOOKMARK [3][-]{subsubsection.A.1.4}{Install software packages on Raspberry Pi}{subsection.A.1}% 36
-\BOOKMARK [3][-]{subsubsection.A.1.5}{Modify configuration files on the Raspberry Pi}{subsection.A.1}% 37
-\BOOKMARK [2][-]{subsection.A.2}{Demo}{appendix.A}% 38
-\BOOKMARK [3][-]{subsubsection.A.2.1}{Power on the Raspberry Pi}{subsection.A.2}% 39
-\BOOKMARK [3][-]{subsubsection.A.2.2}{Connect the Raspberry Pi to the network}{subsection.A.2}% 40
-\BOOKMARK [3][-]{subsubsection.A.2.3}{The output of the circuit should connect to capacitive plates used for dielectrophoresis}{subsection.A.2}% 41
-\BOOKMARK [3][-]{subsubsection.A.2.4}{Acquire the IP address of the Raspberry Pi}{subsection.A.2}% 42
-\BOOKMARK [3][-]{subsubsection.A.2.5}{Enter the IP address in the navigation bar of a web browser}{subsection.A.2}% 43
-\BOOKMARK [3][-]{subsubsection.A.2.6}{Input the desired voltage and frequency values and click update}{subsection.A.2}% 44
-\BOOKMARK [3][-]{subsubsection.A.2.7}{The output of the circuit can be seen to change to the desired values}{subsection.A.2}% 45
-\BOOKMARK [1][-]{appendix.B}{Initial Designs}{}% 46
-\BOOKMARK [2][-]{subsection.B.1}{Frequency Control}{appendix.B}% 47
-\BOOKMARK [2][-]{subsection.B.2}{Voltage Control}{appendix.B}% 48
-\BOOKMARK [3][-]{subsubsection.B.2.1}{Digital Potentiometer}{subsection.B.2}% 49
-\BOOKMARK [3][-]{subsubsection.B.2.2}{Transistor switch}{subsection.B.2}% 50
-\BOOKMARK [3][-]{subsubsection.B.2.3}{Relay}{subsection.B.2}% 51
-\BOOKMARK [2][-]{subsection.B.3}{Amplification Stages}{appendix.B}% 52
-\BOOKMARK [2][-]{subsection.B.4}{Software Components}{appendix.B}% 53
-\BOOKMARK [2][-]{subsection.B.5}{Web Server}{appendix.B}% 54
-\BOOKMARK [3][-]{subsubsection.B.5.1}{Simlink cgi-bin}{subsection.B.5}% 55
+\BOOKMARK [2][-]{subsection.A.1}{Quick Setup}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.2}{Setup}{appendix.A}% 33
+\BOOKMARK [3][-]{subsubsection.A.2.1}{Purchase a Raspberry Pi}{subsection.A.2}% 34
+\BOOKMARK [3][-]{subsubsection.A.2.2}{Install Rasbian Linux Operating System on Raspberry Pi}{subsection.A.2}% 35
+\BOOKMARK [3][-]{subsubsection.A.2.3}{Configure Installation}{subsection.A.2}% 36
+\BOOKMARK [3][-]{subsubsection.A.2.4}{Place circuit controlling software on the Raspberry Pi}{subsection.A.2}% 37
+\BOOKMARK [3][-]{subsubsection.A.2.5}{Install software packages on Raspberry Pi}{subsection.A.2}% 38
+\BOOKMARK [3][-]{subsubsection.A.2.6}{Modify configuration files on the Raspberry Pi}{subsection.A.2}% 39
+\BOOKMARK [3][-]{subsubsection.A.2.7}{Verify Configuration}{subsection.A.2}% 40
+\BOOKMARK [2][-]{subsection.A.3}{Demo}{appendix.A}% 41
+\BOOKMARK [3][-]{subsubsection.A.3.1}{Power on the Raspberry Pi}{subsection.A.3}% 42
+\BOOKMARK [3][-]{subsubsection.A.3.2}{Connect the Raspberry Pi to the network}{subsection.A.3}% 43
+\BOOKMARK [3][-]{subsubsection.A.3.3}{The output of the circuit should connect to capacitive plates used for dielectrophoresis}{subsection.A.3}% 44
+\BOOKMARK [3][-]{subsubsection.A.3.4}{Acquire the IP address of the Raspberry Pi}{subsection.A.3}% 45
+\BOOKMARK [3][-]{subsubsection.A.3.5}{Enter the IP address in the navigation bar of a web browser}{subsection.A.3}% 46
+\BOOKMARK [3][-]{subsubsection.A.3.6}{Input the desired voltage and frequency values and click update}{subsection.A.3}% 47
+\BOOKMARK [3][-]{subsubsection.A.3.7}{The output of the circuit can be seen to change to the desired values}{subsection.A.3}% 48
+\BOOKMARK [1][-]{appendix.B}{Initial Designs}{}% 49
+\BOOKMARK [2][-]{subsection.B.1}{Frequency Control}{appendix.B}% 50
+\BOOKMARK [2][-]{subsection.B.2}{Voltage Control}{appendix.B}% 51
+\BOOKMARK [3][-]{subsubsection.B.2.1}{Digital Potentiometer}{subsection.B.2}% 52
+\BOOKMARK [3][-]{subsubsection.B.2.2}{Transistor switch}{subsection.B.2}% 53
+\BOOKMARK [3][-]{subsubsection.B.2.3}{Relay}{subsection.B.2}% 54
+\BOOKMARK [2][-]{subsection.B.3}{Amplification Stages}{appendix.B}% 55
 \BOOKMARK [1][-]{appendix.C}{Other Considerations}{}% 56
 \BOOKMARK [1][-]{appendix.D}{Code}{}% 57
