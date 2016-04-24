@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  23 APR 2016 21:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  24 APR 2016 03:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,155 +480,147 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 172.
  [4]
-<images/block_diagram.png, id=311, 969.6225pt x 617.30624pt>
+<images/block_diagram.png, id=316, 969.6225pt x 617.30624pt>
 File: images/block_diagram.png Graphic file (type png)
 
 <use images/block_diagram.png>
 Package pdftex.def Info: images/block_diagram.png used on input line 243.
 (pdftex.def)             Requested size: 542.025pt x 345.09572pt.
 
-<images/rpi_real.png, id=313, 1284.8pt x 861.2175pt>
+<images/rpi_real.png, id=318, 1284.8pt x 861.2175pt>
 File: images/rpi_real.png Graphic file (type png)
  <use images/rpi_real.png>
-Package pdftex.def Info: images/rpi_real.png used on input line 279.
+Package pdftex.def Info: images/rpi_real.png used on input line 302.
 (pdftex.def)             Requested size: 233.06677pt x 156.22144pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 279--280
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 302--303
  [] 
  []
 
-<../poster/images/minigen_real.png, id=314, 144.54pt x 144.54pt>
+<../poster/images/minigen_real.png, id=319, 144.54pt x 144.54pt>
 File: ../poster/images/minigen_real.png Graphic file (type png)
 
 <use ../poster/images/minigen_real.png>
 Package pdftex.def Info: ../poster/images/minigen_real.png used on input line 3
-26.
+49.
 (pdftex.def)             Requested size: 233.06677pt x 233.0794pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 326--327
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 349--350
  [] 
  []
 
-[5 <./images/rpi_real.png> <../poster/images/minigen_real.png>]
-<images/circuit_diagram.pdf, id=320, 794.97pt x 614.295pt>
+[5 <./images/rpi_real.png>] [6 <./images/block_diagram.png> <../poster/images/m
+inigen_real.png>] <images/circuit_diagram.pdf, id=336, 794.97pt x 614.295pt>
 File: images/circuit_diagram.pdf Graphic file (type pdf)
 
 <use images/circuit_diagram.pdf>
-Package pdftex.def Info: images/circuit_diagram.pdf used on input line 379.
+Package pdftex.def Info: images/circuit_diagram.pdf used on input line 402.
 (pdftex.def)             Requested size: 433.62164pt x 335.07939pt.
- [6 <./images/block_diagram.png>]
-<images/gain_one_552.pdf, id=333, 794.97pt x 614.295pt>
+
+<images/gain_one_552.pdf, id=339, 794.97pt x 614.295pt>
 File: images/gain_one_552.pdf Graphic file (type pdf)
 
 <use images/gain_one_552.pdf>
-Package pdftex.def Info: images/gain_one_552.pdf used on input line 445.
+Package pdftex.def Info: images/gain_one_552.pdf used on input line 480.
 (pdftex.def)             Requested size: 233.06677pt x 180.10002pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 445--446
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 480--481
  [] 
  []
 
-
-Overfull \vbox (25.7583pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (25.7583pt too high) has occurred while \output is active []
-
-
-[7 <./images/circuit_diagram.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 534--550
+[7 <./images/gain_one_552.pdf>] [8 <./images/circuit_diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 590--606
 []\OT1/ptm/m/n/9 Our im-ple-men-ta-tion pro-vides sev-eral func-tion-al-i-ties.
 
  []
 
-<../poster/images/web_interface.pdf, id=350, 750.805pt x 748.7975pt>
+<../poster/images/web_interface.pdf, id=373, 750.805pt x 748.7975pt>
 File: ../poster/images/web_interface.pdf Graphic file (type pdf)
 
 <use ../poster/images/web_interface.pdf>
 Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
-552.
+608.
 (pdftex.def)             Requested size: 233.06677pt x 232.44475pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 552--553
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 608--609
  [] 
  []
 
-[8 <./images/gain_one_552.pdf> <../poster/images/web_interface.pdf>]
-<images/script_layout.png, id=365, 963.6pt x 722.7pt>
-File: images/script_layout.png Graphic file (type png)
+<script_layout.pdf, id=374, 722.7pt x 542.025pt>
+File: script_layout.pdf Graphic file (type pdf)
+ <use script_layout.pdf>
+Package pdftex.def Info: script_layout.pdf used on input line 626.
+(pdftex.def)             Requested size: 233.06677pt x 174.79965pt.
 
-<use images/script_layout.png>
-Package pdftex.def Info: images/script_layout.png used on input line 570.
-(pdftex.def)             Requested size: 233.06677pt x 174.79689pt.
-
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 570--571
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 626--627
  [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+[9 <../poster/images/web_interface.pdf> <./script_layout.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 894--894
 []|\OT1/ptm/b/n/9 Raspberry
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 894--894
 []|\OT1/ptm/b/n/9 Minigen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 704--704
+Underfull \hbox (badness 10000) in paragraph at lines 894--894
 \OT1/ptm/b/n/9 Func-tion
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 720.
+[10]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 910.
 
-(/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 720.
- [9 <./images/script_layout.png>] [10] [11] [12]
-<pi_images/raspi_config.png, id=433, 657.45625pt x 391.4625pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 910.
+ [11] [12] [13] [14]
+[15] <pi_images/raspi_config.png, id=467, 657.45625pt x 391.4625pt>
 File: pi_images/raspi_config.png Graphic file (type png)
 
 <use pi_images/raspi_config.png>
-Package pdftex.def Info: pi_images/raspi_config.png used on input line 1287.
+Package pdftex.def Info: pi_images/raspi_config.png used on input line 1591.
 (pdftex.def)             Requested size: 233.06677pt x 138.77005pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 1287--1288
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 1591--1592
  [] 
  []
 
-[13 <./pi_images/raspi_config.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1412--1416
+[16 <./pi_images/raspi_config.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1716--1720
 \OT1/ptm/m/n/9 This will ini-ti-ate a command-line text ed-i-tor which
  []
 
-[14] <pi_images/localhost_navigation.png, id=480, 286.06876pt x 69.25874pt>
+[17] <pi_images/localhost_navigation.png, id=513, 286.06876pt x 69.25874pt>
 File: pi_images/localhost_navigation.png Graphic file (type png)
 
 <use pi_images/localhost_navigation.png>
 Package pdftex.def Info: pi_images/localhost_navigation.png used on input line 
-1560.
+1864.
 (pdftex.def)             Requested size: 233.06677pt x 56.42686pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 1560--1561
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 1864--1865
  [] 
  []
 
-<images/web_interface_updating_values.png, id=481, 496.85625pt x 128.48pt>
+<images/web_interface_updating_values.png, id=514, 496.85625pt x 128.48pt>
 File: images/web_interface_updating_values.png Graphic file (type png)
 
 <use images/web_interface_updating_values.png>
 Package pdftex.def Info: images/web_interface_updating_values.png used on input
- line 1573.
+ line 1877.
 (pdftex.def)             Requested size: 233.06677pt x 60.26797pt.
 
-Overfull \hbox (3.0206pt too wide) in paragraph at lines 1573--1574
+Overfull \hbox (3.0206pt too wide) in paragraph at lines 1877--1878
  [] 
  []
 
-[15 <./pi_images/localhost_navigation.png> <./images/web_interface_updating_val
+[18 <./pi_images/localhost_navigation.png> <./images/web_interface_updating_val
 ues.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -639,7 +631,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [16] [17] [18] (../../cgi-bin/pga_calling_script.bash
+ [19] [20] [21] (../../cgi-bin/pga_calling_script.bash
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
 )
@@ -651,25 +643,25 @@ File: omlptm.fd
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 32.
 
-[19]) (../../cgi-bin/update_voltage_frequency.py [20])
-(../../cgi-bin/minigen.py [21] [22] [23] [24]) (../../cgi-bin/pga.py [25]
-[26]) (../../cgi-bin/reset.py)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1963.
- [27]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1963.
+[22]) (../../cgi-bin/update_voltage_frequency.py [23])
+(../../cgi-bin/minigen.py [24] [25] [26] [27]) (../../cgi-bin/pga.py [28]
+[29]) (../../cgi-bin/reset.py)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2267.
+ [30]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2267.
  (./design_document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1963.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1963.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2267.
 
 Package rerunfilecheck Info: File `design_document.out' has not changed.
-(rerunfilecheck)             Checksum: 9F8DB5F66987BB6FF82AB1C09E5AEEE0;4295.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1963.
+(rerunfilecheck)             Checksum: C1B515D4BC8EFC48B244A61757E25E76;4373.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2267.
  ) 
 Here is how much of TeX's memory you used:
- 9582 strings out of 493054
- 137388 string characters out of 6140586
+ 9587 strings out of 493054
+ 137421 string characters out of 6140586
  482219 words of memory out of 5000000
- 12302 multiletter control sequences out of 15000+600000
+ 12303 multiletter control sequences out of 15000+600000
  24706 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,9n,72p,572b,1784s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -685,10 +677,10 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
 dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on design_document.pdf (27 pages, 1145059 bytes).
+Output written on design_document.pdf (30 pages, 1159949 bytes).
 PDF statistics:
- 1186 PDF objects out of 1200 (max. 8388607)
- 1115 compressed objects within 12 object streams
- 633 named destinations out of 1000 (max. 500000)
- 507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 1143 compressed objects within 12 object streams
+ 637 named destinations out of 1000 (max. 500000)
+ 515 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -271,8 +271,31 @@ This communication is accomplished via
 the Raspberry Pi's SPI interface and
 GPIO pins respectively.
 
-%TODO the reason a raspberry pi was chosen
-%TODO the advantages of choosing a raspberry pi over alternatives
+% the reason a raspberry pi was chosen
+There are many potential solutions other than 
+the Raspberry Pi.
+So what motivated the choice of the Raspberry Pi?
+The answer is as would expected,
+the Raspberry Pi has capabilities which allow it
+to act as a communicator between 
+the user and the circuit.
+While other devices have similar capabilities,
+such as an Arduino,
+the requirement of having a web interface is a
+lot easier to implement on the pi compared to
+most Arduinos.
+
+Another factor consistent with the goals
+of the project is the small form factor
+of the Raspberry pi.
+While there was no exact specification,
+it was made clear that smaller implementations
+are preferred.
+On top of the above mentioned factors
+the Raspberry Pi is also inexpensive.
+Given all of these factors,
+the Raspberry Pi seems like an ideal
+fit for this project.
 
 % insert Raspberry Pi connection diagram
 \begin{center}
@@ -383,6 +406,18 @@ increase in the frequency of the output.
 \label{figure_amplifier_circuit}
 \end{figure*}
 
+\subsubsection{Programmable Gain Amplifier(PGA)}
+The programmable gain amplifier or PGA is 
+core mechanism by which voltage is modified in the circuit.
+As can be seen in the circuit diagram \ref{figure_amplifier_circuit},
+There are two PGA's utilized in the circuit.
+Each PGA controls one stage of amplification.
+The PGA has 8 possible output gains, 0-7.
+These gains are set though the use of three GPIO pins.
+Each GPIO pin is connected to one input pin on the PGA.
+The gain of the pga is selected by the binary number encoded by 
+these bits.
+
 \subsubsection{Amplification Stages}
 There are two amplification stages pictured in
 Figure \ref{figure_amplifier_circuit}.
@@ -491,20 +526,6 @@ $120 \frac{V}{\mu s}$.
 These constraints are fairly limiting and require
 an expensive op-amp to meet.
 
-\subsubsection{Programmable Gain Amplifier(PGA)}
-There are three $20V_{pp}$ voltage ranges.
-Which range being acted in is chosen by the relay circuits.
-Within a given range,
-however,
-a PGA is used to control the voltage output.
-In our implementation,
-a PGA has control over a $20V_{pp}$ range.
-The PGA has 8 steps within this range.
-This Device is controlled by 
-the SPI interface on the Raspberry Pi.
-
-%TODO
-
 \section{Software Components}
 The web interface displayed by
 the web server hosted on the Raspberry Pi
@@ -521,8 +542,43 @@ used to control the hardware.
 
 % justify all technology choices
 \subsection{Technology Choices}
-%TODO apache 2
-%TODO python
+There are many tools to accomplish any job.
+In the software domain there are many utilities
+and programming languages which could have been
+used to accomplish the goals set forth in this project description.
+Why then did were apache 2 and python chosen?
+What could be the advantage of using these software tools over others?
+This section seeks to answer the aforementioned questions.
+
+% apache 2
+Apache 2 was chosen as our web server due
+to it's ease of installation and use,
+good documentation, and
+large user base.
+In some respects,
+Apache 2 is often the default choice for web server applications.
+Only if there are special or advanced features necessary,
+which are not available by utilizing Apache 2 would there
+been consideration for other applications.
+Apache 2 is a very well known web server implementation with a lot of users.
+Any foreseeable problem for this project will likely have
+information available from other people having faced the same or similar problem.
+
+% python
+Python is a powerful scripting language which
+is designed around the ideals of quick and pretty code.
+That is, 
+the goal of Python's creators was to write a language
+which would be easily readable, quick to write, and
+have a lot of functionality.
+For this project,
+time is of the essence.
+Any intelligent choice of tool which will help to speed the process of 
+completing one aspect of the project will allow more time to be spent on another.
+Python also has many useful libraries such as spidev and RPi.GPIO
+which were used in this project.
+The relative ease of programming in combination with the useful and
+relevant libraries made Python the clear choice for this project.
 
 \subsection{Web Interface}
 The web interface is hosted on the Raspberry Pi using an Apache web server.
@@ -567,7 +623,7 @@ a cgi-script performing the update functionality.
 % code layout diagram
 %\begin{figure}[!hbt]
 \begin{center}
-\includegraphics[width=0.43\textwidth,keepaspectratio]{script_layout.png}
+\includegraphics[width=0.43\textwidth,keepaspectratio]{script_layout.pdf}
 \end{center}
 %\caption{Script layout according to work delegation.}
 %\label{fig_script_layout}
@@ -592,14 +648,142 @@ passed on to \textit{update\_voltage\_frequency.py}
 which determines the appropriate update procedure 
 with which to call \textit{minigen.py}.
 
-%TODO explain how minigen.py works in detail
+% explain how minigen.py works in detail
+\textit{minigen.py} is a script,
+written in python and uses the spidev library
+to communicate with the Minigen.
+This communication is tricky due
+to the layout of the registers on the Minigen.
+There are five registers:
+two frequency registers,
+two phase registers, and
+one control register.
+A combination of these registers
+need to be written to cause the Minigen to produce the correct output.
+
+Take the typical use case for this project of
+modifying the frequency.
+There are two frequency registers.
+Only one of these are active at a time;
+active defined as the output of the Minigen being derived from that register.
+The control register must be written in order to change the active register.
+Further complicating this process is that the frequency registers are
+28 bits wide, but the Minigen only accepts 16 bit writes at a time over SPI.
+In addition, there are two modes in which frequency can be written
+depending on the settings of the control register.
+
+Sorting though this madness,
+eventually it was found the process for writing the frequency register
+is as follows.
+First,
+modify the control register to a known value so that
+the inactive register may be written and
+the method of writing the frequency register is set to fine.
+Fine frequency modification means both MSB and LSB of 
+the frequency register can be modified.
+Second,
+Preform two consecutive 16 bit writes to the Minigen with
+the first bits addressing the frequency register, and
+the remaining 14 bits containing either the LSB or MSB of the requested frequency.
+Third,
+Preform a final write to the control register to 
+make the frequency register which has just been written
+the active register.
+
+The other problem which needs to be solved
+is, of course, what values need to be written to the frequency register.
+That is we need to convert the decimal value
+given to a binary string to be written.
+This is accomplished by first dividing by
+the minimum step size of the Minigen.
+The resulting value gives the number of steps necessary
+to achieve the value wanted.
+The number which is written the frequency register
+is the number of steps.
+Finally,
+this step value is converted and sent in the order,
+MSB than LSB.
 
 \subsection{Controlling Voltage}
-
 \subsubsection{Programmable Gain Amplifier(PGA)}
-%TODO explain how we choose the value to set the pga
-%TODO explain how we modify the value of the pga
+The method of interaction with the PGA
+is though three GPIO pins which encode
+a binary number indicating the desired gain.
+The software written for the PGA than
+has two objectives.
+First,
+the gain of each stage must be computed.
+Second,
+the gain of the PGA needs to be modified.
 
+% explain how we choose the value to set the pga
+In order to compute the gain of each amplifier,
+two pieces of information are needed.
+What is the gain of the amplifier in this stage and
+what is the requested voltage.
+The gain of the amplifier is know at design time and
+the requested voltage is gained through user interactions
+with the web interface.
+Once these this information is known,
+the problem reduces to one similar to
+counting change.
+
+In the counting change problem,
+a person is trying to create 
+a monetary value with the fewest number
+of coins possible.
+This problem is solved by
+using as many of the biggest value coin as
+possible without going over, then
+using as many of the second biggest value coin as
+possible without going over, ect.
+In this example,
+the coins are analogous to the gains of the
+amplifiers in each stage of the circuit while
+the monetary is analogous to the requested voltage.
+
+The approach used in our implementation
+is similar to that of the counting change problem.
+In order to find the again of a PGA in a given stage,
+we compute how many of that stage's amplifier gain
+could fit in the overall requested voltage.
+All stages conform to the following equation:
+%
+\begin{gather*}
+A_{PGA} = floor(\frac{RV}{G_{AMP}})
+\end{gather*}
+%
+where $A_{PGA} =$ gain of pga,\\
+$RV =$ requested voltage remaining after voltage allocated 
+to previous stages has been removed,\\
+and $G_{AMP}$ is gain of amplifier in series with the PGA.
+
+% explain how we modify the value of the pga
+% discuss the problem of running things as root under apache webserver
+Modification of PGA gain requires
+the toggling of GPIO pins on the Raspberry Pi.
+The pins should be set to a binary
+value equal to the requested gain.
+A Python object utilizing RPi.GPIO
+was created.
+This script preforms the
+necessary mapping of gain value to GPIO pins and
+modifies the value of GPIO pins accordingly, but
+there is a problem.
+
+Root access is required to modify the values of
+the GPIO pins, and the Apache 2 web server
+protects against cgi-bin scripts executing commands as root.
+Our solution is to call a bash script with the arguments
+necessary for the Python object to set GPIO pins to
+a specified gain.
+The intermediary bash script works by
+\textit{echo}ing a short python program and
+piping the output of this \textit{echo} command to
+the input of \textit{sudo python}
+This circumvents apache's protection
+while still allowing the use of
+Python.
 
 \section{Cost Considerations}
 The monetary cost of this project is fairly low. 
@@ -694,11 +878,17 @@ costs for capacitors and resistors are computed at .1 dollars each.
         \textbf{4.41} \\
         \hline
 
+        \textbf{PGA} &
+        \textbf{pga 6910-3} &
+        \textbf{2} &
+        \textbf{8.00} \\
+        \hline
+
         \hline
         \textbf{Total} &
         \textbf{-} &
         \textbf{-} &
-        \textbf{96.84} \\
+        \textbf{104.84} \\
 
         \hline
     \end{tabularx}
@@ -1059,19 +1249,133 @@ protection mechanism was necessary
 when additional power was required
 through the Pi's HDMI port.
 
-\textbf{Amplifier Circuit}
-%TODO break into multiple sections
-%TODO talk about current issues with the amplifier circuit
+\textbf{Amplifier Circuit}\\
+Currently,
+the amplifier circuit is not capable of reaching 
+the maximum frequency or voltage requirement.
+Currently the maximum achievable frequency 
+at which the voltage gain of the circuit has
+not dropped by more than $3db$ from it's intended value is
+around $800Khz$.
+In other words the $-3db$ frequency of this circuit is $800Khz$.
+The issue which prevented reaching a frequency of $1Mhz$ was
+an insufficient gain bandwidth product of our chosen op-amp.
+
+The maximum voltage can also not be reached.
+This is due to an insufficient slew rate
+of the OPA552, the current op-amp.
+This op-amp is unable to change voltage fast enough
+to output large amplitude waves at high frequency.
+
+\subsubsection{Possible Solutions}
+In the case of 
+the current draw from the Raspberry Pi problem and
+the B23 bug,
+it is clear how the problem might be solved.
+However, in the case of  the amplifier circuit
+the solution is non-obvious.
+Possible remedies could range anywhere from a complete redesign
+to the purchase of additional components.
+The later option is more resource efficient 
+if it is available.
+There much more expensive op-amp around \$150 has
+the necessary specifications
+to fulfill the project requirements.
+The part number of this op-amp is
+598-1449-ND.
+Replacing the OPA552, the current op-amp,
+with this one would, in theory,
+allow the design to meet all the frequency and voltage requirements.
 
 % compare what has been accomplished to the project description
 % note the dependencies between them
 % detail each difference and highlight why it happened
 % conclude with the final state of the project
 \section{Concluding Remarks}
-%TODO
+At the onset of this project,
+there was a lot of rapid success.
+During the first semester,
+much of the scripts which
+interact with the circuit from
+the Raspberry Pi were written.
+We were able to modify the frequency 
+and communicate with the PGA's by 
+the end of the first semester.
+The work on the amplification portion 
+of the project took significantly more time.
+Most of this additional time expense came
+as a direct result of 
+the number of problems encountered.
+
+In addition to the implementation struggles
+in the second semester of this design experience
+came a shortage of manpower.
+One group member had to drop out of school for financial reasons.
+This was especially difficult to 
+deal with as the number of
+people on the project was already
+fewer compared to the number
+called for in the project description.
+This project originally specified
+that there should be three computer
+engineers and three electrical engineers
+working on the project.
+Reality instead afforded the group
+assigned to this project four computer
+engineers.
+This eventually became
+three computer engineers.
+
+Being computer engineers,
+our skill set lies outside the realm
+of complicated circuits.
+Our lack of experience with building and testing
+circuits designs
+manifested itself in the struggles constructing
+the multi-stage amplifier circuit.
+While the general lack of 
+expertise with the circuit components
+of the project hampered our group
+significantly in the completion of the project,
+it was a very good learning experience.
+Often times the most difficult situations
+inspire the most growth.
+
+The final state of the project is
+very close the the design specifications.
+The state does deviate in a few key aspects,
+but overall the viability of the design
+has been proven.
+If the more expensive op-amps would have
+been purchased,
+all of the design parameters would have
+been met, at least in theory.
+In other words,
+the limitations of the current implementation
+are due to op-amps with insufficient
+slew rate and
+gain-bandwidth product.
+
+Many of the issues which arose in this
+project came from the amplifier circuit.
+There were many design iterations
+where a new component would get introduced.
+This component would always cause some problem or
+have an adverse effect in some way.
+Eventually the component would be removed,
+or the design would be modified to
+accommodate the problems associated with the new component.
+Sometimes the design would even be reverted to
+a previous configuration.
+Progress on  the amplifier circuit came in
+small increments.
+Over time,
+these increments summed to the nearly-functioning
+implementation at the conclusion of this project.
 
 % go to next page
-\pagebreak
+\newpage
+%\pagebreak
 \appendix
 
 \section{Operation Manual}
