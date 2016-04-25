@@ -45,10 +45,10 @@
     \texttt{timdee@iastate.edu}
     \and
     Long, Justin\\
-    \texttt{jlong@iastate.edu}
+    \texttt{jwlong@iastate.edu}
     \and
-    McDonnel, Brandon\\
-    \texttt{bmcdonnel@iastate.edu}
+    McDonnell, Brandon\\
+    \texttt{bmm@iastate.edu}
 }
 
 \title{Remotely Connected Electric Field Generator\\
@@ -438,8 +438,9 @@ stages must sum to this value.
 
 % voltage stage amplification computation
 \begin{gather*}
-A_1 = gain of stage 1 amp \\ 
+A_1 = gain of stage 1 amp\\ 
 A_2 = gain of stage 2 amp\\
+A_{PGA} = max gain of PGA\\
 V_{m1} = max voltage of stage 1\\
 V_{m2} = max voltage of stage 2\\
 V_{m1} + V_{m2} = 30V\\
@@ -447,12 +448,13 @@ V_{m1} = \frac{V_{m2}}{7}\\
 V_{m1} + 7V_{m1} = 30V\\
 8V_{m1} = 30V\\
 V_{m1} = \frac{30V}{8}\\
-V_{m1} = 7.25V\\
-V_{m2} = 22.75V\\
-A_1 = \frac{V_{m1}}{7}\\
-A_2 = \frac{V_{m2}}{7}\\
-A_1 = 1.0357\frac{V}{V}\\
-A_2 = 3.25\frac{V}{V}\\
+V_{m1} = 3.75V\\
+V_{m2} = 26.25V\\
+A_{PGA} = 3.5V\\
+A_1 = \frac{V_{m1}}{A_{PGA}} = \frac{V_{m1}}{3.5}\\
+A_2 = \frac{V_{m2}}{A_{PGA}} = \frac{V_{m2}}{3.5}\\
+A_1 = 1.07\frac{V}{V}\\
+A_2 = 7.5\frac{V}{V}\\
 \end{gather*}
 
 The above equation derives the appropriate
