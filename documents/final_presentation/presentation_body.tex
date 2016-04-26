@@ -314,6 +314,20 @@
 
 \subsection{Implementation}
 
+\begin{frame}{Layout}
+  \begin{center}
+  \includegraphics[width=0.9\textwidth,keepaspectratio]{IMG_20160226_100546267.jpg}
+  \end{center}
+
+  \begin{block}{Connections Description}
+  \begin{itemize}
+    \item Raspberry Pi connected to components
+    \item Output of Minigen goes to input of PGA
+    \item All three stages input to summing amplifier
+  \end{itemize}
+  \end{block}
+\end{frame}
+
 \begin{frame}{SSR Circuit Implementation}
   \begin{center}
   \includegraphics[width=0.8\textwidth,keepaspectratio]{ssr_implementation.pdf}
@@ -416,6 +430,31 @@
   %\end{center}
 \end{frame}
 
+\begin{frame}{Physical Implementation}
+\begin{multicols}{2}
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{justin_on_pga.pdf}
+  \end{center}
+
+\newpage
+
+  %\begin{block}{Final Implementation}
+    \begin{itemize}
+      \item Raspberry Pi connected to break-out board
+      \item Break-out board connection GPIO pins to
+      \begin{itemize}
+        \item PGA
+        \item Minigen
+      \end{itemize}
+      \item Minigen output to PGA
+      \item PGA output to constant gain amplifier within same stage
+      \item Constant gain amplifiers output to summing amplifier
+    \end{itemize}
+  %\end{block}
+
+\end{multicols}
+\end{frame}
+
 % \begin{frame}{Computing Stage Gains}
 %   \begin{itemize}
 %     \item Hosted Locally
@@ -488,7 +527,7 @@
 \begin{frame}{Current State}
   \begin{block}{Problems}
     \begin{enumerate}
-      \item Minigen B23 Bug
+      %\item Minigen B23 Bug
       \item Current op-amps have insufficient Gain-Bandwidth Product
         \begin{enumerate}
         \item Insufficient frequency

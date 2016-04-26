@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  25 APR 2016 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  26 APR 2016 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1261,127 +1261,151 @@ Package pdftex.def Info: images/pi_connection.pdf used on input line 313.
  [13
 
  <./images/pi_connection.pdf>]
-<images/ssr_implementation.pdf, id=445, 722.7pt x 405.515pt>
+<camera/IMG_20160226_100546267.jpg, id=445, 5364.04pt x 3017.2725pt>
+File: camera/IMG_20160226_100546267.jpg Graphic file (type jpg)
+
+<use camera/IMG_20160226_100546267.jpg>
+Package pdftex.def Info: camera/IMG_20160226_100546267.jpg used on input line 3
+29.
+(pdftex.def)             Requested size: 250.9517pt x 141.15807pt.
+ [14
+
+ <./camera/IMG_20160226_100546267.jpg>] <images/ssr_implementation.pdf, id=468,
+ 722.7pt x 405.515pt>
 File: images/ssr_implementation.pdf Graphic file (type pdf)
 
 <use images/ssr_implementation.pdf>
-Package pdftex.def Info: images/ssr_implementation.pdf used on input line 328.
+Package pdftex.def Info: images/ssr_implementation.pdf used on input line 342.
 (pdftex.def)             Requested size: 223.07054pt x 125.16383pt.
- [14
+ [15
 
  <./images/ssr_implementation.pdf>]
-[15
+[16
 
-] [16
+] [17
 
 ]
-<../design_document/images/block_diagram.pdf, id=517, 727.71875pt x 462.72874pt
+<../design_document/images/block_diagram.pdf, id=541, 727.71875pt x 462.72874pt
 >
 File: ../design_document/images/block_diagram.pdf Graphic file (type pdf)
  <use ../design_document/images/block_diagram.pdf>
 Package pdftex.def Info: ../design_document/images/block_diagram.pdf used on in
-put line 397.
+put line 411.
 (pdftex.def)             Requested size: 278.83713pt x 177.30736pt.
- [17
+ [18
 
  <../design_document/images/block_diagram.pdf>]
-<../design_document/images/circuit_diagram.pdf, id=580, 794.97pt x 614.295pt>
+<../design_document/images/circuit_diagram.pdf, id=604, 794.97pt x 614.295pt>
 File: ../design_document/images/circuit_diagram.pdf Graphic file (type pdf)
 
 <use ../design_document/images/circuit_diagram.pdf>
 Package pdftex.def Info: ../design_document/images/circuit_diagram.pdf used on 
-input line 417.
+input line 431.
 (pdftex.def)             Requested size: 278.83713pt x 215.46576pt.
 
-Overfull \vbox (25.54016pt too high) detected at line 417
- []
-
-[18
-
- <../design_document/images/circuit_diagram.pdf>]
-<../poster/images/web_interface.pdf, id=616, 750.805pt x 748.7975pt>
-File: ../poster/images/web_interface.pdf Graphic file (type pdf)
-
-<use ../poster/images/web_interface.pdf>
-Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
-463.
-(pdftex.def)             Requested size: 139.41856pt x 139.03952pt.
-
-Overfull \hbox (5.0pt too wide) in paragraph at lines 463--463
-[][]  
+Overfull \vbox (25.54016pt too high) detected at line 431
  []
 
 [19
 
- <../poster/images/web_interface.pdf>]
-<../design_document/images/script_layout.pdf, id=642, 722.7pt x 542.025pt>
-File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
+ <../design_document/images/circuit_diagram.pdf>]
+<images/justin_on_pga.pdf, id=641, 302.12875pt x 423.5825pt>
+File: images/justin_on_pga.pdf Graphic file (type pdf)
 
-<use ../design_document/images/script_layout.pdf>
-Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
-put line 482.
-(pdftex.def)             Requested size: 153.36127pt x 115.01958pt.
+<use images/justin_on_pga.pdf>
+Package pdftex.def Info: images/justin_on_pga.pdf used on input line 456.
+(pdftex.def)             Requested size: 139.41856pt x 195.46432pt.
 
-Overfull \hbox (18.9427pt too wide) in paragraph at lines 482--482
-[][]  
+Overfull \hbox (5.0pt too wide) in paragraph at lines 456--456
+ [] 
  []
 
 [20
 
- <../design_document/images/script_layout.pdf>] [21
-
-]
-Underfull \hbox (badness 2961) in paragraph at lines 560--560
-[]|\T1/phv/b/n/10 Raspberry Pi 3
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 560--560
-[]|\T1/phv/b/n/10 Minigen Func-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 560--560
-[]|\T1/phv/b/n/10 Miscellaneous
- []
-
-[22
-
-] [23
-
-]
+ <./images/justin_on_pga.pdf>]
+<../poster/images/web_interface.pdf, id=669, 750.805pt x 748.7975pt>
 File: ../poster/images/web_interface.pdf Graphic file (type pdf)
- <use ../poster/images/web_interface.pdf>
+
+<use ../poster/images/web_interface.pdf>
 Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
-599.
-(pdftex.def)             Requested size: 69.70927pt x 69.51404pt.
+502.
+(pdftex.def)             Requested size: 139.41856pt x 139.03952pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 502--502
+[][]  
+ []
+
+[21
+
+ <../poster/images/web_interface.pdf>]
+<../design_document/images/script_layout.pdf, id=694, 722.7pt x 542.025pt>
 File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
 
 <use ../design_document/images/script_layout.pdf>
 Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
-put line 599.
-(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
-File: images/pi_connection.pdf Graphic file (type pdf)
+put line 521.
+(pdftex.def)             Requested size: 153.36127pt x 115.01958pt.
 
-<use images/pi_connection.pdf>
-Package pdftex.def Info: images/pi_connection.pdf used on input line 599.
-(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
-File: ../design_document/images/circuit_diagram.pdf Graphic file (type pdf)
+Overfull \hbox (18.9427pt too wide) in paragraph at lines 521--521
+[][]  
+ []
 
-<use ../design_document/images/circuit_diagram.pdf>
-Package pdftex.def Info: ../design_document/images/circuit_diagram.pdf used on 
-input line 599.
-(pdftex.def)             Requested size: 69.70927pt x 53.8594pt.
+[22
 
-Overfull \hbox (216.62782pt too wide) in paragraph at lines 599--599
-[][][][][]  
+ <../design_document/images/script_layout.pdf>] [23
+
+]
+Underfull \hbox (badness 2961) in paragraph at lines 599--599
+[]|\T1/phv/b/n/10 Raspberry Pi 3
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 599--599
+[]|\T1/phv/b/n/10 Minigen Func-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--599
+[]|\T1/phv/b/n/10 Miscellaneous
  []
 
 [24
 
 ] [25
 
-] [26
+]
+File: ../poster/images/web_interface.pdf Graphic file (type pdf)
+ <use ../poster/images/web_interface.pdf>
+Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
+638.
+(pdftex.def)             Requested size: 69.70927pt x 69.51404pt.
+File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
+
+<use ../design_document/images/script_layout.pdf>
+Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
+put line 638.
+(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
+File: images/pi_connection.pdf Graphic file (type pdf)
+
+<use images/pi_connection.pdf>
+Package pdftex.def Info: images/pi_connection.pdf used on input line 638.
+(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
+File: ../design_document/images/circuit_diagram.pdf Graphic file (type pdf)
+
+<use ../design_document/images/circuit_diagram.pdf>
+Package pdftex.def Info: ../design_document/images/circuit_diagram.pdf used on 
+input line 638.
+(pdftex.def)             Requested size: 69.70927pt x 53.8594pt.
+
+Overfull \hbox (216.62782pt too wide) in paragraph at lines 638--638
+[][][][][]  
+ []
+
+[26
+
+] [27
+
+] [28
 
 ]
 \tf@nav=\write6
@@ -1393,20 +1417,20 @@ Overfull \hbox (216.62782pt too wide) in paragraph at lines 599--599
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 673.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 673.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 634.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 634.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 673.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 673.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 4F499727424BD7AC88FE1E9F498AD66E;995.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
+(rerunfilecheck)             Checksum: 8ACB308F28DEE768642FFB7B9F3A89D9;995.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 673.
  ) ) 
 Here is how much of TeX's memory you used:
- 22663 strings out of 493054
- 433204 string characters out of 6140586
- 522683 words of memory out of 5000000
- 25536 multiletter control sequences out of 15000+600000
+ 22683 strings out of 493054
+ 433598 string characters out of 6140586
+ 522693 words of memory out of 5000000
+ 25548 multiletter control sequences out of 15000+600000
  59743 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,73p,392b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1418,10 +1442,10 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pf
 b>
-Output written on presentation.pdf (26 pages, 1464501 bytes).
+Output written on presentation.pdf (28 pages, 6477755 bytes).
 PDF statistics:
- 860 PDF objects out of 1000 (max. 8388607)
- 766 compressed objects within 8 object streams
- 70 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 915 PDF objects out of 1000 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
