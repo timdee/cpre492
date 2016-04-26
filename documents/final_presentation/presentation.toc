@@ -1,6 +1,10 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {german}
-\beamer@sectionintoc {1}{Background}{2}{0}{1}
-\beamer@sectionintoc {2}{Project Outline}{4}{0}{2}
+\beamer@sectionintoc {1}{Dielectrophoresis}{2}{0}{1}
+\beamer@sectionintoc {2}{Project Overview}{4}{0}{2}
 \beamer@sectionintoc {3}{Initial Implementation}{6}{0}{3}
-\beamer@sectionintoc {4}{Intermediate Implementation}{7}{0}{4}
+\beamer@sectionintoc {4}{Intermediate Implementation 1}{7}{0}{4}
+\beamer@sectionintoc {5}{Intermediate Implementation 2}{13}{0}{5}
+\beamer@sectionintoc {6}{Final Design}{14}{0}{6}
+\beamer@sectionintoc {7}{Current State}{19}{0}{7}
+\beamer@sectionintoc {8}{Questions}{23}{0}{8}
