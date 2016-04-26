@@ -11,39 +11,55 @@
   \maketitle
 \end{frame}
 
+% justin
 \section{Dielectrophoresis}
 
 % justin
 \begin{frame}{Dielectrophoresis (DEP)}
+  \begin{multicols}{2}
+
+  \begin{block}{}
   \begin{itemize}
   \item A dielectric particle in a non uniform 
   electric field experiences a force
   \item Different potential fields and frequencies 
   has an effect on the net force
   \item First studied in 1950s by Herbert Pohl
-  \item Recently revived due to the ability to
-  manipulate micro-particles and cells. 
   \end{itemize}
+  \end{block}
+
+  \newpage
+
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{dep.pdf}
+  \end{center}
+
+  \end{multicols}
 \end{frame}
 
 % justin
 \begin{frame}{Real World Application}
+  \begin{block}{Dielectrophoresis}
   \begin{itemize}
+    \item Recently revived due to the ability to
+  manipulate micro-particles and cells. 
     \item Potential to separate particles in spinal fluid
     \item Act as filter
     \item Research in separating cancerous cells from healthy cells
     \item Separate platelets from whole blood
     \item Separate red and white blood cells
-    \item Strains of bacteria and viruses
+    \item Separate Strains of bacteria and viruses from living cells
   \end{itemize}
+  \end{block}
 \end{frame}
 
 % tim
 \section{Project Overview}
 
 \begin{frame}{Project Description}
+\begin{block}{}
   \begin{itemize}
-    \item A system to aid in the research of DEP
+    \item A system to aid in of DEP research
     \item Allow for quicker setup times
     \item Control Voltage and Frequency via the web
       \begin{itemize}
@@ -55,9 +71,12 @@
     \item Easy to use
     \item Plug and play
   \end{itemize}
+\end{block}
 \end{frame}
 
+% talk about what motivated the choise of a raspberry pi
 \begin{frame}{Project Structure}
+  \begin{multicols}{2}
   \begin{itemize}
     \item Raspberry Pi
     \item Web Interface
@@ -65,9 +84,19 @@
     \item Frequency Control Solution
     \item Voltage Control Solution
   \end{itemize}
+
+  \newpage
+
+  %\begin{center}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{rpi_real.png}
+  %\end{center}
+
+  \end{multicols}
 \end{frame}
 
 \section{Initial Implementation}
+
+\subsection{Design}
 
 \begin{frame}{Initial Implementation}
   \begin{block}{}
@@ -88,80 +117,253 @@
     \end{itemize}
   \end{block}
 
-  % \begin{center}
-  % \includegraphics[width=1.0\textwidth,keepaspectratio]{Flowchar v1.jpg}
-  % \end{center}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{flowchart_version_1.pdf}
+  \end{center}
 \end{frame}
 
+\subsection{Problems}
+
+\begin{frame}{Concerns}
+  \begin{block}{}
+  \begin{itemize}
+    \item Raspberry Pi 
+      \begin{itemize}
+        \item Complexity of programming
+        \item GPIO pins may only be turned on and off
+        \item On-off mechanism must be used to generate waveform
+        % pi cannot handle alot of output current
+        \item Current load
+      \end{itemize}
+    \item Circuit Output
+      \begin{itemize}
+        \item Complexity of construction
+        \item No guarantees about cleanliness of GPIO pin waveform 
+        \item High risk of failure
+      \end{itemize}
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+% end of first semester
 \section{Intermediate Implementation 1}
 
+\subsection{Design}
+
 \begin{frame}{Minigen Function Generator}
+  %\begin{multicols}{2}
+  
   \begin{itemize}
     \item SPI communications
     \item Small form factor
-    \item Output to 
+    \item Output programmable frequency 
+    \item Produces 1 Khz to 4 Mhz waveforms
   \end{itemize}
+
+  %\newpage
+
+  \begin{center}
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{minigen_real.png}
+  \end{center}
+
+  %\end{multicols}
+
 \end{frame}
 
-\begin{frame}{Intermediate Implementation}
+\begin{frame}{Intermediate Design}
+  \begin{block}{}
   \begin{itemize}
     \item Raspberry Pi controls Integrated circuit components
-    \item Produces frequency 10 Khz - 4 Mhz
+    \item Minigen used to produce frequency
     \item Digital Potentiometers
-    \item SPI communications
-    \item Vary resistance to control amplifier
+      \begin{itemize}
+      \item SPI communications
+      \item Vary resistance to control amplifier
+      \end{itemize}
     \item Amplifier controls voltage output from circuit
   \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Problems and Setbacks}
-  \begin{itemize}
-    \item Mosfet Amplifier
-    \item Digital Potentiometer
-    \item Resistance drops with AC signal
-    \item Distorted the sine wave
-    \item Op Amps
-    \item Slew Rates
-    \item Gain Bandwidth
-    \item Minigen
-    \item B23 Bug
-  \end{itemize}
-\end{frame}
+\subsection{Implementation and Problems}
 
 \begin{frame}{Digital Potentiometer Amplifier Circuit }
+  \begin{block}{Properties}
   \begin{itemize}
-    \item "image"
+    \item Utilizes digital potentiometer as feedback resistor
   \end{itemize}
+
+  % formula
+  \begin{center}
+    $V_{out} = \frac{-R_F}{R_{IN}} * Minigen_{SIGNAL}$
+  \end{center}
+  \end{block}
+
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{digital_pot_amplifier.pdf}
+  \end{center}
+
+  \begin{block}{Problems}
+    \begin{itemize}
+      \item Distortion of signal
+      \item Resistance drops with AC signal
+    \end{itemize}    
+  \end{block}
 \end{frame}
 
 \begin{frame}{MOSFET Amplifier}
+  \begin{block}{Properties}
   \begin{itemize}
-    \item "picture"
-    \item information
+    \item Utilizes digital pot in a different way
+    \item Amplification utilizes transistor
   \end{itemize}
+  \end{block}
+
+  \begin{multicols}{2}
+
+  \begin{center}
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{mosfet_amplifier.pdf}
+  \end{center}
+
+  \newpage
+
+  %\begin{block}{Problems}
+    \begin{itemize}
+      \item Distortion of signal remains
+      \item Concluded digital potentiometer is source of problem
+    \end{itemize}    
+  %\end{block}
+
+  \end{multicols}
 \end{frame}
 
-\begin{frame}{Problems and Setbacks}
-  \begin{itemize}
-    \item Lost a group member
-    \item BJT Switch
-    \item Control through GPIO pin
-    \item Current Leaks through when logically off
-    \item Relay
-    \item Operating Frequency not sufficient
-    \item Brandon
-    \item We have had to make quite a few adjustments from our original plan.
-    \item This is especially the case with our digital potentiometers.
-  \end{itemize}
-\end{frame}
+% \begin{frame}{Problems and Setbacks}
+%   \begin{itemize}
+%     \item MOSFET Amplifier
+%       \begin{itemize}
+%       \item Unable to produce clean waveform
+%       \end{itemize}
+%     \item Digital Potentiometer
+%       \begin{itemize}
+%       \item Resistance drops with AC signal
+%       \item Distorted waveforms
+%       \begin{itemize}
+%     % discuss these things later
+%     %\item Op Amps
+%     %\item Slew Rates
+%     %\item Gain Bandwidth
+%     %\item Minigen
+%     %\item B23 Bug
+%   \end{itemize}
+% \end{frame}
 
+% beginning of second semester to middle of second semester
 \section{Intermediate Implementation 2}
 
-\begin{frame}{SSR Circuit Implementation}
+\subsection{Design}
+
+\begin{frame}{Redesign Amplifier}
+  \begin{block}{Idea Overview}
   \begin{itemize}
-    \item "image"
+    \item Previous problems stem from voltage modification solutions
+    \item Solution: Use integrated circuit component to modify voltage
   \end{itemize}
+  \end{block}
+
+  \begin{block}{Amplifier Properties}
+  \begin{itemize}
+    \item Three stages of amplification
+    \item One PGA and two stages with constant gain
+      \begin{itemize}
+        \item $20V_{pp}$ per stage
+        \item Summing amplifier sums stages
+        \item PGA achieves 8 steps within one stage
+        \item Switches increase output by $20V_{pp}$
+      \end{itemize}
+    \item Use transistors as switches flipped using GPIO pins
+  \end{itemize}
+  \end{block}
+
 \end{frame}
+
+\begin{frame}{Configuration}
+  \begin{block}{Programmable Gain Amplifier(PGA)}
+  \begin{itemize}
+    \item Three pins encode gain
+    \item 8 Gain Options from 0 to 7
+  \end{itemize}
+  \end{block}
+
+%  \begin{multicols}{2}
+
+  % \begin{itemize}
+  %   \item Raspberry Pi connected to components
+  %   \item Output of Minigen goes to input of PGA
+  %   \item All three stages input to summing amplifier
+  % \end{itemize}
+
+ % \newpage
+
+  \begin{center}
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{pi_connection.pdf}
+  \end{center}
+
+  %\end{multicols}
+\end{frame}
+
+\subsection{Implementation}
+
+\begin{frame}{SSR Circuit Implementation}
+  \begin{center}
+  \includegraphics[width=0.8\textwidth,keepaspectratio]{ssr_implementation.pdf}
+  \end{center}
+
+  \begin{block}{Solid State Relay (SSR)}
+  \begin{itemize}
+    \item Uses LED and photo-resistor to allow current though
+    \item Hoped to fix waveform distortion issues
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Problems}
+
+\begin{frame}{Problems}
+  \begin{block}{Programmable Gain Amplifier(PGA)}
+  \begin{itemize}
+    \item Easy to destroy
+    \item Functionally works well
+  \end{itemize}
+  \end{block}
+
+  \begin{block}{Transistor Switch Circuit}
+  \begin{itemize}
+    \item BJT Leaks when logically off
+  \end{itemize}
+  \end{block}
+
+  \begin{block}{Solid State Relay}
+  \begin{itemize}
+    \item Could not function at high enough frequency
+    \item Even moderately high AC signals at input\\ cause output of 0
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+% \begin{frame}{Problems and Setbacks}
+%   \begin{itemize}
+%     \item Lost a group member
+%     \item BJT Switch
+%     \item Control through GPIO pin
+%     \item Current Leaks through when logically off
+%     \item Relay
+%     \item Operating Frequency not sufficient
+%     \item Brandon
+%     \item We have had to make quite a few adjustments from our original plan.
+%     \item This is especially the case with our digital potentiometers.
+%   \end{itemize}
+% \end{frame}
 
 \section{Final Design}
 
@@ -179,6 +381,7 @@
       \item GPIO communications
       \item 8 voltage options (0-7)
     \end{itemize}
+    \item Two-stage amplification
     \item Summing Amplifier
     \begin{itemize}
       \item Sums output from amplification stages
@@ -193,8 +396,10 @@
   \end{center}
 \end{frame}
 
+\subsection{Hardware Components}
+
 \begin{frame}{Amplifier Circuit}
-  %\begin{block}{Components}
+  %\begin{block}{}
   \begin{itemize}
     \item Two stages with PGA and constant gain amplifiers
     \begin{itemize}
@@ -206,9 +411,9 @@
   \end{itemize}
   %\end{block}
 
-  \begin{center}
+  %\begin{center}
   \includegraphics[width=1.0\textwidth,keepaspectratio]{circuit_diagram.pdf}
-  \end{center}
+  %\end{center}
 \end{frame}
 
 % \begin{frame}{Computing Stage Gains}
@@ -237,6 +442,8 @@
 %     \end{gather*}
 % \end{frame}
 
+\subsection{Software Components}
+
 \begin{frame}{Web Interface}
 \begin{multicols}{2}
   \begin{itemize}
@@ -248,9 +455,9 @@
 
 \newpage
 
-\begin{center}
+%\begin{center}
 \includegraphics[width=0.5\textwidth,keepaspectratio]{web_interface.pdf}
-\end{center}
+%\end{center}
 
 \end{multicols}
 \end{frame}
@@ -258,16 +465,18 @@
 % talk about how the web interface accomplishes its job
 \begin{frame}{Software Components}
 \begin{multicols}{2}
-  \begin{itemize}
-    \item a
-  \end{itemize}
 
+%\begin{center}
+\includegraphics[width=.55\textwidth,keepaspectratio]{script_layout.pdf}
+%\end{center}
 
 \newpage
 
-\begin{center}
-\includegraphics[width=0.6\textwidth,keepaspectratio]{script_layout.pdf}
-\end{center}
+\begin{itemize}
+  \item Script organization of the Raspberry Pi
+  \item Delegation of Responsibility
+  \item Scripts correspond to hardware components
+\end{itemize}
 
 \end{multicols}
 \end{frame}
@@ -370,6 +579,23 @@
     \item Simulation files
   \end{itemize}
 \end{block}
+
+\begin{multicols}{4}
+
+%\begin{center}
+\includegraphics[width=.25\textwidth,keepaspectratio]{web_interface.pdf}
+%\end{center}
+%\begin{center}
+\includegraphics[width=.25\textwidth,keepaspectratio]{script_layout.pdf}
+%\end{center}
+%\begin{center}
+\includegraphics[width=.25\textwidth,keepaspectratio]{pi_connection.pdf}
+%\end{center}
+%\begin{center}
+\includegraphics[width=.25\textwidth,keepaspectratio]{circuit_diagram.pdf}
+%\end{center}
+
+\end{multicols}
 \end{frame}
 
 \section{Questions}

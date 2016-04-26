@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  25 APR 2016 20:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2016.1.10)  25 APR 2016 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1129,128 +1129,259 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <5> not available
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 27.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 38.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 38.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
- [2
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
 
-] [3
+<images/dep.pdf, id=123, 317.185pt x 278.03876pt>
+File: images/dep.pdf Graphic file (type pdf)
+ <use images/dep.pdf>
+Package pdftex.def Info: images/dep.pdf used on input line 38.
+(pdftex.def)             Requested size: 139.41856pt x 122.21439pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 38--38
+ [] 
+ []
+
+[2
+
+ <./images/dep.pdf>] [3
 
 ]
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
  [4
 
-] [5
+]
+<../design_document/images/rpi_real.png, id=200, 1284.8pt x 861.2175pt>
+File: ../design_document/images/rpi_real.png Graphic file (type png)
+
+<use ../design_document/images/rpi_real.png>
+Package pdftex.def Info: ../design_document/images/rpi_real.png used on input l
+ine 95.
+(pdftex.def)             Requested size: 139.41856pt x 93.44638pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 95--95
+[][]  
+ []
+
+[5
+
+ <../design_document/images/rpi_real.png>]
+<images/flowchart_version_1.pdf, id=224, 722.7pt x 542.025pt>
+File: images/flowchart_version_1.pdf Graphic file (type pdf)
+
+<use images/flowchart_version_1.pdf>
+Package pdftex.def Info: images/flowchart_version_1.pdf used on input line 123.
+
+(pdftex.def)             Requested size: 223.07054pt x 167.29819pt.
+
+Overfull \vbox (63.46451pt too high) detected at line 123
+ []
+
+[6
+
+ <./images/flowchart_version_1.pdf>] [7
 
 ]
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 94.
- [6
+<../poster/images/minigen_real.png, id=282, 144.54pt x 144.54pt>
+File: ../poster/images/minigen_real.png Graphic file (type png)
 
-] [7
+<use ../poster/images/minigen_real.png>
+Package pdftex.def Info: ../poster/images/minigen_real.png used on input line 1
+72.
+(pdftex.def)             Requested size: 223.07054pt x 223.08188pt.
 
-]
+Overfull \vbox (31.54622pt too high) detected at line 172
+ []
+
 [8
 
-] [9
-
-] [10
-
-] [11
-
-] [12
-
-] [13
-
-] [14
+ <../poster/images/minigen_real.png>] [9
 
 ]
-<../design_document/images/block_diagram.pdf, id=254, 727.71875pt x 462.72874pt
+LaTeX Font Info:    Try loading font information for U+msa on input line 213.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 213.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 213.
+
+<images/digital_pot_amplifier.pdf, id=328, 492.84125pt x 309.155pt>
+File: images/digital_pot_amplifier.pdf Graphic file (type pdf)
+
+<use images/digital_pot_amplifier.pdf>
+Package pdftex.def Info: images/digital_pot_amplifier.pdf used on input line 21
+3.
+(pdftex.def)             Requested size: 139.41856pt x 87.45438pt.
+ [10
+
+ <./images/digital_pot_amplifier.pdf>] <images/mosfet_amplifier.pdf, id=358, 31
+5.1775pt x 283.0575pt>
+File: images/mosfet_amplifier.pdf Graphic file (type pdf)
+
+<use images/mosfet_amplifier.pdf>
+Package pdftex.def Info: images/mosfet_amplifier.pdf used on input line 239.
+(pdftex.def)             Requested size: 139.41856pt x 125.21082pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 239--239
+ [] 
+ []
+
+[11
+
+ <./images/mosfet_amplifier.pdf>]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 288.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 288.
+ [12
+
+]
+<images/pi_connection.pdf, id=409, 722.7pt x 542.025pt>
+File: images/pi_connection.pdf Graphic file (type pdf)
+
+<use images/pi_connection.pdf>
+Package pdftex.def Info: images/pi_connection.pdf used on input line 313.
+(pdftex.def)             Requested size: 223.07054pt x 167.29819pt.
+ [13
+
+ <./images/pi_connection.pdf>]
+<images/ssr_implementation.pdf, id=445, 722.7pt x 405.515pt>
+File: images/ssr_implementation.pdf Graphic file (type pdf)
+
+<use images/ssr_implementation.pdf>
+Package pdftex.def Info: images/ssr_implementation.pdf used on input line 328.
+(pdftex.def)             Requested size: 223.07054pt x 125.16383pt.
+ [14
+
+ <./images/ssr_implementation.pdf>]
+[15
+
+] [16
+
+]
+<../design_document/images/block_diagram.pdf, id=517, 727.71875pt x 462.72874pt
 >
 File: ../design_document/images/block_diagram.pdf Graphic file (type pdf)
  <use ../design_document/images/block_diagram.pdf>
 Package pdftex.def Info: ../design_document/images/block_diagram.pdf used on in
-put line 194.
+put line 397.
 (pdftex.def)             Requested size: 278.83713pt x 177.30736pt.
- [15
+ [17
 
  <../design_document/images/block_diagram.pdf>]
-<../design_document/images/circuit_diagram.pdf, id=308, 794.97pt x 614.295pt>
+<../design_document/images/circuit_diagram.pdf, id=580, 794.97pt x 614.295pt>
 File: ../design_document/images/circuit_diagram.pdf Graphic file (type pdf)
 
 <use ../design_document/images/circuit_diagram.pdf>
 Package pdftex.def Info: ../design_document/images/circuit_diagram.pdf used on 
-input line 212.
+input line 417.
 (pdftex.def)             Requested size: 278.83713pt x 215.46576pt.
 
-Overfull \vbox (34.04016pt too high) detected at line 212
- []
-
-[16
-
- <../design_document/images/circuit_diagram.pdf>]
-<../poster/images/web_interface.pdf, id=335, 750.805pt x 748.7975pt>
-File: ../poster/images/web_interface.pdf Graphic file (type pdf)
-
-<use ../poster/images/web_interface.pdf>
-Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
-256.
-(pdftex.def)             Requested size: 139.41856pt x 139.03952pt.
-
-Overfull \hbox (5.0pt too wide) in paragraph at lines 256--256
- [] 
- []
-
-[17
-
- <../poster/images/web_interface.pdf>]
-<../design_document/images/script_layout.pdf, id=352, 722.7pt x 542.025pt>
-File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
-
-<use ../design_document/images/script_layout.pdf>
-Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
-put line 273.
-(pdftex.def)             Requested size: 167.30397pt x 125.47365pt.
-
-Overfull \hbox (32.8854pt too wide) in paragraph at lines 273--273
- [] 
+Overfull \vbox (25.54016pt too high) detected at line 417
  []
 
 [18
 
- <../design_document/images/script_layout.pdf>] [19
+ <../design_document/images/circuit_diagram.pdf>]
+<../poster/images/web_interface.pdf, id=616, 750.805pt x 748.7975pt>
+File: ../poster/images/web_interface.pdf Graphic file (type pdf)
 
-]
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Underfull \hbox (badness 2961) in paragraph at lines 351--351
-[]|\T1/phv/b/n/10 Raspberry Pi 3
+<use ../poster/images/web_interface.pdf>
+Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
+463.
+(pdftex.def)             Requested size: 139.41856pt x 139.03952pt.
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 463--463
+[][]  
  []
 
+[19
 
-Underfull \hbox (badness 5787) in paragraph at lines 351--351
-[]|\T1/phv/b/n/10 Minigen Func-ti-
- []
+ <../poster/images/web_interface.pdf>]
+<../design_document/images/script_layout.pdf, id=642, 722.7pt x 542.025pt>
+File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
 
+<use ../design_document/images/script_layout.pdf>
+Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
+put line 482.
+(pdftex.def)             Requested size: 153.36127pt x 115.01958pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--351
-[]|\T1/phv/b/n/10 Miscellaneous
+Overfull \hbox (18.9427pt too wide) in paragraph at lines 482--482
+[][]  
  []
 
 [20
 
-] [21
+ <../design_document/images/script_layout.pdf>] [21
 
-] [22
+]
+Underfull \hbox (badness 2961) in paragraph at lines 560--560
+[]|\T1/phv/b/n/10 Raspberry Pi 3
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 560--560
+[]|\T1/phv/b/n/10 Minigen Func-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 560--560
+[]|\T1/phv/b/n/10 Miscellaneous
+ []
+
+[22
 
 ] [23
 
-] [24
+]
+File: ../poster/images/web_interface.pdf Graphic file (type pdf)
+ <use ../poster/images/web_interface.pdf>
+Package pdftex.def Info: ../poster/images/web_interface.pdf used on input line 
+599.
+(pdftex.def)             Requested size: 69.70927pt x 69.51404pt.
+File: ../design_document/images/script_layout.pdf Graphic file (type pdf)
+
+<use ../design_document/images/script_layout.pdf>
+Package pdftex.def Info: ../design_document/images/script_layout.pdf used on in
+put line 599.
+(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
+File: images/pi_connection.pdf Graphic file (type pdf)
+
+<use images/pi_connection.pdf>
+Package pdftex.def Info: images/pi_connection.pdf used on input line 599.
+(pdftex.def)             Requested size: 69.70927pt x 52.27861pt.
+File: ../design_document/images/circuit_diagram.pdf Graphic file (type pdf)
+
+<use ../design_document/images/circuit_diagram.pdf>
+Package pdftex.def Info: ../design_document/images/circuit_diagram.pdf used on 
+input line 599.
+(pdftex.def)             Requested size: 69.70927pt x 53.8594pt.
+
+Overfull \hbox (216.62782pt too wide) in paragraph at lines 599--599
+[][][][][]  
+ []
+
+[24
+
+] [25
+
+] [26
 
 ]
 \tf@nav=\write6
@@ -1262,32 +1393,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 351--351
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 634.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 634.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: B84732FB9A751F70CA9E97ECCDF6EE31;427.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
+(rerunfilecheck)             Checksum: 4F499727424BD7AC88FE1E9F498AD66E;995.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
  ) ) 
 Here is how much of TeX's memory you used:
- 22546 strings out of 493054
- 430966 string characters out of 6140586
- 521652 words of memory out of 5000000
- 25451 multiletter control sequences out of 15000+600000
- 46688 words of font info for 55 fonts, out of 8000000 for 9000
+ 22663 strings out of 493054
+ 433204 string characters out of 6140586
+ 522683 words of memory out of 5000000
+ 25536 multiletter control sequences out of 15000+600000
+ 59743 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,17n,63p,392b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,73p,392b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
-.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (24 pages, 372442 bytes).
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pf
+b>
+Output written on presentation.pdf (26 pages, 1464501 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 57 named destinations out of 1000 (max. 500000)
- 127 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 860 PDF objects out of 1000 (max. 8388607)
+ 766 compressed objects within 8 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

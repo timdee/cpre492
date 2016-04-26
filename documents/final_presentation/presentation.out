@@ -1,8 +1,17 @@
 \BOOKMARK [2][]{Outline0.1}{Dielectrophoresis}{}% 1
 \BOOKMARK [2][]{Outline0.2}{Project Overview}{}% 2
 \BOOKMARK [2][]{Outline0.3}{Initial Implementation}{}% 3
-\BOOKMARK [2][]{Outline0.4}{Intermediate Implementation 1}{}% 4
-\BOOKMARK [2][]{Outline0.5}{Intermediate Implementation 2}{}% 5
-\BOOKMARK [2][]{Outline0.6}{Final Design}{}% 6
-\BOOKMARK [2][]{Outline0.7}{Current State}{}% 7
-\BOOKMARK [2][]{Outline0.8}{Questions}{}% 8
+\BOOKMARK [3][]{Outline0.3.1.6}{Design}{Outline0.3}% 4
+\BOOKMARK [3][]{Outline0.3.2.7}{Problems}{Outline0.3}% 5
+\BOOKMARK [2][]{Outline0.4}{Intermediate Implementation 1}{}% 6
+\BOOKMARK [3][]{Outline0.4.1.8}{Design}{Outline0.4}% 7
+\BOOKMARK [3][]{Outline0.4.2.10}{Implementation and Problems}{Outline0.4}% 8
+\BOOKMARK [2][]{Outline0.5}{Intermediate Implementation 2}{}% 9
+\BOOKMARK [3][]{Outline0.5.1.12}{Design}{Outline0.5}% 10
+\BOOKMARK [3][]{Outline0.5.2.14}{Implementation}{Outline0.5}% 11
+\BOOKMARK [3][]{Outline0.5.3.15}{Problems}{Outline0.5}% 12
+\BOOKMARK [2][]{Outline0.6}{Final Design}{}% 13
+\BOOKMARK [3][]{Outline0.6.1.18}{Hardware Components}{Outline0.6}% 14
+\BOOKMARK [3][]{Outline0.6.2.19}{Software Components}{Outline0.6}% 15
+\BOOKMARK [2][]{Outline0.7}{Current State}{}% 16
+\BOOKMARK [2][]{Outline0.8}{Questions}{}% 17
